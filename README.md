@@ -4,7 +4,7 @@
 
 # CeresCoconut TEST
 
-A Coconut theme for Ceres 3.
+A Coconut theme for Ceres 3. (toller Test)
 
 
 ## Requirements
