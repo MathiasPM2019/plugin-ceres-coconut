@@ -1,1 +1,8 @@
-/* Enter your CSS here */
+/* Bereich Header */
+
+.top-bar {
+ width:100%;
+ z-index:1060;
+ color:#666;
+ background-color:#f9f9f9 !important;
+}
