@@ -2,9 +2,9 @@
 
 ![plentymarkets Logo](http://www.plentymarkets.eu/layout/pm/images/logo/plentymarkets-logo.jpg)
 
-# CeresCoconut TEST
+# CeresCoconut
 
-A Coconut theme for Ceres 3. (toller Test)
+A Coconut theme for Ceres 3.
 
 
 ## Requirements
