@@ -41,19 +41,6 @@
                             <i class="flag-icon flag-icon-{{ lang }}"></i>
                         </a>
                     </li>
-
-                    {% if enableCurrencySelect == "true" %}
-                        <li class="list-inline-item dropdown control-languages">
-                            <a class=""
-                               data-toggle="collapse"
-                               href="#currencySelect"
-                               aria-expanded="false"
-                               aria-controls="currencySelect"
-                               data-parent="#controlsList">
-                                <span>{{ services.checkout.getCurrencyData()[currencyFormat] }}</span>
-                            </a>
-                        </li>
-                    {% endif %}
                     <li class="list-inline-item control-search">
                         <a class="anicon anicon-search-xcross"
                            aria-label="toggle search"
