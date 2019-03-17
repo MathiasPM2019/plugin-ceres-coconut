@@ -1,8 +1,21 @@
 /* Bereich Header */
-
 .top-bar {
  width:100%;
  z-index:1060;
  color:#666;
  background-color:#f9f9f9 !important;
+}
+.top-bar .controls-list > li a:not(.btn):hover {
+  background-color: #f9f9f9;
+  color: #c00418;
+}
+.top-bar .controls-list .control-basket .toggle-basket-preview {
+ background-color:#f9f9f9;
+ color:#666
+}
+.top-bar .controls-list .control-basket .toggle-basket-preview:hover {
+ background-color:#f9f9f9;
+}
+.top-bar .controls-list > li a:not(.btn) {
+    color: #666;
 }
