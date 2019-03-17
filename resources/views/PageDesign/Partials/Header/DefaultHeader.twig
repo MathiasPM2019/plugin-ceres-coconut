@@ -5,7 +5,11 @@
         <div class="container-max">
             <div class="row">
                 {{ LayoutContainer.show("Ceres::Header.LeftSide") }}
-
+                <div  class="col-6 col-sm-12 text-center">
+                  <i aria-hidden="true" class="fa fa-check text-success"></i>
+                        schnelle Lieferung
+                </div>
+                <div class="col-6 col-sm-12">
                 <ul id="controlsList" class="controls-list list-inline">
                   <li class="list-inline-item control-user">Dies ist ein Test. Test bereitstellen!</li>
                     <li class="list-inline-item control-user">
@@ -80,6 +84,7 @@
                         {% endif %}
                     </li>
                 </ul>
+              </div>
             </div>
         </div>
         {% include "Ceres::PageDesign.Partials.Header.Navigation" %}
