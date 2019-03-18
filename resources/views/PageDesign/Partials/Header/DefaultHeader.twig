@@ -3,9 +3,9 @@
 <header id="page-header" class="top-bar fixed-top">
     <div>
         <div class="container-max">
-            <div class="row flex-row">
+            <div class="row flex-row"> <!--Top Bar -->
                 {{ LayoutContainer.show("Ceres::Header.LeftSide") }}
-              <div class="col-sm-12 col-lg-8 row flex-row">
+              <div class="col-sm-12 col-lg-8 row flex-row hidden-xs-down">
                 <div  class="col-4 text-center">
                   <i aria-hidden="true" class="fa fa-check text-success"></i>
                         schnelle Lieferung
@@ -35,7 +35,8 @@
                         </user-login-handler>
                     </li>
 
-                    <li class="list-inline-item control-search">
+                    <li class="list-inline-item control-search hidden">
+                      <!-- ausgeblendete Lupe toggle -->
                         <a class="anicon anicon-search-xcross"
                            aria-label="toggle search"
                            data-toggle="collapse"
@@ -77,6 +78,18 @@
                 </ul>
               </div>
             </div>
+        </div>
+        <div class="container-max">
+          <div class="row flex-row">
+            <div id="searchBox" class="cmp cmp-search-box collapse">
+                {% set overrideSearchBar = LayoutContainer.show("Ceres::Search.SearchBar") %}
+                {% if overrideSearchBar | trim is empty %}
+                    <item-search template="#vue-item-search"></item-search>
+                {% else %}
+                    {{ overrideSearchBar | raw }}
+                {% endif %}
+            </div>
+          </div>
         </div>
         {% include "Ceres::PageDesign.Partials.Header.Navigation" %}
     </div>
