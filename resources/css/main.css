@@ -19,3 +19,13 @@
 .top-bar .controls-list > li a:not(.btn) {
     color: #666;
 }
+
+.grey-bright {
+  background-color: #f9f9f9;
+}
+.grey-mid {
+  background-color: #f0f0f0;
+}
+.grey-dark {
+  background-color: #515151;
+}
