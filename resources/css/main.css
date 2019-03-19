@@ -10,6 +10,31 @@
   background-color: #515151;
   color: #f9f9f9;
 }
+
+/* einheitliche Höhen falls benötigt */
+.lh-2 {
+  min-height:40px;
+}
+.lh-1  {
+  min-height: 20px;
+}
+.lh-075  {
+  min-height: 15px;
+}
+.lh-05  {
+  min-height: 10px;
+}
+.lh-025  {
+  min-height: 5px;
+}
+
+/* Reset einiger Werte */
+.no-padding { padding:0;}
+.no-margin {margin:0;}
+
+@media (min-width: 576px) {
+  .no-padding-xs-up { padding:0;}
+}
 /* Bereich Header */
 .top-bar {
  width:100%;
