@@ -5,7 +5,7 @@
 {% set useMegaMenu  = config("Ceres.header.megamenu_levels") > 1 %}
 
 <nav class="grey-dark navbar{% if useMegaMenu %} megamenu{%endif%}">
-    <div class="container-max">
+    <div class="container-max grey-dark">
         <div class="row">
             <div class="brand-wrapper hidden-xs-up" {% if showHeaderNavBar == "side" %}style="position: relative"{% endif %}>
                 <a class="navbar-brand float-lg-left" href="{{ homepageURL }}">
