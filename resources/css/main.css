@@ -11,6 +11,20 @@
   color: #f9f9f9;
 }
 
+@media (max-width:991.98px) {
+  .grey-bright {
+    background-color: #f9f9f9;
+    color: #666;
+  }
+  .grey-mid {
+    background-color: #f0f0f0;
+  }
+  .grey-dark {
+    background-color: #f0f0f0;
+    color: #666;
+  }
+}
+
 /* einheitliche Höhen falls benötigt */
 .lh-2 {
   min-height:40px;

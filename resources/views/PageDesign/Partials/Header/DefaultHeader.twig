@@ -5,7 +5,7 @@
         <div class="container-max">
             <div class="row flex-row justify-content-end"> <!--Top Bar -->
                 {{ LayoutContainer.show("Ceres::Header.LeftSide") }}
-              <div class="col-sm-12 col-lg-8 row hidden-xs-down">
+              <div class="col-sm-12 col-lg-8 row d-sm-none">
                 <div  class="col-4 text-center padding-y-05">
                   <i aria-hidden="true" class="fa fa-check"></i>
                         schnelle Lieferung
@@ -35,18 +35,16 @@
                         </user-login-handler>
                     </li>
 
-                    <li class="list-inline-item control-search hidden">
+                    <li class="list-inline-item control-search d-lg-none">
                       <!-- ausgeblendete Lupe toggle -->
-                        <a class="anicon anicon-search-xcross"
-                           aria-label="toggle search"
+                        <a aria-label="toggle search"
                            data-toggle="collapse"
                            href="#searchBox"
                            aria-expanded="false"
                            aria-controls="searchBox"
                            data-parent="#controlsList">
-                            <span class="anicon-search-item" aria-hidden="true"></span>
+                            <img src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/lupe.svg" style="max-height:20px;">
                         </a>
-                        <img src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/lupe.svg" style="max-height:20px;">
                     </li>
                     {% if "wish-list" in enabledRoutes or "all" in enabledRoutes %}
                         <li class="list-inline-item control-wish-list">
