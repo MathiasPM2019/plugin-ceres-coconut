@@ -3,9 +3,9 @@
 <header id="page-header" class="top-bar fixed-top">
     <div>
         <div class="container-max">
-            <div class="row flex-row justify-contend-end"> <!--Top Bar -->
+            <div class="row flex-row justify-content-end"> <!--Top Bar -->
                 {{ LayoutContainer.show("Ceres::Header.LeftSide") }}
-              <div class="col-sm-12 col-lg-8 row flex-row hidden-xs-down">
+              <div class="col-sm-12 col-lg-8 row hidden-xs-down">
                 <div  class="col-4 text-center padding-y-05">
                   <i aria-hidden="true" class="fa fa-check"></i>
                         schnelle Lieferung
@@ -81,8 +81,8 @@
         </div>
         <div class="col-12 grey-mid">
           <div class="container-max">
-          <div class="row flex-row ">
-            <div class="col-lg-3">
+          <div class="row flex-row">
+            <div class="col-lg-3 padding-y-05">
               <a class="navbar-brand float-lg-left  hidden-xs-down" href="{{ homepageURL }}">
                 {% if ('http' in companyLogo) or ('layout/' in companyLogo) %}
                     <img alt="{{ companyName }}" src="{{ companyLogo }}" class="img-fluid" crossorigin="anonymous" />

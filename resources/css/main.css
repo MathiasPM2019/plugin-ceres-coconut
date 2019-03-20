@@ -60,7 +60,17 @@
 .top-bar .controls-list > li a:not(.btn) {
     color: #666;
 }
+
+.top-bar .controls-list .control-user {
+    -webkit-box-flex: 2;
+    -ms-flex: 2 1 auto;
+    flex: 2 1 auto;  /* Verbesserung Anordnung oben rechts */
+}
 .cmp-search-box {
     background-color: transparent;
     width: 100%;
+}
+/* Sucheingabe etwas zentriert mit lineheight */
+.cmp-search-box .search-input {
+    line-height: 1.1;
 }
