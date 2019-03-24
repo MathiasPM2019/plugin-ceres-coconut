@@ -5,7 +5,7 @@
         <div class="container-max">
             <div class="row flex-row justify-content-end"><!--Top Bar -->
             {{ LayoutContainer.show("Ceres::Header.LeftSide") }}
-              <div class="col-sm-12 col-lg-8 hidden-sm-down">
+              <div class="col-sm-12 col-lg-8 hidden-md-down">
                 <div  class="col-4 pull-left text-center padding-y-05">
                   <i aria-hidden="true" class="fa fa-check"></i>
                         schnelle Lieferung
@@ -35,7 +35,7 @@
                         </user-login-handler>
                     </li>
 
-                    <li class="list-inline-item control-search d-lg-none">
+                    <li class="list-inline-item control-search d-none">
                       <!-- ausgeblendete Lupe toggle -->
                         <a aria-label="toggle search"
                            data-toggle="collapse"
@@ -81,7 +81,7 @@
           <div class="container-max">
           <div class="row flex-row">
             <div class="col-lg-3 padding-y-05">
-              <a class="navbar-brand float-lg-left  hidden-xs-down" href="{{ homepageURL }}">
+              <a class="navbar-brand float-lg-left  hidden-md-down" href="{{ homepageURL }}">
                 {% if ('http' in companyLogo) or ('layout/' in companyLogo) %}
                     <img alt="{{ companyName }}" src="{{ companyLogo }}" class="img-fluid" crossorigin="anonymous" />
                 {% else %}
@@ -113,7 +113,7 @@
 
 <div class="container-max page-header">
     <div class="row">
-        <div id="searchBox" class="cmp cmp-search-box collapse">
+        <div id="searchBox" class="cmp cmp-search-box d-none"> /* collapse !!*/
             {% set overrideSearchBar = LayoutContainer.show("Ceres::Search.SearchBar") %}
             {% if overrideSearchBar | trim is empty %}
                 <item-search template="#vue-item-search"></item-search>
