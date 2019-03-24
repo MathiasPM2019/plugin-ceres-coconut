@@ -3,23 +3,23 @@
 <header id="page-header" class="top-bar fixed-top">
     <div>
         <div class="container-max">
-            <div class="row flex-row justify-content-end"> <!--Top Bar -->
-                {{ LayoutContainer.show("Ceres::Header.LeftSide") }}
-              <div class="col-sm-12 col-lg-8 row d-sm-none">
-                <div  class="col-4 text-center padding-y-05">
+            <div class="row flex-row justify-content-end"><!--Top Bar -->
+            {{ LayoutContainer.show("Ceres::Header.LeftSide") }}
+              <div class="col-sm-12 col-lg-8 hidden-sm-down">
+                <div  class="col-4 pull-left text-center padding-y-05">
                   <i aria-hidden="true" class="fa fa-check"></i>
                         schnelle Lieferung
                 </div>
-                <div  class="col-4 text-center padding-y-05">
+                <div  class="col-4 pull-left text-center padding-y-05">
                   <i aria-hidden="true" class="fa fa-check"></i>
                         tolle Auswahl
                 </div>
-                <div  class="col-4 text-center padding-y-05">
+                <div  class="col-4 pull-left text-center padding-y-05">
                   <i aria-hidden="true" class="fa fa-check"></i>
                         gratis Versand ab 25,- &euro;
                 </div>
               </div>
-                <div class="col-sm-12 col-lg-4 no-paddin-xs-up">
+              <div class="col-sm-12 col-lg-4 no-padding-xs-up">
                 <ul id="controlsList" class="controls-list list-inline pull-right">
                       <li class="list-inline-item control-user">
                         <user-login-handler>
