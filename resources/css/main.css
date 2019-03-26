@@ -88,3 +88,15 @@
 .cmp-search-box .search-input {
     line-height: 1.1;
 }
+
+/* Megamenu */
+
+#mainNavbarCollapsable ul.mainmenu {
+  color: #f0f0f0;
+}
+.no-touch nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li:hover{
+  color: #fff !important;
+}
+#mainNavbarCollapsable ul.mainmenu > li a {
+  padding: 10px 0 10px 0;
+}
