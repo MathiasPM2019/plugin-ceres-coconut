@@ -113,16 +113,7 @@
 
 <div class="container-max page-header">
     <div class="row">
-        <div id="searchBox" class="cmp cmp-search-box d-none">
-            {% set overrideSearchBar = LayoutContainer.show("Ceres::Search.SearchBar") %}
-            {% if overrideSearchBar | trim is empty %}
-                <item-search template="#vue-item-search"></item-search>
-            {% else %}
-                {{ overrideSearchBar | raw }}
-            {% endif %}
-        </div>
-
-        {% if enableCurrencySelect == "true" %}
+          {% if enableCurrencySelect == "true" %}
             <div id="currencySelect" class="cmp cmp-currency-select collapse">
                 <div class="container-max">
                     <div class="row py-3">
