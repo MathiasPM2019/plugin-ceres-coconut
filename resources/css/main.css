@@ -80,6 +80,9 @@
     -ms-flex: 2 1 auto;
     flex: 2 1 auto;  /* Verbesserung Anordnung oben rechts */
 }
+.top-bar .controls-list .control-languages a[aria-expanded="true"], .top-bar .controls-list .control-search a[aria-expanded="true"] {
+    background: #f0f0f0;
+}
 .cmp-search-box {
     background-color: transparent;
     width: 100%;
@@ -87,6 +90,12 @@
 /* Sucheingabe etwas zentriert mit lineheight */
 .cmp-search-box .search-input {
     line-height: 1.1;
+}
+/* Suche collapse mobile auto show lg */
+@media (min-width:991.98px){
+  #searchBox.collapse  {
+    display: block !important;
+  }
 }
 
 /* Megamenu */
