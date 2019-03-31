@@ -19,8 +19,8 @@
     </div>
 
 
-    <div class="container-max footer-content">
-        <div class="row">
+    <div class="col-12 grey-dark footer-content">
+        <div class="row hidden">
             <div class="col-12">
                 <div class="footer-services mt-4">
                     {% set paymentMethodContent = LayoutContainer.show("Ceres::Homepage.PaymentMethods") %}
@@ -48,25 +48,59 @@
             </div>
         </div>
 
-        <div class="col-12 grey-dark">
+        <div class="container-max">
           <div class="container-max">
             <div class="row flex-row">
-              <div class="col-lg-4">
-                <h3>&oUml;ber uns</h3>
+              <div class="col-lg-3">
+                <h4>&Uuml;ber uns</h4>
+                <hr>
+                <h4>Intersport Kl&ouml;pping</h4>
+                <ul class="footerList">
+                  <li>Filiale Lutherstadt Wittenberg</li>
+                  <li>Dresdener Stra&szlig;e 165</li>
+                  <li>06886 Lutherstadt Wittenberg</li>
+                </ul>
+                <ul class="footerList">
+                  <li>Filiale Jessen</li>
+                  <li>Rosa-Luxemburg-Stra&szlig;e 65</li>
+                  <li>06917 Jessen (Elster)</li>
+                </ul>
+
               </div>
-              <div class="col-lg-4">
-                <h3>&oUml;ber uns</h3>
+              <div class="col-lg-3">
+                <h4>&Oumlffnungszeiten</h4>
+                <hr>
+                <table>
+                  <tr><td>Montag - Freitag</td><td>9.30 - 18.30 Uhr</td></tr>
+                  <tr><td>Samstag</td><td>10.00 - 15.00 Uhr</td></tr>
+                </table>
               </div>
-              <div class="col-lg-4">
-                <h3>&oUml;ber uns</h3>
+              <div class="col-lg-3">
+                <h4>Einkaufen</h4>
+                <hr>
+                <li>Zahlungsarten</li>
+                <li>Versandkosten</li>
+                <li>kostenfreie R&uml;cksendung</li>
+                <li>Warenkorb</li>
+                <li>Registrieren</li>
+                <li>Einloggen</li>
+                <li>Mein Konto</li>
               </div>
-              <div class="col-lg-4">
-                <h3>&oUml;ber uns</h3>
+              <div class="col-lg-3">
+                <h4>Rechtliches</h4>
+                <hr>
+                <ul class="footerList">
+                  <li>Kontakt</li>
+                  <li>Widerrufsrecht</li>
+                  <li>Datenschutzerkl&auml;rung</li>
+                  <li>AGB</li>
+                  <li>Impressum</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row hidden">
             <hr class="my-4">
             {% for i in 1..numberOfCols %}
                 <div class="col-6 col-sm-3 col-lg-2">
