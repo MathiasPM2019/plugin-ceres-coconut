@@ -109,3 +109,21 @@
 #mainNavbarCollapsable ul.mainmenu > li a {
   padding: 10px 0 10px 0;
 }
+
+/*Footer*/
+ul.footerList {
+	padding-left: 0;
+	list-style: none;
+}
+ul.footerList li {
+  font-size: 0.9em;
+  line-height: 1.8em;
+  color: #f0f0f0;
+}
+
+ul.footerList li a {
+	color: #f0f0f0;
+}
+ul.footerList li a:hover {
+	color: #888;
+}
