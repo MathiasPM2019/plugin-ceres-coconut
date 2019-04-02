@@ -19,7 +19,7 @@
     </div>
 
 
-    <div class="col-12 grey-dark border-top-red">
+    <div class="col-12 grey-dark-mobile border-top-red">
         <div class="row hidden">
             <div class="col-12">
                 <div class="footer-services mt-4">
@@ -70,7 +70,7 @@
               <div class="col-lg-3">
                 <h5 class="text-uppercase">&Oumlffnungszeiten</h5>
                 <hr>
-                <table>
+                <table class="footerList">
                   <tr><td>Montag - Freitag</td><td align="right" width="120px">9.30 - 18.30 Uhr</td></tr>
                   <tr><td>Samstag</td><td align="right" width="120px">10.00 - 15.00 Uhr</td></tr>
                 </table>
@@ -99,6 +99,29 @@
                   <li><a href="{{ urls.legalDisclosure }}">Impressum</a></li>
                 </ul>
               </div>
+            </div>
+            <hr>
+            <div class="row flex-row pt-4">
+              <div class="col-lg-3">
+                <p class="footerList">Bei Fragen stehen wir Ihnen gern telefonisch zur Verfügung</p>
+              </div>
+              <div class="col-lg-3">
+                <p class="footerList">VERSAND: 0 34 91 / 45 90 121</p>
+              </div>
+              <div class="col-lg-3">
+                <p class="footerList">SPORT-SHOP: 0 34 91 / 45 90 110</p>
+              </div>
+              <div class="col-lg-3">
+                <p class="footerList">FAHRRAD-SHOP: 0 34 91 / 45 90 114</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row flex-row pt-4">
+              <p class="footerList">
+                <small>&copy; Copyright {{ "now" | date("Y") }} Klöpping GmbH. Alle Rechte vorbehalten.</small><br>
+                <small>Alle Preisangaben inklusive Mehrwertsteuer, alle Preise in Euro. Bei durchgestrichenen Preisen mit "*" handelt es
+                   sich um ehem. unverbindliche Preisempfehlungen des Herstellers.</small>
+              </p>
             </div>
           </div>
         </div>
@@ -166,11 +189,6 @@
                     {% endif %}
                 {% endautoescape %}
             </div>
-            <a rel="nofollow" href="https://www.plentymarkets.eu">
-                <img alt="Plentymarkets GmbH Logo" class="svg plenty-brand" src="{{ plugin_path('Ceres') }}/images/plentymarkets-logo.svg" rel="nofollow" crossorigin="anonymous">
-            </a>
-            <br>
-            <small>&copy; Copyright {{ "now" | date("Y") }} | {{ trans("Ceres::Template.footerAllRightsReserved") }}</small>
         </div>
     </div>
 </div>
