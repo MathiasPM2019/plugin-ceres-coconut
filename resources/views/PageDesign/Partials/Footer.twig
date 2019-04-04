@@ -79,20 +79,20 @@
                 <h5 class="text-uppercase">Einkaufen</h5>
                 <hr>
                 <ul class="footerList">
-                  <li>Zahlungsarten</li>
-                  <li>Versandkosten</li>
-                  <li>kostenfreie R&uuml;cksendung</li>
-                  <li>Warenkorb</li>
-                  <li>Registrieren</li>
-                  <li>Einloggen</li>
-                  <li>Mein Konto</li>
+                  <li><a href="{{ services.url.getCategoryURL(856) }}">Zahlungsarten</a></li>
+                  <li><a href="{{ urls.ShippingCosts }}">Versandkosten</a></li>
+                  <li><a href="{{ services.url.getCategoryURL(1173) }}">kostenfreie R&uuml;cksendung</a></li>
+                  <li><a href="{{ urls.Basket }}">Warenkorb</a></li>
+                  <li><a href="{{ urls.contact }}">CustomerRegistration Registrieren</a></li>
+                  <li><a href="{{ services.url.getCategoryURL(920)  }}">Einloggen</a></li>
+                  <li><a href="{{ urls.myAccount }}">Mein Konto</a></li>
                 </ul>
               </div>
               <div class="col-lg-3">
                 <h5 class="text-uppercase">Rechtliches</h5>
                 <hr>
                 <ul class="footerList">
-                  <li><a href="{{ urls.contact }}">Kontakt</li>
+                  <li><a href="{{ urls.contact }}">Kontakt</a></li>
                   <li><a href="{{ urls.cancellationRights }}">Widerrufsrecht</a></li>
                   <li><a href="{{ urls.privacyPolicy }}">Datenschutzerkl&auml;rung</a></li>
                   <li><a href="{{ urls.gtc }}">AGB</a></li>
@@ -117,7 +117,7 @@
             </div>
             <hr>
             <div class="row flex-row pt-4">
-              <div col-12>
+              <div class="col-12">
                 <p class="footerList">
                   &copy; Copyright {{ "now" | date("Y") }} Klöpping GmbH. Alle Rechte vorbehalten.<br>
                   Alle Preisangaben inklusive Mehrwertsteuer, alle Preise in Euro. Bei durchgestrichenen Preisen mit "*" handelt es
