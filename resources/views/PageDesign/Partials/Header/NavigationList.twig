@@ -1,1 +1,20 @@
-<!-- Insert markup for navigation list here -->
+{% import "Ceres::Category.Macros.CategoryTree" as Tree %}
+
+{% set rootCategoryIds = [1, 2, 3] %}
+{% set lvl2Categories = [] %}
+{% for category in categories if category.children | length > 0 and category.id in rootCategoryIds %}
+  {% set lvl2Categories = lvl2Categories | merge(category.children) %}
+{% endfor %}
+
+<ul class="mainmenu pull-lg-right">
+    {{ Tree.get_nav_bar(
+        lvl2Categories,
+        "",
+        ceresConfig.header.megamenuLevels,
+        {
+            "1": ceresConfig.header.megamenuItemsStage1,
+            "2": ceresConfig.header.megamenuItemsStage2,
+            "3": ceresConfig.header.megamenuItemsStage3
+        }
+    ) }}
+</ul>

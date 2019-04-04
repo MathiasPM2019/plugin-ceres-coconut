@@ -71,8 +71,8 @@
                 <h5 class="text-uppercase">&Oumlffnungszeiten</h5>
                 <hr>
                 <table class="footerList">
-                  <tr><td>Montag - Freitag</td><td align="right" width="120px">9.30 - 18.30 Uhr</td></tr>
-                  <tr><td>Samstag</td><td align="right" width="120px">10.00 - 15.00 Uhr</td></tr>
+                  <tr><td>Montag &ndsh; Freitag</td><td align="right" width="100px">9.30 &ndsh; 18.30 Uhr</td></tr>
+                  <tr><td>Samstag</td><td align="right" width="100px">10.00 &ndsh; 15.00 Uhr</td></tr>
                 </table>
               </div>
               <div class="col-lg-3">
@@ -81,10 +81,9 @@
                 <ul class="footerList">
                   <li><a href="{{ services.category.getURLbyID(856) }}">Zahlungsarten</a></li>
                   <li><a href="{{ urls.ShippingCosts }}">Versandkosten</a></li>
-                  <li><a href="{{ services.url.CategoryURL(1173) }}">kostenfreie R&uuml;cksendung</a></li>
-                  <li><a href="{{ urls.basket }}">Warenkorb</a></li>
+                  <li><a href="{{ services.category.getURLbyID(1173) }}">kostenfreie R&uuml;cksendung</a></li>
                   <li><a href="{{ urls.CustomerRegistration }}">Registrieren</a></li>
-                  <li><a href="{{ services.url.CategoryURL(920)  }}">Einloggen</a></li>
+                  <li><a href="{{ services.category.getURLbyID(920)  }}">Einloggen</a></li>
                   <li><a href="{{ urls.myAccount }}">Mein Konto</a></li>
                 </ul>
               </div>
