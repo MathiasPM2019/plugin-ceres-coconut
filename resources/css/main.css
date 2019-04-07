@@ -139,6 +139,14 @@ div.grey-dark hr, div.grey-dark-mobile hr {
   padding: 10px 0 10px 0;
 }
 
+#mainNavbarCollapsable ul.mainmenu > li > ul {
+  box-sizing: content-box;
+  border-left: 300px solid #fff;
+  margin-left: -300px;
+  border-right: 300px solid #fff;
+}
+/*ENDE Megamenu*/
+
 /*Footer*/
 .footerList {
 	padding-left: 0;
