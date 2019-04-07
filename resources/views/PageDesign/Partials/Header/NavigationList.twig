@@ -1,9 +1,9 @@
 {% import "Ceres::Category.Macros.CategoryTree" as Tree %}
-
+/*
 <ul class="mainmenu float-lg-right">
     {{ Tree.get_nav_bar(
         categories,
-        "",
+        ""
         ceresConfig.header.megamenuLevels,
         {
             "1": ceresConfig.header.megamenuItemsStage1,
@@ -11,4 +11,14 @@
             "3": ceresConfig.header.megamenuItemsStage3
         }
     ) }}
+</ul>*/
+
+<ul class="mainmenu float-lg-right">
+  <li class="ddown">
+    <a href="/sport">Sport</a>
+    <span data-toggle="collapse" href="#navDropdown0" aria-expanded="false" class="d-lg-none nav-direction">
+    <i aria-hidden="true" class="fa fa-caret-down"></i>
+    </span>
+    {% include "CeresCoconut::PageDesign.Partials.Header.MegamenuPart1" %}
+  </li>
 </ul>
