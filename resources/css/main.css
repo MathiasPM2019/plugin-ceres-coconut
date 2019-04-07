@@ -83,6 +83,13 @@ div.grey-dark hr, div.grey-dark-mobile hr {
   .no-padding-xs-up { padding:0;}
 }
 /* Bereich Header */
+.header-top-scroll {
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
 .top-bar {
  width:100%;
  z-index:1060;
@@ -132,19 +139,44 @@ div.grey-dark hr, div.grey-dark-mobile hr {
 #mainNavbarCollapsable ul.mainmenu {
   color: #f0f0f0;
 }
+nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu {
+  justify-content: flex-start;
+}
+.mainddown {
+  width: 25%;
+  font-size: 20px;
+}
 .no-touch nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li:hover{
   color: #fff !important;
 }
 #mainNavbarCollapsable ul.mainmenu > li a {
   padding: 10px 0 10px 0;
 }
-
 #mainNavbarCollapsable ul.mainmenu > li > ul {
   box-sizing: content-box;
   border-left: 300px solid #fff;
   margin-left: -300px;
   border-right: 300px solid #fff;
+  padding: 20px 0 20px 0;
 }
+nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li ul.nav-dropdown-inner > li.level1 {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1.2em;
+  padding: 0 0 0 20px;
+}
+nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li ul.nav-dropdown-inner > li.level1:hover {
+  background-color: #f9f9f9;
+}
+nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li ul.nav-dropdown-inner > li.level2 {
+  font-size: 0.98em;
+  line-height: 2.0em;
+  padding: 0 0 0 20px;
+}
+nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li ul.nav-dropdown-inner > li.level2:hover {
+  background-color: #f9f9f9;
+}
+
 /*ENDE Megamenu*/
 
 /*Footer*/
