@@ -152,7 +152,7 @@ li.mainddown {
 #mainNavbarCollapsable ul.mainmenu > li a {
   padding: 10px 0 10px 0;
 }
-#mainNavbarCollapsable ul.mainmenu > li > ul {
+#mainNavbarCollapsable ul.mainmenu > li > div.collapse {
   box-sizing: content-box;
   border-left: 500px solid #fff;
   margin-left: -500px;
