@@ -163,6 +163,7 @@ li.mainddown {
 }
 nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse li {
   display: inline-block ; /*list-item*/
+  line-height: 25px;
 }
 nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li ul.nav-dropdown-inner > li.level1 {
   font-weight: 600;
@@ -175,12 +176,19 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li u
 }
 nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li ul.nav-dropdown-inner > li.level2 {
   font-size: 12px;
-  line-height: 2.0em;
   padding: 0 0 0 20px;
 }
 nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li ul.nav-dropdown-inner > li.level2:hover {
   background-color: #f9f9f9;
 }
+nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li ul.nav-dropdown-inner > li.linepart {
+  padding: 0 0 0 20px;
+  margin: 10px 0 -10px 0;
+  width: 90%;
+}
+nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li ul.nav-dropdown-inner > li > hr {
+  border-top: 1px solid #888;
+  }
 
 /*ENDE Megamenu*/
 
