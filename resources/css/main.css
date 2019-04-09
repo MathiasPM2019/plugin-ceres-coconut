@@ -142,7 +142,7 @@ div.grey-dark hr, div.grey-dark-mobile hr {
 nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu {
   justify-content: flex-start;
 }
-.mainddown {
+li.mainddown {
   width: 25%;
   font-size: 20px;
 }
@@ -154,22 +154,27 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu {
 }
 #mainNavbarCollapsable ul.mainmenu > li > ul {
   box-sizing: content-box;
-  border-left: 300px solid #fff;
-  margin-left: -300px;
-  border-right: 300px solid #fff;
+  border-left: 500px solid #fff;
+  margin-left: -500px;
+  border-right: 500px solid #fff;
   padding: 20px 0 20px 0;
+  height: 450px;
+  max-height: 450px;
+}
+nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse li {
+  display: inline-block ; /*list-item*/
 }
 nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li ul.nav-dropdown-inner > li.level1 {
   font-weight: 600;
   margin-bottom: 8px;
-  font-size: 1.2em;
+  font-size: 16px;
   padding: 0 0 0 20px;
 }
 nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li ul.nav-dropdown-inner > li.level1:hover {
   background-color: #f9f9f9;
 }
 nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li ul.nav-dropdown-inner > li.level2 {
-  font-size: 0.98em;
+  font-size: 12px;
   line-height: 2.0em;
   padding: 0 0 0 20px;
 }
