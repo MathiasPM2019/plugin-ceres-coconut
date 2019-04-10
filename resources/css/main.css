@@ -1,3 +1,7 @@
+body {
+  font-family: Custom-Font, Helvetica, Arial, sans-serif;
+}
+
 /* Farben definieren 2019 */
 .grey-bright {
   background-color: #f9f9f9;
@@ -161,6 +165,9 @@ li.mainddown {
   height: 450px;
   max-height: 450px;
 }
+#mainNavbarCollapsable ul.mainmenu > li.ddown > a:after {
+    content: none; /*Pfeil unten aus*/
+  }
 nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse li {
   display: inline-block ; /*list-item*/
   line-height: 25px;
