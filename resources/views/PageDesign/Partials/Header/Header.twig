@@ -19,24 +19,10 @@
 {% if headerContainer is empty %}
     {% include "CeresCoconut::PageDesign.Partials.Header.DefaultHeader" %}
 {% else %}
-<header id="page-header" class="fixed-top">
+<header id="page-header">
     {{ headerContainer | raw }}
 </header>
 {% endif %}
-
-{% set scriptId = uid() %}
-<script id="{{ scriptId }}">
-    var vueApp = document.getElementById("vue-app");
-    var pageHeader = document.getElementById("page-header");
-
-    if ( !!vueApp && !!pageHeader )
-    {
-        vueApp.style.marginTop = pageHeader.getBoundingClientRect().height + 'px';
-    }
-
-    var scriptElement = document.getElementById("{{ scriptId }}");
-    scriptElement.parentElement.removeChild(scriptElement);
-</script>
 
 <div>
     {% if category.linklist == "Y" %}
