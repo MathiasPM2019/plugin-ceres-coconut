@@ -210,6 +210,22 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
      column-fill: balance;
    }
 
+.li-bannerwerbung-oben {
+     width: 330px;
+     overflow: hidden;
+    }
+.li-bannerwerbung-oben img{
+        max-height: 220px;
+   }
+.li-bannerwerbung-oben p {
+      margin-top: -2px;
+      width: 100%;
+      padding: 15px;
+      text-align: center;
+     color: #444;
+     background-color: #f0f0f0;
+    }
+
 /*ENDE Megamenu*/
 
 /*Footer*/
