@@ -173,7 +173,7 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse li {
   line-height: 25px;
 }
 nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li ul.nav-dropdown-inner > li.level1 {
-  font-weight: 600;
+  font-weight: 300;
   margin-bottom: 8px;
   font-size: 16px;
   padding: 0 0 0 20px;
@@ -194,8 +194,21 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li u
   width: 90%;
 }
 nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li ul.nav-dropdown-inner > li > hr {
-  border-top: 1px solid #888;
+  border-top: 1px solid #dfdfdf;
   }
+nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
+     background-color: #fff;
+     column-gap: .5em;
+     column-rule: 1px solid #efefef;
+     display: none;
+     padding: 1em 0;
+     min-height: 7em;
+     max-height: 86vh;
+     column-count: 6;
+     overflow-x: auto;
+     overflow-y: hidden;
+     column-fill: balance;
+   }
 
 /*ENDE Megamenu*/
 
