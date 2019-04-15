@@ -216,38 +216,38 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
    .li-bannerwerbung-oben {
     width: 330px;
     overflow: hidden;
-       }
+    }
    .li-bannerwerbung-unten {
      width: 330px;
      overflow: hidden;
-       }
+    }
    .bild-wrapper-oben {
      height: 200px;
      overflow: hidden;
    }
    .li-bannerwerbung-oben img {
-     width: 330px;
-      }
+    width: 330px;
+    transition: all 400ms;
+    }
 .bild-wrapper-unten {
     height: 120px;
     overflow: hidden;
-    transition: all 400ms;
-      }
+    }
 .li-bannerwerbung-oben img:hover {
     position: relative;
     transform:scale(1.1);
     transition: all 400ms;
-          }
+    }
 .li-bannerwerbung-unten img {
     width: 330px;
     position: relative;
     transition: all 400ms;
-          }
+    }
 .li-bannerwerbung-unten img:hover {
     position: relative;
     transform:scale(1.1);
     transition: all 400ms;
-          }
+    }
 .li-bannerwerbung-oben p ,
 .li-bannerwerbung-unten p {
      margin-top: -2px;
