@@ -17,7 +17,7 @@
         {% include "CeresCoconut::Category.Item.Partials.CategoryParallaxImage" with { 'category': category } %}
     {% endif %}
 
-    <div class="categoriegrid page-content container-max">
+    <div class="categoriegrid page-content"> <!-- container-max entfernt -->
       <!-- Breadcrumps neu positioniert -->
       {% if not services.template.isHome() and not services.template.isMyAccount() and not services.template.isCheckout() %}
           {% include "Ceres::PageDesign.Partials.Header.Breadcrumb" %}
@@ -37,8 +37,9 @@
             </div>
         {% endif %}
 
-        <div class="list-controls mb-5">
+        <div class="list-controls mb-3">
             <div class="list-controls-inner">
+              <div class="container-max">
                 <div class="row">
                     <div class="col-12">
                         <div class="list-wrapper">
@@ -49,7 +50,7 @@
                             {% if overrideSearchFilters | trim is empty %}
                                 <item-filter-list :facet-data="{{ facets | json_encode }}">
                                     {% if facets | length > 0 %}
-                                        <a class="btn btn-link filter-toggle" href="#filterCollapse">
+                                        <a class="btn btn-link filter-toggle " href="#filterCollapse">
                                             <i class="fa fa-sliders default-float" aria-hidden="true"></i> {{ trans("Ceres::Template.itemFilter") }}
                                         </a>
                                     {% endif %}
@@ -60,6 +61,7 @@
                         </div>
                     </div>
                 </div>
+              </div>
             </div>
 
             {# TAGS #}
@@ -68,14 +70,16 @@
 
         {% if ceresConfig.pagination.position in ['top', 'top_bottom'] %}
             <div class="list-controls mb-5 row">
+              <div class="container-max">
                 <div class="col-12">
                     {% include "Ceres::Category.Item.Partials.Pagination" %}
                 </div>
+              </div>
             </div>
         {% endif %}
 
         <div class="row">
-
+          <div class="container-max">
             {% if ceresConfig.header.showNavBars == "side" or ceresConfig.header.showNavBars == "both" %}
                 <div class="col-3 hidden-md-down">
                     <div class="sidebar-categories">
@@ -103,6 +107,7 @@
                 </ul>
             </div>
         </div>
+      </div>
         {% if ceresConfig.pagination.position in ['bottom', 'top_bottom'] %}
             <div class="list-controls mb-5 row">
                 <div class="col-12">
