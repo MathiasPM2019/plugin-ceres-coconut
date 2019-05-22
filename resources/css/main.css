@@ -314,9 +314,40 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
 }
 
 /* Filter Panel */
+.list-controls .filter-toggle {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute;
+    right: 0.5em;
+    color: #c00418;
+    font-size: 18px;
+}
+
 .list-controls .list-controls-inner {
     padding: 5px;
 }
+
+.list-controls #filterCollapse {
+    background: #efefef;
+    box-sizing: content-box;
+    border-left: 500px solid #efefef;
+    margin-left: -500px;
+    border-right: 500px solid #efefef;
+}
+
+.list-controls #filterCollapse .page-content {
+    background-color: #efefef;
+  border: 0px;
+  border-top: 2px solid #c00418;
+  margin: 0px 0 0 0;
+}
+
+.form-check {
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    cursor: pointer;
+    margin-bottom: 2px;
 
 /*seitliche Navigation*/
 
