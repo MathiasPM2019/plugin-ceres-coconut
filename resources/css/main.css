@@ -312,3 +312,58 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
   background-position: top center;
     border-bottom: 2px solid #c00418;
 }
+
+/* Filter Panel */
+.list-controls .list-controls-inner {
+    background: #fff;
+    padding: 0.5em;
+}
+
+/*seitliche Navigation*/
+
+.sidebar-categories {
+    background: #fff;
+    font-family: Custom-Font,Helvetica,Arial,sans-serif;
+}
+
+.sidebar-categories .category-title {
+    background: #fff;
+    padding: 15px 5px 5px 15px;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+}
+
+.sidebar-categories ul li.active > a {
+    background: #fff;
+    color: #c00418;
+  font-weight: 800;
+}
+
+.sidebar-categories ul li {
+  line-height: 12px;
+}
+
+.sidebar-categories ul li a {
+    display: block;
+    color: #4D4F4D;
+    padding: 0.75rem 15px;
+        padding-left: 15px;
+    font-size: 14px;
+    cursor: pointer;
+  transition: all 0.8s ease;
+}
+
+.sidebar-categories ul li a:hover {
+    color: #c00418;
+    background: #fff;
+  margin-left: 5px;
+    transition: all 0.2s ease;
+  }
+
+.sidebar-categories>ul>li>a.nav-link:first-child {
+  font-size: 18px;
+}
+
+.sidebar-categories>ul>li>ul>li>a.nav-link:first-child {
+  font-size: 16px;
+}
