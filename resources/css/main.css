@@ -329,25 +329,34 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
 }
 
 .list-controls #filterCollapse {
-    background: #efefef;
+    background: #f3f3f3;
     box-sizing: content-box;
-    border-left: 500px solid #efefef;
+    border-left: 500px solid #f3f3f3;
     margin-left: -500px;
-    border-right: 500px solid #efefef;
+    border-right: 500px solid #f3f3f3;
+    margin-top: 5px;
+  box-shadow: 10px -2px 5px rgba(20,20,20,0.1);
 }
 
 .list-controls #filterCollapse .page-content {
-    background-color: #efefef;
+    background-color: #f3f3f3;
   border: 0px;
-  border-top: 2px solid #c00418;
-  margin: 0px 0 0 0;
+  margin: 5px 0 0 0;
 }
 
 .form-check {
     -webkit-transition: all .3s ease;
     transition: all .3s ease;
     cursor: pointer;
-    margin-bottom: 2px;
+    margin-bottom: 2px; }
+
+.card-columns .card {
+    margin-bottom: 30px;
+}
+
+.list-controls #filterCollapse .page-content .card .form-check .form-check-label {
+  padding: 0.3rem 0;
+}
 
 /*seitliche Navigation*/
 
