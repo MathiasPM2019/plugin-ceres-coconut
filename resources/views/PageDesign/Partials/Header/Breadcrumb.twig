@@ -1,1 +1,36 @@
-<!-- Insert markup for breadcrumb here -->
+{{ component("Ceres::Category.Components.CategoryBreadcrumbs") }}
+{% set homepageURL = services.url.getHomepageURL() %}
+
+{% if categoryBreadcrumbs is not empty %}
+    <nav data-component="breadcrumbs" data-renderer="twig" class="container-max small hidden-sm-down mb-3">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{{ homepageURL }}">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                </a>
+            </li>
+
+            {% set break = false %}
+            {% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}
+                {% if category.details[0] %}
+                    <li class="breadcrumb-item">
+                        <a href="{{ services.category.getURLById( category.id ) }}">{{ category.details[0].name }}</a>
+                    </li>
+                {% else %}
+                    {% set break = true %}
+                {% endif %}
+            {% endfor %}
+
+            {% set lastCategory = categoryBreadcrumbs | last %}
+            {% if lastCategory.details is defined %}
+                <li class="breadcrumb-item active"><span>{{ lastCategory.details[0].name }}</span></li>
+            {% else %}
+                <li class="breadcrumb-item active" v-cloak v-if="$store.state.item.variation.documents">
+                    <span>${ $store.state.item.variation.documents[0].data | itemName }</span>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <category-breadcrumbs template="#vue-category-breadcrumbs"></category-breadcrumbs>
+{% endif %}
