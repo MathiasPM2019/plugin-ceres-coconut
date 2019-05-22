@@ -85,7 +85,7 @@
                 {% if ('http' in companyLogo) or ('layout/' in companyLogo) %}
                     <img alt="1abc{{ companyName }}" src="{{ companyLogo }}" class="img-fluid" crossorigin="anonymous" />
                 {% else %}
-                    <img alt="2abc{{ companyName }}" src="{{ plugin_path('Ceres') }}/{{ companyLogo }}" class="img-fluid" crossorigin="anonymous" />
+                    <img alt="2abc{{ companyName }}" src="{{ companyLogo }}" class="img-fluid" crossorigin="anonymous" />
                 {% endif %}
               </a>
             </div>
