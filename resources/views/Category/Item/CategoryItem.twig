@@ -14,7 +14,7 @@
     {{ component( "Ceres::ItemList.Components.Filter.ItemFilterTagList") }}
 
     {% if ceresConfig.item.showCategoryImage %}
-        {% include "Ceres::Category.Item.Partials.CategoryParallaxImage" with { 'category': category } %}
+        {% include "CeresCoconut::Category.Item.Partials.CategoryParallaxImage" with { 'category': category } %}
     {% endif %}
 
     <div class="categoriegrid page-content container-max">
