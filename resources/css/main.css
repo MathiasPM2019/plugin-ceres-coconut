@@ -1,8 +1,18 @@
 body {
   font-family: Custom-Font, Helvetica, Arial, sans-serif;
+  background-color: #fff;
 }
 
 /* Farben definieren 2019 */
+
+body > #vue-app, body > #vue-error {
+  background-color: #fff;
+}
+
+.page-content {
+    background-color: #fff;
+  }
+
 .grey-bright {
   background-color: #f9f9f9;
   color: #666;
