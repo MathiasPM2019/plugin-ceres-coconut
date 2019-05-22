@@ -324,6 +324,7 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
 .sidebar-categories {
     background: #fff;
     font-family: Custom-Font,Helvetica,Arial,sans-serif;
+  border-right: 1px solid #efefef;
 }
 
 .sidebar-categories .category-title {
@@ -336,7 +337,7 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
 
 .sidebar-categories .category-title::after {
     content: '';
-    display: block;
+    display: none;
     margin: 5px auto;
     width: 80%;
     border-bottom: 1px solid #666;
@@ -350,7 +351,7 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
 }
 
 .sidebar-categories ul li {
-  line-height: 12px;
+  line-height: 10px;
 }
 
 .sidebar-categories ul li a {
@@ -358,7 +359,7 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
     color: #4D4F4D;
     padding: 0.75rem 15px;
         padding-left: 15px;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
   transition: all 0.8s ease;
 }
