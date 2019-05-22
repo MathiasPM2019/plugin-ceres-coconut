@@ -276,3 +276,27 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
 .footerList a:hover {
 	text-decoration: underline;
 }
+
+/* START Kategorie */
+
+.parallax-img-container {
+  height: 320px;
+  max-width: none;
+  position: relative;
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .parallax-img-container {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
+
+.parallax-img-container .parallax-img-container-inner[style^='background-image'] {
+  height: 300px;
+  background-size: cover;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
