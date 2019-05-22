@@ -328,10 +328,20 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
 
 .sidebar-categories .category-title {
     background: #fff;
-    padding: 15px 5px 5px 15px;
+    padding: 15px 0;;
     text-transform: uppercase;
     font-size: 1.6rem;
+    text-align: center;
+  }
+
+.sidebar-categories .category-title::after {
+    content: '';
+    display: block;
+    margin: 5px auto;
+    width: 80%;
+    border-bottom: 1px solid #666;
 }
+
 
 .sidebar-categories ul li.active > a {
     background: #fff;
