@@ -82,11 +82,7 @@
           <div class="row flex-row">
             <div class="col-lg-3 padding-y-05">
               <a class="navbar-brand float-lg-left  hidden-md-down" href="{{ homepageURL }}">
-                {% if ('http' in companyLogo) or ('layout/' in companyLogo) %}
-                    <img alt="1abc{{ companyName }}" src="{{ companyLogo }}" class="img-fluid"/>
-                {% else %}
-                    <img alt="2abc{{ companyName }}" src="{{ companyLogo }}" class="img-fluid"/>
-                {% endif %}
+                <img alt="{{ companyName }}" src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/intersport_kloepping_2018.png" class="img-fluid"/>
               </a>
             </div>
             <div id="searchBox" class="col-lg-9 cmp cmp-search-box py-sm-2 collapse">

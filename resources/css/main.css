@@ -315,8 +315,7 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
 
 /* Filter Panel */
 .list-controls .list-controls-inner {
-    background: #fff;
-    padding: 0.5em;
+    padding: 5px;
 }
 
 /*seitliche Navigation*/
@@ -329,7 +328,7 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
 
 .sidebar-categories .category-title {
     background: #fff;
-    padding: 15px 15px;
+    padding: 0px 15px 10px 15px;
     text-transform: uppercase;
     font-size: 1.6rem;
 }
