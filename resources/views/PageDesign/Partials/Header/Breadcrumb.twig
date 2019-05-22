@@ -1,8 +1,8 @@
-{{ component("Ceres::Category.Components.CategoryBreadcrumbs") }}
+{{ component("CeresCoconut::Category.Components.CategoryBreadcrumbs") }}
 {% set homepageURL = services.url.getHomepageURL() %}
 
 {% if categoryBreadcrumbs is not empty %}
-    <nav data-component="breadcrumbs" data-renderer="twig" class="container-max small hidden-sm-down mb-3">
+    <nav data-component="breadcrumbs" data-renderer="twig" class="container-max hidden-sm-down">
         <ul class="breadcrumb">
             <li class="breadcrumb-item">
                 <a href="{{ homepageURL }}">
