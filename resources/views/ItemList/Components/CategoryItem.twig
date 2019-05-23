@@ -54,8 +54,8 @@
                 <div class="row">
                   <div class="col-8">
                       <a :href="itemData | itemURL" class="thumb-title small">
-                            ${ itemData | itemName } <br>
-                            ${ itemData | itemManufacturer.externalName }
+                            ${ itemData | itemName } <br><br>
+                            ${ itemData.manufacturer.externalName }
                   </div>
                   <div class="col-4">
                     <div class="thumb-meta">
