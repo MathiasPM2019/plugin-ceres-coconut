@@ -17,11 +17,8 @@
 
 <script type="x/template" id="vue-category-item">
     <article class="cmp cmp-product-thumb cmp-product-thumb--grid">
-  <p>Coconut→ItemList→Components→CategoryItem.twig</p>
+  <p>Ansicht in Arbeit</p>
         <div class="thumb-inner">
-
-            {{ AddToBasket.printVueComponent( "itemData", true ) }}
-
               <div class="thumb-image">
                 <div class="square-container">
                     <div class="square-inner main-image">
@@ -57,8 +54,7 @@
                 <div class="row">
                   <div class="col-8">
                       <a :href="itemData | itemURL" class="thumb-title small">
-                            ${ itemData | itemName }
-                            <span v-for="attribute in itemData.groupedAttributes">${ "Ceres::Template.itemGroupedAttribute" | translate(attribute) }</span>
+                            ${ itemData | itemManufactor } ${ itemData | itemName }
                       </a>
                   </div>
                   <div class="col-4">
@@ -92,7 +88,7 @@
                     </div>
                 </div><!-- row Ende -->
             </slot>
-            <div><p>Ansehen</p></div>
+            <div><a :href="itemData | itemURL"><p>Ansehen</p></a></div>
             </div>
             <!-- ./ITEM DETAILS  -->
         </div>
