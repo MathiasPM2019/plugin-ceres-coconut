@@ -55,7 +55,7 @@
                   <div class="col-8">
                       <a :href="itemData | itemURL" class="thumb-title small">
                             ${ itemData | itemName } <br><br>
-                            ${ itemData.manufacturer.externalName }
+                            ${ itemData.prices.rrp.unitPrice.formatted }
                   </div>
                   <div class="col-4">
                     <div class="thumb-meta">
