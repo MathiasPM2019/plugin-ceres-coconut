@@ -41,17 +41,17 @@ body > #vue-app, body > #vue-error {
   }
   .grey-dark {
     background-color: #f0f0f0;
-    color: #666;
+    color: #fff;
   }
 
-  .grey-dark, .grey-dark-mobile {
+  .grey-dark-mobile {
   background-color: #f0f0f0;
   background: #f0f0f0; /* Old browsers */
 	background: -moz-linear-gradient(top, #f0f0f0 0%, #efefef 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(top, #f0f0f0 0%,#efefef 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to bottom, #f0f0f0 0%,#efefef 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#efefef',GradientType=0 ); /* IE6-9 */
-	color: #fff;
+	color: #666;
   } }
 /*hr elemente dunkel falls .grey-dark */
 div.grey-dark hr, div.grey-dark-mobile hr {
