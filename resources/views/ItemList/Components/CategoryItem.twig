@@ -55,18 +55,21 @@
             <!-- ITEM DETAILS -->
             <slot name="item-details">
                 <div class="thumb-content">
-                <ul>
-                  <li>1 ${ itemData | itemProducer }</li>
-                  <li>2 ${ currentVariation.item.manufacturer.externalName }</li>
-                  <li>3 ${ itemData | itemName }</li>
-                  <li>4 Artikelgewicht ${ currentVariation.variation.weightNetG }</li>
-
-                  <li>4 currentVariation.texts.shortDescription</li>
-                </ul>
-                    <a :href="itemData | itemURL" class="thumb-title small">
-                          ${ itemData | itemName }
-                      <span v-for="attribute in itemData.groupedAttributes">${ "Ceres::Template.itemGroupedAttribute" | translate(attribute) }</span>
-                    </a>
+                <div class="row">
+                  <div class="col-8">
+                    <ul>
+                      <li>1 ${ itemData | itemProducer }</li>
+                      <li>2 ${ currentVariation.item.manufacturer.externalName }</li>
+                      <li>3 ${ itemData | itemName }</li>
+                      <li>4 Artikelgewicht ${ currentVariation.variation.weightNetG }</li>
+                      <li>4 currentVariation.texts.shortDescription</li>
+                    </ul>
+                      <a :href="itemData | itemURL" class="thumb-title small">
+                            ${ itemData | itemName }
+                            <span v-for="attribute in itemData.groupedAttributes">${ "Ceres::Template.itemGroupedAttribute" | translate(attribute) }</span>
+                      </a>
+                  </div>
+                  <div class="col-4">
                     <div class="thumb-meta">
                         <slot name="BeforePrices"></slot>
                         <div class="prices">
@@ -94,9 +97,11 @@
                     </div>
 
                     {{ AddToBasket.printVueComponent( "itemData" ) }}
-
                     </div>
+                </div><!-- row Ende -->
             </slot>
+            <div><p>Ansehen</p></div>
+            </div>
             <!-- ./ITEM DETAILS  -->
         </div>
     </article>
