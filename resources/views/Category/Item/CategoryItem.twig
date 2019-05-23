@@ -92,7 +92,8 @@
               {% if categoryDescriptionTop == "description2" or categoryDescriptionTop == "both" and category.details[0].description2 | trim is not empty %}
                   <div class="category-description mb-3">{{ category.details[0].description2 | raw }}</div>
               {% endif %}
-                <ul class="product-list row grid">
+
+                <ul class="product-list row grid TEST">
                     {% for item in itemList %}
                         <li class="col-12 col-sm-6 col-md-4 col-lg-{% if ceresConfig.header.showNavBars == "side" or ceresConfig.header.showNavBars == "both" %}4{% else %}3{% endif %}">
                             <category-item
@@ -102,6 +103,7 @@
                                 <template slot="AfterPrices">{{ LayoutContainer.show("CeresCoconut::CategoryItem.AfterPrices", item.data) }}</template>
                             </category-item>
                         </li>
+                        <hr>
                     {% endfor %}
                 </ul>
             </div>
