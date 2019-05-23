@@ -44,16 +44,15 @@ body > #vue-app, body > #vue-error {
     color: #666;
   }
 
-  .grey-dark-mobile {
-  background-color: #54585B;
-	background: #61686c; /* Old browsers */
-	background: -moz-linear-gradient(top, #61686c 0%, #47494b 100%); /* FF3.6-15 */
-	/*! background: -webkit-linear-gradient(top, #61686c 0%,#47494b 100%); */ /* Chrome10-25,Safari5.1-6 */
-	/*! background: linear-gradient(to bottom, #61686c 0%,#47494b 100%); */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#61686c', endColorstr='#47494b',GradientType=0 ); /* IE6-9 */
-  color: #fff;
-  }
-}
+  .grey-dark, .grey-dark-mobile {
+  background-color: #f0f0f0;
+  background: #f0f0f0; /* Old browsers */
+	background: -moz-linear-gradient(top, #f0f0f0 0%, #efefef 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #f0f0f0 0%,#efefef 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #f0f0f0 0%,#efefef 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#efefef',GradientType=0 ); /* IE6-9 */
+	color: #fff;
+  } }
 /*hr elemente dunkel falls .grey-dark */
 div.grey-dark hr, div.grey-dark-mobile hr {
   margin-top: 1rem;
@@ -149,6 +148,10 @@ div.grey-dark hr, div.grey-dark-mobile hr {
 }
 
 /* Megamenu */
+.wrapper-main .navbar {
+    font-family: Custom-Font,Helvetica,Arial,sans-serif;
+    border-bottom: 0px solid #efefef;
+}
 
 #mainNavbarCollapsable ul.mainmenu {
   color: #f0f0f0;
@@ -358,6 +361,15 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
   padding: 0.3rem 0;
 }
 
+@media (max-width:576px) {
+.list-sort {
+  width:70%;
+  }
+
+.list-itemsperpage {
+  width:70%;
+  }
+}
 /*seitliche Navigation*/
 
 .sidebar-categories {
