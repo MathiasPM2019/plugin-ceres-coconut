@@ -17,8 +17,7 @@
 
 <script type="x/template" id="vue-category-item">
     <article class="cmp cmp-product-thumb cmp-product-thumb--grid">
-  <p>Ansicht in Arbeit</p>
-        <div class="thumb-inner">
+      <div class="thumb-inner">
               <div class="thumb-image">
                 <div class="square-container">
                     <div class="square-inner main-image">
@@ -51,13 +50,13 @@
             <!-- ITEM DETAILS -->
             <slot name="item-details">
                 <div class="thumb-content">
-                <div class="row">
-                  <div class="col-8">
+                <div class="row m-0">
+                  <div class="col-7 px-0">
                       <a :href="itemData | itemURL" class="thumb-title small">
                             ${ itemData | itemName } <br><br>
-                            ${ itemData.item.manufacturer.externalName } <!-- noch testen -->
+                            ${ itemData.item.manufacturer.externalName }
                   </div>
-                  <div class="col-4">
+                  <div class="col-5 px-0">
                     <div class="thumb-meta">
                         <slot name="BeforePrices"></slot>
                         <div class="prices">
