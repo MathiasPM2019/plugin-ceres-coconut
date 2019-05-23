@@ -1,1 +1,30 @@
-<!-- Insert markup here -->
+{% import "Ceres::Basket.Macros.AddToBasket" as AddToBasket %}
+{% import "Ceres::Item.Macros.AgeRestriction" as AgeRestriction %}
+
+{% set itemData = config("Ceres.item.data") | split(', ') %}
+{% set enabledRoutes = config("IO.routing.enabled_routes") | split(', ') %}
+{% set shippingCat = config("Ceres.global.shippingCostsCategoryId") %}
+
+<script type="x/template" id="vue-single-item">
+    <div>
+        <div class="single container-max page-content">
+            <div class="row mt-5 position-relative">
+
+                <div class="col-md-7">
+                    <slot name="ImageCarousel"></slot>
+                </div>
+
+                <div class="col-md-5 single-rightside">
+                    {% include "Ceres::Item.Components.SingleItem.SingleItem_Details" %}
+                </div>
+
+                <div class="col-md-7">
+                    {% include "Ceres::Item.Components.SingleItem.SingleItem_InformationTable" %}
+                </div>
+            </div>
+
+            <slot name="ItemListContainer"></slot>
+            <slot name="FeedbackContainer"></slot>
+        </div>
+    </div>
+</script>
