@@ -95,6 +95,22 @@ div.grey-dark hr, div.grey-dark-mobile hr {
 @media (min-width: 576px) {
   .no-padding-xs-up { padding:0;}
 }
+
+
+/*ELEMENTE*/
+
+.pollebutton p {
+  margin: 0px;
+  padding: 5px;
+  background-color: #ffffff;
+  font-size: 1.4em;
+  font-weight: 400;
+  line-height:  40px;
+  border: 2px solid #c00418;
+  clear: both;
+  color: #c00418;
+}
+
 /* Bereich Header */
 .header-top-scroll {
   position: relative;
