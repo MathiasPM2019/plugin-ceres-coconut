@@ -40,19 +40,17 @@ body > #vue-app, body > #vue-error {
     background-color: #f0f0f0;
   }
   .grey-dark {
-    background-color: #f0f0f0;
-    color: #fff;
+    background-color: #efefef;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#61686c+0,47494b+100 */
+	background: #efefef; /* Old browsers */
+	background: -moz-linear-gradient(top, #efefef 0%, #dfdfdf 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #efefef 0%,#dfdfdf 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #efefef 0%,#dfdfdf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#dfdfdf',GradientType=0 ); /* IE6-9 */
+  color: #fff;
   }
+}
 
-  .grey-dark-mobile {
-  background-color: #f0f0f0;
-  background: #f0f0f0; /* Old browsers */
-	background: -moz-linear-gradient(top, #f0f0f0 0%, #efefef 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, #f0f0f0 0%,#efefef 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, #f0f0f0 0%,#efefef 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#efefef',GradientType=0 ); /* IE6-9 */
-	color: #666;
-  } }
 /*hr elemente dunkel falls .grey-dark */
 div.grey-dark hr, div.grey-dark-mobile hr {
   margin-top: 1rem;
@@ -222,8 +220,8 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li u
 }
 nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li ul.nav-dropdown-inner > li.linepart {
   padding: 0 0 0 20px;
-  margin: 10px 0 -10px 0;
-  width: 90%;
+  margin: 5px 0 -10px 0;
+  width: 80%;
 }
 nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li ul.nav-dropdown-inner > li > hr {
   border-top: 1px solid #dfdfdf;
