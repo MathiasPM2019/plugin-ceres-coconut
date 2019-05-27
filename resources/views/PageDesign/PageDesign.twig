@@ -1,1 +1,348 @@
-<!-- Insert markup for page design here -->
+{% import "Ceres::PageDesign.Macros.IncludeComponents" as Loader %}
+{% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
+{% import "Ceres::PageDesign.Macros.Translations" as Translations %}
+{{ component( "Ceres::PageDesign.Components.Notifications" ) }}
+{{ component( "Ceres::Basket.Components.BasketPreview" ) }}
+{{ component( "Ceres::Customer.Components.Login" ) }}
+{{ component( "Ceres::Customer.Components.Registration" ) }}
+{{ component( "Ceres::Basket.Components.AddItemToBasketOverlay" ) }}
+{{ component( "Ceres::PageDesign.Components.Popper" ) }}
+{{ component( "Ceres::Category.Components.CategoryBreadcrumbs" ) }}
+{{ component( "Ceres::Customer.Components.ForgotPassword" ) }}
+
+{# TODO: remove if shop builder pages can be rebuild by migrations #}
+{{ component( "Ceres::Containers.Components.LastSeenItemList" ) }}
+{{ component( "CeresCoconut::ItemList.Components.CategoryItem") }}
+{{ component( "Ceres::Newsletter.Components.NewsletterInput" ) }}
+{{ component( "Ceres::PageDesign.Components.Carousel" ) }}
+
+{% if request.get('isContentBuilder') == 1 %}
+    {% include "Ceres::Widgets.WidgetComponents" %}
+{% endif %}
+
+{% set currencyFormat = config("Ceres.currency.format") %}
+{% set defaultLanguage = services.webstoreConfig.getDefaultLanguage() %}
+
+<!DOCTYPE html>
+
+<html lang="{{ lang }}" data-framework="vue" prefix="og: http://ogp.me/ns#">
+
+<head>
+    {% include getPartial('head') %}
+
+    {% block PartialHead %}
+    {% endblock %}
+
+    {% for styleTemplate in get_additional_styles() %}
+        {% include styleTemplate.path ignore missing with styleTemplate.params %}
+    {% endfor %}
+</head>
+
+<body>
+<script>
+    if('ontouchstart' in document.documentElement)
+    {
+        document.body.classList.add("touch");
+    }
+    else
+    {
+        document.body.classList.add("no-touch");
+    }
+</script>
+<div id="vue-app">
+    <div class="wrapper wrapper-top">
+        <!-- messages -->
+        <notifications template="#vue-notifications" :initial-notifications="{{ notifications | json_encode() }}"></notifications>
+    </div>
+
+    <div class="wrapper wrapper-left">
+        <!-- filters -->
+    </div>
+
+    <div class="wrapper wrapper-main {% if ceresConfig.header.fixNavBarPos %}isSticky{% endif %}">
+        {% include getPartial('header') %}
+
+        <div id="page-body" class="main">
+            {% block PageBody %}
+                <!-- inject content of inherited templates here -->
+            {% endblock %}
+        </div>
+
+        {% include getPartial('footer') %}
+
+        {% block PartialFooter %}
+        {% endblock %}
+    </div>
+
+    {% if basket is not defined %}
+        {% set basket = services.basket.getBasketForTemplate() %}
+    {% endif %}
+    {% if ceresConfig.basket.previewType == "right" %}
+        <div class="wrapper wrapper-right">
+            <basket-preview :show-net-prices={{ showNetPrices | json_encode }}></basket-preview>
+        </div>
+    {% endif %}
+
+    <div class="wrapper wrapper-bottom">
+        <!-- LOGIN MODAL -->
+        <div id="login-modal-wrapper">
+            <div class="modal fade login-modal" id="login" tabindex="-1" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title h3">{{ trans("Ceres::Template.login") }}</div>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <login template="#vue-login" modal-element="login-modal-wrapper"></login>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ./LOGIN MODAL -->
+
+        <!-- REGISTRATION MODAL -->
+        <div id="simple-registration-modal-wrapper">
+            <div class="modal fade" id="registration" tabindex="-1" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title h3">
+                                {{ trans("Ceres::Template.regCreateAccount") }}
+
+                            </div>
+
+                            <popper v-cloak class="ml-auto">
+                                <button slot="handle" class="btn btn-icon btn-secondary btn-sm">
+                                    <i class="fa fa-info"></i>
+                                </button>
+                                <div slot="title">
+                                    {{ trans("Ceres::Template.regContactInformations") }}
+                                </div>
+                                <ul slot="content" class='pl-3'>
+                                    <li class='mb-3'>{{ trans('Ceres::Template.regContactInfoText1') }}</li>
+                                    <li class='mb-3'>{{ trans('Ceres::Template.regContactInfoText2') }}</li>
+                                    <li class='mb-3'>{{ trans('Ceres::Template.regContactInfoText3') }}</li>
+                                    <li>{{ trans('Ceres::Template.regContactInfoText4') }}</li>
+                                </ul>
+                            </popper>
+
+                            <button type="button" class="close ml-0" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <registration template="#vue-registration" :is-simple-registration="true" modal-element="simple-registration-modal-wrapper"></registration>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ./REGISTRATION MODAL -->
+
+        <!-- BASKET MODAL -->
+        <add-item-to-basket-overlay :basket-add-information="{{ ceresConfig.basket.addItemToBasketConfirm | json_encode() }}"></add-item-to-basket-overlay>
+        <!-- ./BASKET MODAL -->
+
+        <!-- PASSWORD RESET MODAL -->
+        <forgot-password-modal></forgot-password-modal>
+        <!-- ./PASSWORD RESET MODAL -->
+
+        <!-- SHIPPINGCOSTS MODAL -->
+        <div id="shippingscosts-modal-wrapper">
+            <div class="modal fade" id="shippingscosts" tabindex="-1" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title h3">{{ trans('Ceres::Template.shippingInfoCosts') }}</div>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            {% include category_template(ceresConfig.global.shippingCostsCategoryId, lang, webstoreConfig.webstoreId) ignore missing %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ./SHIPPINGCOSTS MODAL -->
+    </div>
+</div>
+
+<script>
+    App = {
+        config: {{ ceresConfig | json_encode | raw }},
+        activeCurrency: "{{ currencyData[currencyFormat] }}",
+        currencyPattern: {{  services.checkout.getCurrencyPattern() | json_encode | raw }},
+        isCategoryView: {% if services.template.isCategory() == "1" %}true{% else %}false{% endif %},
+        isCheckoutView : {% if services.template.isCheckout() == "1" %}true{% else %}false{% endif %},
+        isSearch: {% if services.template.isSearch() == "1" %}true{% else %}false{% endif %},
+        templateEvent: "{{templateEvent}}",
+        language: "{{ lang }}",
+        defaultLanguage: "{{ defaultLanguage }}",
+        decimalSeparator: "{{ config("IO.format.separator_decimal") }}",
+        urlTrailingSlash: {{ urls.appendTrailingSlash | json_encode }}
+    };
+</script>
+
+
+{{ Loader.include_components() }}
+
+{{ LayoutContainer.show("Ceres::Script.Loader") }}
+
+{{ Translations.add( "Ceres", "Template" ) }}
+{% if ceresConfig.log.performanceLevel  == 'development' %}
+    <script src="{{ plugin_path('Ceres') }}/js/dist/ceres-vendor.js"></script>
+    <script src="{{ plugin_path('Ceres') }}/js/dist/ceres-app.js"></script>
+{% else %}
+    <script src="{{ plugin_path('Ceres') }}/js/dist/ceres.min.js"></script>
+{% endif %}
+
+{% for scriptTemplate in get_additional_scripts() %}
+    {% include scriptTemplate.path ignore missing with scriptTemplate.params %}
+{% endfor %}
+
+{{ LayoutContainer.show("Ceres::Script.AfterScriptsLoaded") }}
+
+{{ get_filtered_tags() }}
+
+<script>
+    vueEventHub = new Vue();
+
+    {% if ceresConfig.log.checkSyntax %}
+        var rootElement = document.getElementById("vue-app");
+        rootElement.innerHTML = rootElement.innerHTML.replace(/(?:^|\s)(?::|v-bind:)\S+=(?:""|'')/g, '');
+
+        var vueApp = new Vue({
+            store: window.ceresStore
+        });
+
+        vueApp.$mount( rootElement.cloneNode(true) );
+
+        if ( vueApp.$el.id === "vue-app")
+        {
+            document.body.replaceChild( vueApp.$el, rootElement );
+        }
+    {% else %}
+        var vueApp = new Vue({
+            el: "#vue-app",
+            store: window.ceresStore
+        });
+    {% endif %}
+
+
+    (function($) {
+
+        var header = document.getElementById('page-header');
+        var unfixedElements = [];
+
+        if ( !!header )
+        {
+            function calculateBodyOffset()
+            {
+                if ( header.classList.contains('fixed-top'))
+                {
+                    var bodyOffset = 0;
+                    // Get current header with children
+                    var children = document.getElementById('page-header').children;
+                    for( var i = 0; i < children.length; i++ )
+                    {
+                        bodyOffset += children[i].getBoundingClientRect().height;
+                    }
+
+                    document.getElementById('vue-app').style.marginTop = bodyOffset + 'px';
+                    document.getElementById('vue-app').style.minHeight = "calc(100vh - " + bodyOffset + "px)";
+                }
+            }
+
+            function getUnfixedElements()
+            {
+                unfixedElements = [];
+                $('#page-header .unfixed').each(function(i, elem)
+                {
+                    var rect = elem.getBoundingClientRect();
+                    unfixedElements.push({
+                        element: elem,
+                        top: rect.top,
+                        height: rect.height
+                    });
+                });
+                scrollUnfixedElements();
+            }
+
+            function scrollUnfixedElements()
+            {
+                var scrollTop = window.scrollY;
+                unfixedElements.forEach(function(unfixed)
+                {
+                    var spacingTop = unfixed.height - scrollTop;
+                    if ( !!unfixed.element.previousElementSibling )
+                    {
+                        unfixed.element.previousElementSibling.style.marginBottom = (spacingTop >= 0 ? spacingTop : 0) + 'px'
+                    }
+                    else
+                    {
+                        unfixed.element.parentElement.style.paddingTop = (spacingTop >= 0 ? spacingTop : 0) + 'px';
+                    }
+                    unfixed.element.style.position = 'absolute';
+                    unfixed.element.style.top = unfixed.top - scrollTop + 'px';
+                });
+            }
+
+            getUnfixedElements();
+
+            $(window).scroll(scrollUnfixedElements);
+
+            $(document).on('shopbuilder.after.ready', function()
+            {
+                unfixedElements.forEach(function(unfixed)
+                {
+                    $(unfixed.element).attr('css', '');
+                });
+                scrollUnfixedElements = function() {};
+            });
+
+            $(document).on('shopbuilder.before.viewUpdate shopbuilder.after.viewUpdate', function()
+            {
+                calculateBodyOffset();
+                $('.owl-carousel').trigger('refresh.owl.carousel');
+            });
+
+            var headerImages = header.querySelectorAll("img");
+
+            if(headerImages.length)
+            {
+                for (var img in headerImages)
+                {
+                    headerImages[img].onload = function()
+                    {
+                        calculateBodyOffset();
+                    }
+                }
+            }
+
+            calculateBodyOffset();
+        }
+
+        $(document).on('shopbuilder.after.drop shopbuilder.after.widget_replace', function(event, eventData, widgetElement)
+        {
+            var compiled = Vue.compile(widgetElement[0].outerHTML );
+            var component = new Vue({
+                store: window.ceresStore,
+                render: compiled.render,
+                staticRenderFns: compiled.staticRenderFns
+            });
+            component.$mount( widgetElement[0] );
+            $(component.$el).find('*').each(function(index, elem) {
+                $(elem).click(function(event) {
+                    event.preventDefault();
+                });
+            });
+
+            $(component.$el).find('.owl-carousel').on('resized.owl.carousel', function()
+            {
+                window.dispatchEvent(new Event('resize'));
+            });
+        });
+
+
+    })(jQuery);
+</script>
+
+{{ get_shop_builder_scripts( "latest", ceresConfig.log.performanceLevel == 'live') }}
+</body>
+</html>

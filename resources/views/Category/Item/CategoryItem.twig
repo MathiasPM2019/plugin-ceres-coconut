@@ -93,14 +93,14 @@
                   <div class="category-description mb-3">{{ category.details[0].description2 | raw }}</div>
               {% endif %}
 
-                <ul class="product-list row grid TEST">
+                <ul class="product-list row grid TEST OK">
                     {% for item in itemList %}
                         <li class="col-12 col-sm-6 col-md-4 col-lg-{% if ceresConfig.header.showNavBars == "side" or ceresConfig.header.showNavBars == "both" %}4{% else %}3{% endif %}">
                             <category-item
                                 :item-data="{{ item.data | json_encode }}"
                                 :decimal-count="{{ decimalCount }}">
-                                <template slot="BeforePrices">{{ LayoutContainer.show("CeresCoconut::CategoryItem.BeforePrices", item.data) }}</template>
-                                <template slot="AfterPrices">{{ LayoutContainer.show("CeresCoconut::CategoryItem.AfterPrices", item.data) }}</template>
+                                <template slot="BeforePrices">{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
+                                <template slot="AfterPrices">{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
                             </category-item>
                         </li>
                         <hr>
