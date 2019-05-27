@@ -53,11 +53,12 @@
                 <div class="row m-0">
                   <div class="col-7 px-0">
                       <a :href="itemData | itemURL" class="thumb-title small">
-                        ${ itemData.item.manufacturer.externalName }<br><br>
-                        ${ itemData | itemName } <br><br>
-                        Textname1: ${ itemData.texts.name1 }<br><br>
-                        Textname2: ${ itemData.texts.name2 }<br><br>
-                        Textname3: ${ itemData.texts.name3 }
+                        <ul>
+                        <li class="h2">${ itemData.item.manufacturer.externalName }</li>
+                        <li class="h4">${ itemData.texts.name1 }</li>
+                        <li class="h4">${ itemData.texts.name3 }</li>
+                        </ul>
+                        </a>
                   </div>
                   <div class="col-5 px-0">
                     <div class="thumb-meta">
