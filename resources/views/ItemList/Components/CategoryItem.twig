@@ -53,7 +53,7 @@
                 <div class="row m-0">
                   <div class="col-7 px-0">
                       <a :href="itemData | itemURL" class="thumb-title small">
-                        <ul>
+                        <ul class="px-0">
                         <li class="h2">${ itemData.item.manufacturer.externalName }</li>
                         <li class="h4">${ itemData.texts.name1 }</li>
                         <li class="h4">${ itemData.texts.name3 }</li>
@@ -63,20 +63,21 @@
                   <div class="col-5 px-0">
                     <div class="thumb-meta">
                         <slot name="BeforePrices"></slot>
-                        <div class="prices">
-                            <div v-if="itemData.prices.rrp && itemData.prices.rrp.price.value > 0 && itemData.prices.rrp.price.value > itemData.prices.default.unitPrice.value" class="price-view-port">
+
+                        <ul class="px-0 prices justify-content-end text-right">
+                            <li v-if="itemData.prices.rrp && itemData.prices.rrp.price.value > 0 && itemData.prices.rrp.price.value > itemData.prices.default.unitPrice.value" class="price-view-port">
                                 <del class="crossprice" v-if="itemData.prices.specialOffer">
                                     ${ itemData.prices.default.unitPrice.formatted }
                                 </del>
                                 <del class="crossprice" v-else>
                                     ${ itemData.prices.rrp.unitPrice.formatted }
                                 </del>
-                            </div>
+                            </li>
 
-                            <div class="price">
+                            <li class="price">
                                 ${ itemData.prices.default.unitPrice.formatted | specialOffer(itemData.prices, "unitPrice", "formatted") }
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
 
                     <slot name="AfterPrices"></slot>
