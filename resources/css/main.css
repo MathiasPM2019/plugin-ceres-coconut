@@ -442,3 +442,21 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
 .sidebar-categories>ul>li>ul>li>a.nav-link:first-child {
   font-size: 16px;
 }
+
+/* Artikel Listenansicht */
+
+.cmp-product-thumb .crossprice {
+    font-size: 1.0em;
+    font-weight: 800;
+    padding: 0 7px 0 7px;
+    margin: 0 0 5px 0;
+    color: #c00418;
+}
+
+.cmp-product-thumb .price {
+    color: #666;
+    line-height: 1.2;
+    font-weight: 700;
+    font-size: 1.3rem;
+    min-height: 21px;
+}
