@@ -16,7 +16,6 @@
 {% endif %}
 
 <script type="x/template" id="vue-category-item">
-  <a  :href="itemData | itemURL">
     <article class="cmp cmp-product-thumb cmp-product-thumb--grid">
       <div class="thumb-inner">
               <div class="thumb-image">
@@ -51,6 +50,7 @@
             <!-- ITEM DETAILS -->
             <slot name="item-details">
                 <div class="thumb-content">
+                <a  :href="itemData | itemURL">
                 <div class="row m-0">
                   <div class="col-8 px-0">
                       <div class="thumb-title small">
@@ -92,10 +92,10 @@
                     {{ AddToBasket.printVueComponent( "itemData" ) }}
                     </div>
                 </div><!-- row Ende -->
+              </a>
             </slot>
           </div>
             <!-- ./ITEM DETAILS  -->
         </div>
     </article>
-  </a>
 </script>
