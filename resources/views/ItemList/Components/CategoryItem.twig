@@ -58,6 +58,15 @@
                         <li class="h4 font-weight-bold">${ itemData.item.manufacturer.externalName }</li>
                         <li class="h5">${ itemData.texts.name1 }</li>
                         <li class="h5">${ itemData.texts.name3 }</li>
+                        <li class="h5">
+                          <script type="x/template" id="vue-add-to-wish-list">
+                            <a class="text-muted small add-to-wish-list" :class="{active: isVariationInWishList}" @click.prevent="switchState()" data-toggle="tooltip" data-placement="top" title="">
+                            <i v-waiting-animation="isLoading" class="fa fa-heart"></i>
+                            {{ trans("Ceres::Template.singleItemWishList") }}
+                            </a>
+                          </script>
+                        </li>
+
                         </ul>
                         </a>
                   </div>
