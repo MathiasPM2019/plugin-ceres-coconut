@@ -488,3 +488,11 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
     font-size: 1.3rem;
     min-height: 21px;
 }
+
+.cmp-product-thumb .crossprice {
+  color: #c00418;
+}
+
+.cmp-product-thumb li {
+  color: #444;
+  }
