@@ -389,7 +389,7 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
 .sidebar-categories {
     background: #fff;
     font-family: Custom-Font,Helvetica,Arial,sans-serif;
-  border-right: 1px solid #efefef;
+    border-right: 0px solid #efefef;
 }
 
 .sidebar-categories .category-title {
@@ -411,46 +411,74 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
 .sidebar-categories ul li.active > a {
     background: #fff;
     color: #c00418;
-  font-weight: 800;
+    font-weight: 800;
 }
 
 .sidebar-categories ul li {
-  line-height: 10px;
+    line-height: 10px;
 }
 
 .sidebar-categories ul li a {
     display: block;
     color: #4D4F4D;
     padding: 0.75rem 15px;
-        padding-left: 15px;
+    padding-left: 15px;
     font-size: 16px;
     cursor: pointer;
-  transition: all 0.8s ease;
+    transition: all 0.8s ease;
 }
 
 .sidebar-categories ul li a:hover {
     color: #c00418;
     background: #fff;
-  margin-left: 5px;
+    margin-left: 5px;
     transition: all 0.2s ease;
   }
 
 .sidebar-categories>ul>li>a.nav-link:first-child {
-  font-size: 18px;
+    font-size: 18px;
 }
 
 .sidebar-categories>ul>li>ul>li>a.nav-link:first-child {
-  font-size: 16px;
+    font-size: 16px;
 }
 
 /* Artikel Listenansicht */
 
-.cmp-product-thumb .crossprice {
-    font-size: 1.0em;
-    font-weight: 800;
-    padding: 0 7px 0 7px;
-    margin: 0 0 5px 0;
-    color: #c00418;
+.product-list.row > li {
+    border: 1px solid #efefef;
+    border-left:0;
+    margin-top: -1px;
+}
+
+.product-list.row > li:nth-of-type(3n+1) {
+    border-left: 1px solid #efefef;
+    margin-top: -1px;
+}
+
+.cmp-product-thumb {
+    padding: 0;
+    margin-bottom: 0px;
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: #c00418;
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: #c00418;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    width: 15px;
+    height: 5px;
+    margin: 5px 7px;
+    background: #cc8a91;
+    display: block;
+    -webkit-backface-visibility: visible;
+    -webkit-transition: opacity 200ms ease;
+    transition: opacity 200ms ease;
+    border-radius: 0px;
 }
 
 .cmp-product-thumb .price {
