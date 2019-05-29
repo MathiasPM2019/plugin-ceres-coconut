@@ -53,22 +53,13 @@
                 <div class="thumb-content">
                 <div class="row m-0">
                   <div class="col-8 px-0">
-                      <a class="thumb-title small">
+                      <div class="thumb-title small">
                         <ul class="px-0">
                         <li class="h4 font-weight-bold">${ itemData.item.manufacturer.externalName }</li>
                         <li class="h5">${ itemData.texts.name1 }</li>
                         <li class="h5">${ itemData.texts.name3 }</li>
-                        <li class="h5">
-                          <script type="x/template" id="vue-add-to-wish-list">
-                            <a class="text-muted small add-to-wish-list" :class="{active: isVariationInWishList}" @click.prevent="switchState()" data-toggle="tooltip" data-placement="top" title="">
-                            <i v-waiting-animation="isLoading" class="fa fa-heart"></i>
-                            {{ trans("Ceres::Template.singleItemWishList") }}
-                            </a>
-                          </script>
-                        </li>
-
                         </ul>
-                        </a>
+                      </div>
                   </div>
                   <div class="col-4 px-0">
                     <div class="thumb-meta mt-0">
