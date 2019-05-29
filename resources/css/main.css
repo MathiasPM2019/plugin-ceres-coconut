@@ -465,10 +465,6 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
     background: #c00418;
 }
 
-.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-    background: #c00418;
-}
-
 .owl-theme .owl-dots .owl-dot span {
     width: 15px;
     height: 5px;
@@ -479,6 +475,7 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
     -webkit-transition: opacity 200ms ease;
     transition: opacity 200ms ease;
     border-radius: 0px;
+    box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .cmp-product-thumb .price {
