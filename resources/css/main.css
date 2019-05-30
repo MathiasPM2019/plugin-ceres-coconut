@@ -475,7 +475,6 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
     -webkit-transition: opacity 200ms ease;
     transition: opacity 200ms ease;
     border-radius: 0px;
-    box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .cmp-product-thumb .price {

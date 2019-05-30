@@ -95,7 +95,7 @@
 
                 <ul class="product-list row grid TEST OK">
                     {% for item in itemList %}
-                        <li class="col-12 col-sm-6 col-md-4 col-lg-{% if ceresConfig.header.showNavBars == "side" or ceresConfig.header.showNavBars == "both" %}4{% else %}3{% endif %}">
+                        <li class="col-6 col-sm-6 col-md-4 col-lg-{% if ceresConfig.header.showNavBars == "side" or ceresConfig.header.showNavBars == "both" %}4{% else %}3{% endif %}">
                             <category-item
                                 :item-data="{{ item.data | json_encode }}"
                                 :decimal-count="{{ decimalCount }}">
