@@ -492,3 +492,13 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
 .cmp-product-thumb li {
   color: #444;
   }
+
+  .thumb-content li {
+  list-style-type: none;
+}
+/* kleinerer schrift mobil: */
+@media (max-width:576px){
+.thumb-title .h4, .thumb-title .h5 {
+  font-size: 12px;
+}
+}
