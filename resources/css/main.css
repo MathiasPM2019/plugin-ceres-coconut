@@ -415,13 +415,13 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
 }
 
 .sidebar-categories ul li {
-    line-height: 10px;
+    line-height: 16px;
 }
 
 .sidebar-categories ul li a {
     display: block;
     color: #4D4F4D;
-    padding: 0.75rem 15px;
+    padding: 0.5rem 15px;
     padding-left: 15px;
     font-size: 16px;
     cursor: pointer;
