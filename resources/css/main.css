@@ -503,7 +503,7 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
   .thumb-content li {
   list-style-type: none;
 }
-/* Mobile Ansicht bild+text 100% Width*/
+/* Mobile Ansichten */
 @media(max-width:576px){
 .cmp-product-thumb .thumb-image {
   float:none;
@@ -513,6 +513,9 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
   width: 100%;
   padding: 0 12px;
   }
+  .thumb-meta {
+  margin-bottom: 30px;
+}
 }
 
 /* kleinerer schrift mobil: */
