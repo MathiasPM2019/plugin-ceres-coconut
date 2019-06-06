@@ -496,9 +496,38 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
   .thumb-content li {
   list-style-type: none;
 }
+@media (max-width:576px) {
+  .thumb-title li {
+    display: inline;
+  }
+  .thumb-title li:after {
+    content: " /";
+  }
+}
+/* Mobile Ansicht bild+text 100% Width*/
+@media(max-width:576px){
+.cmp-product-thumb .thumb-image {
+  float:none;
+  width:100%;
+  }
+.cmp-product-thumb .thumb-content{
+    width: 100%;
+  }
+}
 /* kleinerer schrift mobil: */
 @media (max-width:576px){
 .thumb-title .h4, .thumb-title .h5 {
-  font-size: 12px;
-}
+  font-size: 15px;
+  margin-bottom: 3px;
+  }
+  .thumb-title li {
+    float: left;
+  }
+  .thumb-title li:nth-child(2):before {
+    content: "\00A0";
+  }
+  .thumb-title li:nth-child(3).h5 {
+    font-size: 12px;
+    min-width: 300px;
+  }
 }
