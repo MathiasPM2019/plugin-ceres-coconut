@@ -329,6 +329,15 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
   background-position: top center;
     border-bottom: 2px solid #c00418;
 }
+/*kategoriebanner mobil*/
+@media (max-width:768px) {
+  .parallax-img-container .parallax-img-container-inner[style^='background-image'] {
+    height: 180px;
+  }
+  .parallax-img-container {
+    height: 180px;
+  }
+}
 
 /* Filter Panel */
 .list-controls .filter-toggle {
