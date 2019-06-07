@@ -388,6 +388,10 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
 .list-sort {
   width:70%;
   }
+.custom-select {
+  line-height: 12px;
+  padding: 10px 5px 8px 10px;
+}
 
 .list-itemsperpage {
   width:70%;
