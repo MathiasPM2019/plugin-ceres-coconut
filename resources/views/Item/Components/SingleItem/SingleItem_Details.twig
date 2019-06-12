@@ -1,6 +1,6 @@
 <div v-stick-in-parent>
     <div class="producertag h4 producer text-muted" v-if="currentVariation.filter.hasManufacturer">
-        ${ currentVariation.item.manufacturer.externalName }
+        ${ currentVariation.item.manufacturer.externalName } Logo: ${ currentVariation.item.manufacturer.logo }
     </div>
 
     <h1 class="h2 title">
@@ -10,6 +10,8 @@
     </h1>
     <p>Ausgabe: TEST<br><br>
       ${ currentVariation }
+      <br><br>
+      ENDE!
 
     </p> <!-- TEST ENDE -->
 
