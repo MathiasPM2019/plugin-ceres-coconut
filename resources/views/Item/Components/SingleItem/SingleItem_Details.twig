@@ -1,9 +1,7 @@
 <div v-stick-in-parent>
   <div class="item-facts">
       <ul class="product-names">
-        <li class="title"><img src="${ currentVariation.item.manufacturer.logo }" ></li>
-        <li class="title"><img :data-src="${ currentVariation.item.manufacturer.logo }" ></li>
-        <li class="title">${ currentVariation.item.manufacturer.logo }" ></li>
+        
         <li class="h2 title">${ currentVariation | itemName }</li>
         <li class="h5 title">${ currentVariation.texts.shortDescription }</li>
       </ul>
