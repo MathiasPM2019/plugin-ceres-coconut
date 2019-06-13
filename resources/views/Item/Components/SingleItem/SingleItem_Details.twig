@@ -1,17 +1,14 @@
 <div v-stick-in-parent>
   <div class="item-facts">
-      <ul class="product-names">
-        <li class="h2 title"><img :src="currentVariation.item.manufacturer.logo" :alt="currentVariation.item.manufacturer.externalName"</li>
-        <li class="h2 title">${ currentVariation | itemName }</li>
-        <li class="h5 title">${ currentVariation.texts.name3 }</li>
-      </ul>
-
+    <ul class="product-names">
+      <li class="h2 title"><img :src="currentVariation.item.manufacturer.logo" :alt="currentVariation.item.manufacturer.externalName"></li>
+      <li class="h2 title">${ currentVariation | itemName }</li>
+      <li class="h5 title">${ currentVariation.texts.name3 }</li>
+    </ul>
+    <hr>
     {% if ('item.shortDescription' in itemData or 'all' in itemData)%}
         <p class="single-description" v-if="currentVariation.texts.shortDescription !== ''" v-html="currentVariation.texts.shortDescription"></p>
     {% endif %}
-
-    <hr>
-
     <div class="mb-5">
                             <span class="articlenumber small text-muted">
                                 <b>{{ trans("Ceres::Template.singleItemNumber") }}</b>
