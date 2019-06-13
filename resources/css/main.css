@@ -572,3 +572,14 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
     font-size: 20px;
   }
 }
+
+/* ItemSingelView */
+
+.item-facts ul.product-names {
+  list-style-type: none;
+  line-height: 12px;
+}
+.item-facts ul.product-names img {
+  max-height: 30px;
+  max-width: 120px;
+}
