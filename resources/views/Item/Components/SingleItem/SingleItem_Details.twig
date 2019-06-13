@@ -2,14 +2,11 @@
   <div class="item-facts">
       <ul class="product-names">
         <li class="title"><img src="${ currentVariation.item.manufacturer.logo }" ></li>
+        <li class="title"><img :data-src="${ currentVariation.item.manufacturer.logo }" ></li>
+        <li class="title">${ currentVariation.item.manufacturer.logo }" ></li>
         <li class="h2 title">${ currentVariation | itemName }</li>
         <li class="h5 title">${ currentVariation.texts.shortDescription }</li>
       </ul>
-    <p>Ausgabe: TEST<br><br>
-      <br><br>
-      ENDE!
-
-    </p> <!-- TEST ENDE -->
 
     {% if ('item.shortDescription' in itemData or 'all' in itemData)%}
         <p class="single-description" v-if="currentVariation.texts.shortDescription !== ''" v-html="currentVariation.texts.shortDescription"></p>
