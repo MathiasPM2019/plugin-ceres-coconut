@@ -584,3 +584,9 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
   max-height: 30px;
   max-width: 120px;
 }
+
+.single .font-style-handwritten {
+  font-size: 2.0rem;
+  font-family: 'Handlee', cursive;
+  color: #666;
+}
