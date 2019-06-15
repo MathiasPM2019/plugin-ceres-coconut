@@ -36,7 +36,8 @@
 
     {% if ('item.recommendedPrice' in itemData or 'all' in itemData) %}
         <div class="crossprice" v-if="currentVariation.prices.rrp && currentVariation.prices.rrp.unitPrice.value > 0 && currentVariation.prices.rrp.unitPrice.value > currentVariation.prices.default.unitPrice.value">
-            <del class="text-muted small">
+            <del class="">
+              <img src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/cross_price_red.svg">
                 ${ currentVariation.prices.rrp.unitPrice.formatted }
             </del>
         </div>
