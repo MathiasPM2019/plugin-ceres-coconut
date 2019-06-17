@@ -599,10 +599,22 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
   font-weight: 800;
   position: relative;
   }
+  .item-facts .crossprice:after {
+position: absolute;
+display: block;
+content: '';
+top: 50%;
+left: 50%;
+width: 90%;
+height: 2px;
+background-color: #c00418;
+background-color: rgba(192,4,24,0.8);
+transform: translate(-50%) rotate(170deg);
+}
+/*löschen:*/
 .item-facts .crossprice img {
   position: absolute;
   left: -5px;
   top: 5px;
   max-width: 65px;
-
 }
