@@ -11,20 +11,15 @@
     {% endif %}
     <div class="mb-5">
       <dl>
-        <dt>{{ trans("Ceres::Template.singleItemNumber") }}</dt>
+        <dt class="font-weight-bold">{{ trans("Ceres::Template.singleItemNumber") }}</dt>
           <dd>${ currentVariation.variation.number }</dd>
-        <dt v-if="currentVariation.unit">Inhalt / Menge:</dt>
-          <dd v-if="currentVariation.unit">{{ trans("Ceres::Template.singleItemContent") }}
+        <dt class="font-weight-bold" v-if="currentVariation.unit">Inhalt / Menge:</dt>
+          <dd v-if="currentVariation.unit">
             <span>${ currentVariation.unit.content | numberFormat }</span>
             <span>${ currentVariation.unit.names.name }</span></dd>
-        <dt v-if="currentVariation.variation.mayShowUnitPrice">{{ trans("Ceres::Template.singleItemUnitPrice") }}</dt>
+        <dt class="font-weight-bold" v-if="currentVariation.variation.mayShowUnitPrice">{{ trans("Ceres::Template.singleItemUnitPrice") }}</dt>
           <dd v-if="currentVariation.variation.mayShowUnitPrice">${ variationGraduatedPrice.basePrice | specialOffer(currentVariation.prices, "basePrice") }</dd>
       </dl>
-
-                            <span class="articlenumber small text-muted">
-                                <b>{{ trans("Ceres::Template.singleItemNumber") }}</b>
-                                <span>${ currentVariation.variation.number }</span>
-                            </span>
     </div>
 
     <!-- Variation -->
@@ -47,9 +42,7 @@
 
     {% if ('item.recommendedPrice' in itemData or 'all' in itemData) %}
         <div style="float:left;" lass="crossprice" v-if="currentVariation.prices.rrp && currentVariation.prices.rrp.unitPrice.value > 0 && currentVariation.prices.rrp.unitPrice.value > currentVariation.prices.default.unitPrice.value">
-            <del class="">
-                ${ currentVariation.prices.rrp.unitPrice.formatted }
-            </del>
+            ${ currentVariation.prices.rrp.unitPrice.formatted } *
         </div>
     {% endif %}
 
@@ -59,19 +52,19 @@
                             </span>
                             <sup>*</sup>
                             <span :content="currentVariation.prices.default.currency"></span>
-                        </span>
+    </span>
+
+    <span class="vat small text-muted">
+          {% if services.customer.showNetPrices() %}{{ trans("Ceres::Template.singleItemExclVAT") }}{% else %}{{ trans("Ceres::Template.singleItemInclVAT") }}{% endif %} zzgl. optionaler 
+        <a {% if shippingCat is not empty %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.singleItemShippingCosts") }}">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a>
+    </span>
 
     <div class="base-price text-muted my-3" v-if="currentVariation.unit">
-        <div>
-            {{ trans("Ceres::Template.singleItemContent") }}
-            <span>${ currentVariation.unit.content | numberFormat }</span>
-            <span>${ currentVariation.unit.names.name }</span>
-        </div>
         <div v-if="currentVariation.variation.mayShowUnitPrice">
             {{ trans("Ceres::Template.singleItemUnitPrice") }}
             <span class="base-price-value">
                                     ${ variationGraduatedPrice.basePrice | specialOffer(currentVariation.prices, "basePrice") }
-                                </span>
+            </span>
         </div>
     </div>
 
@@ -104,7 +97,7 @@
             <slot name="AfterAddToBasket"></slot>
         </div>
     </div>
-
+    <hr>
     {% if "wish-list" in enabledRoutes or "all" in enabledRoutes %}
         <div class="row">
             <add-to-wish-list :variation-id="currentVariation.variation.id"></add-to-wish-list>
@@ -113,13 +106,6 @@
     <!-- ./ITEM DETAIL -->
 
     <slot name="AdditionalContentAfterAddToBasket"></slot>
-
-    <hr>
-
-    <span class="vat small text-muted">
-                            * {% if services.customer.showNetPrices() %}{{ trans("Ceres::Template.singleItemExclVAT") }}{% else %}{{ trans("Ceres::Template.singleItemInclVAT") }}{% endif %} {{ trans("Ceres::Template.singleItemExclusive") }}
-        <a {% if shippingCat is not empty %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.singleItemShippingCosts") }}">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a>
-                        </span>
 
     <slot name="AdditionalContentAfterVAT"></slot>
   </div>

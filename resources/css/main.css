@@ -574,7 +574,9 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
 }
 
 /* ItemSingelView */
-
+.item-facts * {
+  color: #666;
+}
 .item-facts ul.product-names {
   list-style-type: none;
   line-height: 12px;
@@ -617,4 +619,11 @@ transform: translate(-50%) rotate(170deg);
   left: -5px;
   top: 5px;
   max-width: 65px;
+}
+.item-facts dl dt {
+  display: block;
+  min-width: 120px;
+}
+.item-facts dl dt {
+  float: left;
 }
