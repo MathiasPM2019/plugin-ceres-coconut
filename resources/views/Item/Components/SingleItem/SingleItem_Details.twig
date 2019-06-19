@@ -99,7 +99,13 @@
     <hr>
     {% if "wish-list" in enabledRoutes or "all" in enabledRoutes %}
         <div class="row">
+          <div class="col-4">
             <add-to-wish-list :variation-id="currentVariation.variation.id"></add-to-wish-list>
+          </div>
+          <div class="col-4"><p>Frage stellen</p>
+          </div>
+          <div class="col-4"><p>R&uuml;ckruf anfordern</p>
+          </div>
         </div>
     {% endif %}
     <!-- ./ITEM DETAIL -->

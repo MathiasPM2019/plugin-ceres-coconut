@@ -627,3 +627,19 @@ transform: translate(-50%) rotate(170deg);
 .item-facts dl dt {
   float: left;
 }
+
+.item-facts .btn-primary {
+    color: #fff;
+    background-color: #19ad19;
+    border-color: transparent;
+}
+
+.item-facts .btn-primary * {
+  color: #fff;
+}
+
+.item-facts .availability_1 * {
+    background-color: #19ad19;
+    color: #fff;
+    font-weight: 500;
+}
