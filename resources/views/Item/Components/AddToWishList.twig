@@ -1,1 +1,8 @@
-<!-- Insert markup here -->
+<script type="x/template" id="vue-add-to-wish-list">
+    <div>
+        <a class="text-muted small add-to-wish-list" :class="{active: isVariationInWishList}" @click.prevent="switchState()" data-toggle="tooltip" data-placement="top" title="">
+            <i v-waiting-animation="isLoading" class="fa fa-heart"></i>
+            {{ trans("Ceres::Template.singleItemWishList") }}
+        </a>
+    </div>
+</script>
