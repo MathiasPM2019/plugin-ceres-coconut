@@ -644,6 +644,11 @@ transform: translate(-50%) rotate(170deg);
     font-weight: 500;
 }
 
+.item-facts .availability_5 * {
+    color: #fff;
+    font-weight: 500;
+}
+
 .item-facts .add-to-wish-list:hover i.fa-paper-plane {
     color: #c00418 !important;
 }
