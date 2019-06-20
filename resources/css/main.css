@@ -643,3 +643,11 @@ transform: translate(-50%) rotate(170deg);
     color: #fff;
     font-weight: 500;
 }
+
+.item-facts .add-to-wish-list:hover i.fa-paper-plane {
+    color: #c00418 !important;
+}
+
+.item-facts .add-to-wish-list:hover i.fa-phone {
+    color: #164194 !important;
+}
