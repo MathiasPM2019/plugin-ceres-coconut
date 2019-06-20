@@ -22,9 +22,18 @@
       </dl>
     </div>
 
-    <!-- Variation -->
-    <div class="mb-3" v-if="variations.length > 0">
-        <variation-select template="#vue-variation-select" :attributes="attributeNameMap" :variation-units="variationUnits" :variations="variations" :preselect="currentVariation.variation.id" :unitPreselect="currentVariation.variation.unitCombinationId" @is-valid-change="isVariationSelected = $event"></variation-select>
+    <!-- Variation und groessen-check-->
+    <div class="row">
+      <div class="col-8 mb-3" v-if="variations.length > 0">
+          <variation-select template="#vue-variation-select" :attributes="attributeNameMap" :variation-units="variationUnits" :variations="variations" :preselect="currentVariation.variation.id" :unitPreselect="currentVariation.variation.unitCombinationId" @is-valid-change="isVariationSelected = $event"></variation-select>
+        </div>
+        <div class="col-4">
+          <a data-toggle="modal" href="#Groessen-check" class="text-muted small add-to-wish-list">
+            <div ><img class="pull-left m-2" src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/groessencheck.svg">
+              <p> Gr&ouml;&szlig;en<br>Check</p>
+            </div>
+          </a>
+        </div>
     </div>
     <!-- /Variation -->
 
@@ -111,7 +120,7 @@
           <p class="pt-2 m-0 small text-center">Dieses Modell kannst du in unseren Filialen testen!</p></div>
         <div class="col-6">
           <img class="pull-left m-2" style="max-height:40px" src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/montage.svg">
-          <p class="pt-2 m-0 small text-center">Dein Wunschfahrrad wird fahrbereit montiert und stehend versendet!</p></div>
+          <p class="pt-2 m-0 small text-center">Dein Wunschfahrrad wird fahrbereit montiert<br> und stehend versendet!</p></div>
       </div>
     </div>
   </div>
