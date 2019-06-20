@@ -58,18 +58,9 @@
         <a {% if shippingCat is not empty %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.singleItemShippingCosts") }}">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a>
     </span>
 
-    <div class="base-price text-muted my-3" v-if="currentVariation.unit">
-        <div v-if="currentVariation.variation.mayShowUnitPrice">
-            {{ trans("Ceres::Template.singleItemUnitPrice") }}
-            <span class="base-price-value">
-                                    ${ variationGraduatedPrice.basePrice | specialOffer(currentVariation.prices, "basePrice") }
-            </span>
-        </div>
-    </div>
-
     <slot name="AfterPrice"></slot>
 
-    <span v-if="currentVariation.variation.availability" :class="'availability badge availability_' + currentVariation.variation.availability.id">
+    <span v-if="currentVariation.variation.availability" :class="'mt-4 availability badge availability_' + currentVariation.variation.availability.id">
                             <span>
                                 ${ currentVariation.variation.availability.names.name }
                             </span>
@@ -104,7 +95,7 @@
           </div>
           <div class="col-4"><a  data-toggle="modal" href="#Frage-stellen" class="text-muted small add-to-wish-list"><i class="fa fa-paper-plane"></i> Frage stellen</a>
           </div>
-          <div class="col-4"><a class="text-muted small add-to-wish-list"><i class="fa fa-phone"></i> R&uuml;ckruf anfordern</a>
+          <div class="col-4"><a data-toggle="modal" href="#Rueckruf-anfordern" class="text-muted small add-to-wish-list"><i class="fa fa-phone"></i> R&uuml;ckruf anfordern</a>
           </div>
         </div>
     {% endif %}
@@ -113,10 +104,10 @@
     <slot name="AdditionalContentAfterAddToBasket"></slot>
 
     <slot name="AdditionalContentAfterVAT"></slot>
-    <div class="competence-features">
+    <div class="mt-5 px-2 py-2 grey-mid competence-features">
       <div class="row">
-        <div class="col-6"></div>
-        <div class="col-6"></div>
+        <div class="col-6"><p><img style="max-height:40px" src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/fahrrad_testen.svg" >Dieses Modell kannst du in unseren Filialen testen!</p></div>
+        <div class="col-6"><p><img style="max-height:40px" src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/montage.svg"> Dein Wunschfahrrad wird für dich fahrbereit montiert und stehend versendet!</p></div>
       </div>
     </div>
   </div>
