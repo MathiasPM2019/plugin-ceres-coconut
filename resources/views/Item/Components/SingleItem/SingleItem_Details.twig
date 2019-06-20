@@ -27,10 +27,10 @@
       <div class="col-8 mb-3" v-if="variations.length > 0">
           <variation-select template="#vue-variation-select" :attributes="attributeNameMap" :variation-units="variationUnits" :variations="variations" :preselect="currentVariation.variation.id" :unitPreselect="currentVariation.variation.unitCombinationId" @is-valid-change="isVariationSelected = $event"></variation-select>
         </div>
-        <div class="col-8 mb-3">
+      <div class="col-8 mb-3">
           <a data-toggle="modal" href="#Groessen-check">
-            <div class="grey-mid p-2 col-12 col-md-6 col-lg-4"><img class="pull-left m-2" src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/groessencheck.svg">
-              <p> Gr&ouml;&szlig;en<br>Check</p>
+            <div class="grey-mid p-2 col-12 col-md-6 col-lg-4"><img class="pull-left" src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/groessencheck.svg">
+              <p class="m-0 small text-center lh-025"> Gr&ouml;&szlig;en<br>Check</p>
             </div>
           </a>
         </div>
