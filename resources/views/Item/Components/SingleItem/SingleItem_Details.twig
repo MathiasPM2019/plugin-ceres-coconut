@@ -22,22 +22,11 @@
       </dl>
     </div>
 
-    <!-- Variation und groessen-check-->
+    <!-- Variation enthält groessen-check-->
 
       <div class="mb-2" v-if="variations.length > 0">
         <variation-select template="#vue-variation-select" :attributes="attributeNameMap" :variation-units="variationUnits" :variations="variations" :preselect="currentVariation.variation.id" :unitPreselect="currentVariation.variation.unitCombinationId" @is-valid-change="isVariationSelected = $event"></variation-select>
       </div>
-        <div v-if="currentVariation.attributes.attributesID = 8">
-          <div class="col-12 col-md-6 col-lg-4">
-            <a data-toggle="modal" href="#Groessen-check">
-              <div class="row justify-content-center grey-mid p-2">
-                <img class="mx-3 pull-left" src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/groessencheck.svg">
-                <p class="my-2 small text-center lh-025"> Welche Gr&ouml;ße <br> ben&ouml;tige ich?</p>
-              </div>
-            </a>
-          </div>
-        </div>
-
 
     <!-- /Variation -->
 

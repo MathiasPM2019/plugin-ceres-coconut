@@ -1,1 +1,42 @@
-<!-- Insert markup for variation select here -->
+<script type="x/template" id="vue-variation-select">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 variation-select" v-for="(attribute, attributeId) in attributes">
+            <div class="input-unit" ref="labelBoxRef">
+                <select class="custom-select" v-model="selectedAttributes[attributeId]" @change="onSelectionChange(selectedAttributes[attributeId])">
+                        <option :value="null" v-if="hasEmptyOption">{{ trans("Ceres::Template.singleItemPleaseSelect") }}</option>
+                        <option
+                            v-for="(attributeValue, attributeValueId) in attribute.values"
+                            :value="attributeValueId"
+                            :disabled="!isEnabled(attributeId, attributeValueId)">
+                            ${ attributeValue }
+                        </option>
+                </select>
+                <label v-tooltip="isTextCut(attribute.name)" data-toggle="tooltip" data-placement="top" :title="attribute.name">${ attribute.name }</label>
+            </div>
+        </div>
+        <div v-if="currentVariation.attributes.attributesID == 8">
+          <div class="col-12 col-md-6 col-lg-4">
+            <a data-toggle="modal" href="#Groessen-check">
+              <div class="row justify-content-center">
+                <img class="mx-3 pull-left" src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/groessencheck.svg">
+                <p class="my-2 small text-center lh-025"> Welche Gr&ouml;ße <br> ben&ouml;tige ich?</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 variation-select" v-if="possibleUnitIds.length > 1">
+            <div class="input-unit">
+                <select class="custom-select" v-model="selectedUnitId" @change="onSelectionChange(possibleUnitIds[selectedUnitId])">
+                    <option :value="0" v-if="hasEmptyOption">{{ trans("Ceres::Template.singleItemPleaseSelect") }}</option>
+                    <option
+                            v-for="unitCombinationId in possibleUnitIds"
+                            :value="unitCombinationId">
+                        ${ variationUnits[unitCombinationId] }
+                    </option>
+                </select>
+                <label v-tooltip data-toggle="tooltip" data-placement="top" title="{{ trans("Ceres::Template.singleItemContent") }}">{{ trans("Ceres::Template.singleItemContent") }}</label>
+            </div>
+        </div>
+    </div>
+</script>
