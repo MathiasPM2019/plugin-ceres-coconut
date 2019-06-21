@@ -14,7 +14,8 @@
                 <label v-tooltip="isTextCut(attribute.name)" data-toggle="tooltip" data-placement="top" :title="attribute.name">${ attribute.name }</label>
             </div>
         </div>
-        <div v-if="currentVariation.attributeValueID == 8">
+        <div><p>test 1</p></div>
+        <div v-if="currentVariation.attributes.attribute.backendName == 'Rahmengröße'">
           <div class="col-12 col-md-6 col-lg-4">
             <a data-toggle="modal" href="#Groessen-check">
               <div class="row justify-content-center">
