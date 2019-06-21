@@ -601,7 +601,7 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
   font-weight: 800;
   position: relative;
   }
-  .item-facts .crossprice:after {
+.item-facts .crossprice:after {
 position: absolute;
 display: block;
 content: '';
