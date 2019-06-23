@@ -642,19 +642,39 @@ transform: translate(-50%) rotate(170deg);
     border-color: transparent;
 }
 
-.item-facts .btn-primary * {
-  color: #fff;
-}
-
 .item-facts .availability_1 * {
-    background-color: #19ad19;
-    color: #fff;
+    background-color: #fff;
+    color: #888;
     font-weight: 500;
 }
+.item-facts .badge {
+  border-radius: 0px;
+  padding: 4px 15px 3px 15px;
+  background-color: #fff;
+}
 
+.item-facts .availability_1.badge:before {
+  content: '';
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  margin: 0 10px -2px -10px;
+  background-color: #19ad19;
+}
 .item-facts .availability_5 * {
-    color: #fff;
+    background-color: #fff;
+    color: #888;
     font-weight: 500;
+}
+.item-facts .availability_5.badge:before {
+  content: '';
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  margin: 0 10px -2px -10px;
+  background-color: #c00418;
 }
 
 .item-facts .add-to-wish-list:hover i.fa-paper-plane {
