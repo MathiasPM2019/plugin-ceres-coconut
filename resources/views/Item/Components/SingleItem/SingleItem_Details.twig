@@ -27,6 +27,9 @@
       <div class="mb-2" v-if="variations.length > 0">
         <variation-select template="#vue-variation-select" :attributes="attributeNameMap" :variation-units="variationUnits" :variations="variations" :preselect="currentVariation.variation.id" :unitPreselect="currentVariation.variation.unitCombinationId" @is-valid-change="isVariationSelected = $event"></variation-select>
       </div>
+      <div v-if="attribute.values.attributeValueID == 8">
+      <p> toller Test </p>
+      </div>
     <!-- /Variation -->
 
     <!-- Item Bundle -->
