@@ -27,18 +27,7 @@
                 <label v-tooltip data-toggle="tooltip" data-placement="top" title="{{ trans("Ceres::Template.singleItemContent") }}">{{ trans("Ceres::Template.singleItemContent") }}</label>
             </div>
         </div>
-        <div v-if="currentVariation.attributes.attributeID == 8">
-          <div class="col-12 col-md-6 col-lg-4">
-            <a data-toggle="modal" href="#Groessen-check">
-              <div class="row justify-content-center">
-                <img class="mx-3 pull-left" src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/groessencheck.svg">
-                <p class="my-2 small text-center lh-025"> Welche Gr&ouml;ße <br> ben&ouml;tige ich?</p>
-              </div>
-            </a>
-          </div>
-        </div>
-
-
+    
 <!-- TEST -->
 <div v-if="currentVariation.item.manufaturer.externalName == 'Pegasus'"><p>test iff Hersteller Pegasus</p></div>
         <div v-if="currentVariation.texts.name3 == '28 Zoll Crossbike'"><p>test Name3 iff Anweisung 28 Zoll Crossbike</p></div>
