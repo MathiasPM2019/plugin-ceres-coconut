@@ -665,7 +665,7 @@ transform: translate(-50%) rotate(170deg);
     color: #164194 !important;
 }
 
-@media (max-width:676px) {
+@media (max-width:768px) {
 .item-facts  a.add-to-wish-list i {
   display: block;
   width: 100%;
@@ -675,5 +675,13 @@ transform: translate(-50%) rotate(170deg);
     text-align: center;
     display: inline-block;
     width: 100%;
+  }
+
+  .competence-features img {
+    display: block;
+    width: 100%;
+  }
+  .competence-features p {
+    padding: 0 10px 0 10px;
   }
 }
