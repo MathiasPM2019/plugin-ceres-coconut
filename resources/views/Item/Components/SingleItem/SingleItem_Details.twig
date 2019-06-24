@@ -27,11 +27,11 @@
       <div class="mb-2" v-if="variations.length > 0">
         <variation-select template="#vue-variation-select" :attributes="attributeNameMap" :variation-units="variationUnits" :variations="variations" :preselect="currentVariation.variation.id" :unitPreselect="currentVariation.variation.unitCombinationId" @is-valid-change="isVariationSelected = $event"></variation-select>
       </div>
-      <div v-if="currentVariation.attributes[0].attributeID > 1">
-        <p> toller Test Attribute > 1</p>
+      <div v-if="currentVariation.attributes[0].attribute.names.name == 'Rahmengröße'">
+        <p> toller Test Attribute > als Wort</p>
       </div>
       <div>
-        <p> leerer Container 2 </p>
+        <p> leerer Container 3 </p>
       </div>
     <!-- /Variation -->
 
