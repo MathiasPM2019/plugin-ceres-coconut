@@ -27,10 +27,8 @@
       <div class="mb-2" v-if="variations.length > 0">
         <variation-select template="#vue-variation-select" :attributes="attributeNameMap" :variation-units="variationUnits" :variations="variations" :preselect="currentVariation.variation.id" :unitPreselect="currentVariation.variation.unitCombinationId" @is-valid-change="isVariationSelected = $event"></variation-select>
       </div>
-      <div v-if="currentVariation.attributes[0].attribute.names.name == 'Rahmengröße'">
-        <p> toller Test Attribute > als Wort</p>
-      </div>
-    < /Variation -->
+    
+    <!-- /Variation -->
 
     <!-- Item Bundle -->
     <item-bundle :bundle-type="currentVariation.variation.bundleType" :bundle-components="currentVariation.bundleComponents"></item-bundle>
@@ -68,7 +66,7 @@
                             <span>
                                 ${ currentVariation.variation.availability.names.name }
                             </span>
-                        </span>
+    </span>
 
     <div class="row my-3">
         <div class="w-100">
@@ -103,7 +101,7 @@
           </div>
         </div>
     {% endif %}
-    <!-- ./ITEM DETAIL -->
+    <!-- /ITEM DETAIL -->
 
     <slot name="AdditionalContentAfterAddToBasket"></slot>
 
@@ -112,10 +110,12 @@
       <div class="row">
         <div class="col-6">
           <img class="pull-left m-2" style="max-height:40px" src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/fahrrad_testen.svg">
-          <p class="pt-2 m-0 small text-center">Dieses Modell kannst du in unseren Filialen testen!</p></div>
+          <p class="pt-2 m-0 small text-center">Dieses Modell kannst du in unseren Filialen testen!</p>
+        </div>
         <div class="col-6">
           <img class="pull-left m-2" style="max-height:40px" src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/montage.svg">
-          <p class="pt-2 m-0 small text-center">Dein Wunschfahrrad wird fahrbereit montiert<br> und stehend versendet!</p></div>
+          <p class="pt-2 m-0 small text-center">Dein Wunschfahrrad wird fahrbereit montiert<br> und stehend versendet!</p>
+        </div>
       </div>
     </div>
   </div>

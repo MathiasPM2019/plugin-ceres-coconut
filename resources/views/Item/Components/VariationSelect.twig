@@ -14,6 +14,9 @@
                 <label v-tooltip="isTextCut(attribute.name)" data-toggle="tooltip" data-placement="top" :title="attribute.name">${ attribute.name }</label>
             </div>
         </div>
+        <div v-if="currentVariation.attributes[0].attribute.names.name == 'Rahmengröße'">
+          <p> toller Test Attribute > als Wort</p>
+        </div>
       
         <div class="col-12 col-md-6 col-lg-4 variation-select" v-if="possibleUnitIds.length > 1">
             <div class="input-unit">
