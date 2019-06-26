@@ -19,14 +19,6 @@
 							</div>
 						</div>
 						<div class="col-12 col-md-6 mb-3">
-							<div class="input-unit input-mail-field" data-validate="regex" data-model="userMail">
-								{% set uid_mail = uid() %}
-								<input type="email" name="email" v-model="userMail" id="{{ uid_mail }}" data-validate-ref="{{ mailRegex }}">
-								<label for="{{ uid_mail }}">Meine {{ trans("Ceres::Template.contactMail") }}*</label>
-							</div>
-							<div class="error-feedback">{{ trans("Ceres::Template.contactEnterConfirmEmail") }}</div>
-						</div>
-						<div class="col-12 col-md-6 mb-3">
 							<div class="input-unit">
 								<input type="subject" name="contactTelefon" v-model="subject" id="txt_contactTelefon">
 								<label for="txt_contactTelefon">Deine Telefonnummer</label>
@@ -36,16 +28,16 @@
 						<div class="col-12 mb-3">
 							<div class="input-unit" data-validate="text" data-model="subject">
 								<input type="subject" placeholder="" name="subject" v-model="subject" id="txt_subject">
-								<label for="txt_subject">Bitte Marke und Modell angeben*</label>
+								<label for="txt_subject">Bitte Marke und Modell angeben *</label>
 							</div>
 							<div class="error-feedback">{{ trans("Ceres::Template.contactEditSubject") }}</div>
 						</div>
-					<div class="col-12">
+					  <div class="col-12">
 							<div class="input-unit textarea" data-validate="text" data-model="message">
-								<textarea name="message" id="txt_message" v-model="message" class="no-resize" rows="15" cols="25"></textarea>
-								<label for="txt_message">Meine Frage*</label>
+								<textarea name="message" id="txt_message" v-model="message" class="no-resize" rows="1" cols="1"></textarea>
+								<label for="txt_message">Meine Telefonnummer *</label>
 							</div>
-							<div class="error-feedback">{{ trans("Ceres::Template.contactEditMessage") }}</div>
+							<div class="error-feedback">Bitte Telefonnummer angeben.</div>
 						</div>
 
 						<div class="col-12 mb-4 small">* {{ trans("Ceres::Template.contactRequiredField") }}</div>
@@ -63,17 +55,7 @@
                     {% endif %}
 				</div>
 
-				<div class="col-12 col-md-9">
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" id="cc" v-model="cc" value="cc" name="mailToMe">
-						<label class="form-check-label" for="cc">
-							{{ trans("Ceres::Template.contactSendMeACopy") }}
-						</label>
-					</div>
-				</div>
-
 				<div class="col-12">
-					<hr>
 				</div>
 
 				<div class="col-12">
