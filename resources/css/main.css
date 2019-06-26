@@ -94,6 +94,12 @@ div.grey-dark hr, div.grey-dark-mobile hr {
   .no-padding-xs-up { padding:0;}
 }
 
+/* Dialog Overlay */
+
+.modal-content {
+    border: 2px solid #c00418;;
+    border-radius: 0px;
+  }
 
 /*ELEMENTE*/
 
