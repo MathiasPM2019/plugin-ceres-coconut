@@ -22,19 +22,22 @@
       </dl>
     </div>
 
-    <!-- Variation enthält groessen-check-->
+    <!-- Variation enthaelt groessen-check-->
 
       <div class="mb-2" v-if="variations.length > 0">
         <variation-select template="#vue-variation-select" :attributes="attributeNameMap" :variation-units="variationUnits" :variations="variations" :preselect="currentVariation.variation.id" :unitPreselect="currentVariation.variation.unitCombinationId" @is-valid-change="isVariationSelected = $event"></variation-select>
       </div>
       <div v-if="currentVariation.attributes[0].attribute.names.name == 'Rahmengröße'">
         <hr>
-        <div class="col-4">
-          <a data-toggle="modal" href="#Groessen-check" class="text-muted small add-to-wish-list">
-            <img style="max-height:20px;" src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/groessencheck.svg" > Ben&ouml;tigst Du Hilfe bei der Auswahl der Rahmenh&ouml;he?
+        <div class="col-12">
+
+          <a data-toggle="modal" href="#Groessen-check" class="text-muted">
+            <div class="row">
+              <div class="col-1 p-0"><img class="mx-2" style="max-height:40px;" src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/groessencheck.svg"></div>
+              <div class="col-11 p-0 pl-3">Ben&ouml;tigst Du Hilfe bei der Auswahl<br> der richtigen Rahmengr&ouml;e?</div>
+            </div>
           </a>
         </div>
-
       </div>
 
     <!-- /Variation -->
