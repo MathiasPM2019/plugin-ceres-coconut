@@ -33,19 +33,7 @@
 							</div>
 							<div class="error-feedback">{{ trans("Ceres::Template.contactEditSubject") }}</div>
 						</div>
-						<div class="col-12 mb-3"><p>
-						<dl class="small">
-			        <dt class="font-weight-bold">{{ trans("Ceres::Template.singleItemNumber") }}</dt>
-			          <dd>${ currentVariation.variation.number }</dd>
-			        <dt class="font-weight-bold" v-if="currentVariation.unit">Inhalt / Menge:</dt>
-			          <dd v-if="currentVariation.unit">
-			            <span>${ currentVariation.unit.content | numberFormat }</span>
-			            <span>${ currentVariation.unit.names.name }</span></dd>
-			        <dt class="font-weight-bold" v-if="currentVariation.variation.mayShowUnitPrice">{{ trans("Ceres::Template.singleItemUnitPrice") }}</dt>
-			          <dd v-if="currentVariation.variation.mayShowUnitPrice">${ variationGraduatedPrice.basePrice | specialOffer(currentVariation.prices, "basePrice") }</dd>
-			      </dl></p></div>
-
-						<div class="col-12">
+					<div class="col-12">
 							<div class="input-unit textarea" data-validate="text" data-model="message">
 								<textarea name="message" id="txt_message" v-model="message" class="no-resize" rows="15" cols="25"></textarea>
 								<label for="txt_message">{{ trans('Ceres::Template.contactMessage') }}*</label>
