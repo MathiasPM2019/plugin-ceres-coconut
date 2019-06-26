@@ -115,6 +115,18 @@ div.grey-dark hr, div.grey-dark-mobile hr {
   color: #c00418;
 }
 
+.btn-red {
+  border: 2px solid #c00418;
+  background-color: #fff;
+  color: #c00418;;
+}
+
+.btn-red:hover {
+  border: 2px solid #c00418;
+  background-color: #efefef;
+  color: #c00418;
+}
+
 /* Bereich Header */
 .header-top-scroll {
   position: relative;
@@ -646,6 +658,11 @@ transform: translate(-50%) rotate(170deg);
     color: #fff;
     background-color: #19ad19;
     border-color: transparent;
+    border-radius: 1px;
+}
+
+.item-facts .btn-primary i {
+  color: #fff;
 }
 
 .item-facts .availability_1 * {

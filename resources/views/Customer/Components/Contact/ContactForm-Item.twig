@@ -15,14 +15,14 @@
 						<div class="col-12 col-md-6 mb-3">
 							<div class="input-unit input-name-field">
 								<input type="name" name="name" v-model="name" id="txt_name">
-								<label for="txt_name">{{ trans("Ceres::Template.contactName") }} ({{ trans("Ceres::Template.contactOptional") }})</label>
+								<label for="txt_name">Mein Name</label>
 							</div>
 						</div>
 						<div class="col-12 col-md-6 mb-3">
 							<div class="input-unit input-mail-field" data-validate="regex" data-model="userMail">
 								{% set uid_mail = uid() %}
 								<input type="email" name="email" v-model="userMail" id="{{ uid_mail }}" data-validate-ref="{{ mailRegex }}">
-								<label for="{{ uid_mail }}">{{ trans("Ceres::Template.contactMail") }}*</label>
+								<label for="{{ uid_mail }}">Meine {{ trans("Ceres::Template.contactMail") }}*</label>
 							</div>
 							<div class="error-feedback">{{ trans("Ceres::Template.contactEnterConfirmEmail") }}</div>
 						</div>
@@ -36,12 +36,12 @@
 					<div class="col-12">
 							<div class="input-unit textarea" data-validate="text" data-model="message">
 								<textarea name="message" id="txt_message" v-model="message" class="no-resize" rows="15" cols="25"></textarea>
-								<label for="txt_message">{{ trans('Ceres::Template.contactMessage') }}*</label>
+								<label for="txt_message">Meine Frage*</label>
 							</div>
 							<div class="error-feedback">{{ trans("Ceres::Template.contactEditMessage") }}</div>
 						</div>
 
-						<div class="col-12 text-sm-right">* {{ trans("Ceres::Template.contactRequiredField") }}</div>
+						<div class="col-12 mb-4 small">* {{ trans("Ceres::Template.contactRequiredField") }}</div>
 					</form>
 				</div>
 
@@ -73,8 +73,8 @@
 					<accept-privacy-policy-check class="mb-3 medium" v-if="enableConfirmingPrivacyPolicy" v-model="privacyPolicyAccepted" @input="privacyPolicyValueChanged($event)" :show-error="privacyPolicyShowError"></accept-privacy-policy-check>
 				</div>
 
-				<div class="col-12 col-md-5 send-mail">
-					<button type="submit" class="btn btn-primary btn-block" :disabled="waiting" @click="validate({{ gCapture | length > 0 }})">
+				<div class="mt-2 col-12 col-md-5 send-mail">
+					<button type="submit" class="btn btn-primary btn-block btn-red" :disabled="waiting" @click="validate({{ gCapture | length > 0 }})">
 						<i v-waiting-animation="waiting" class="fa fa-paper-plane-o" aria-hidden="true"></i>
 						{{ trans("Ceres::Template.contactSend") }}
 					</button>
