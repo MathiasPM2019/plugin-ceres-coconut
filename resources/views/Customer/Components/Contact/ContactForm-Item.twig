@@ -28,7 +28,7 @@
 						</div>
 						<div class="col-12 mb-3">
 							<div class="input-unit" data-validate="text" data-model="subject">
-								<input type="subject" placeholder="z.B. ${ currentVariation.item.manufacturer.externalName } ${ currentVariation | itemName }" name="subject" v-model="subject" id="txt_subject">
+								<input type="subject" placeholder="z.B. {{ currentVariation.item.manufacturer.externalName }} {{ currentVariation | itemName }}" name="subject" v-model="subject" id="txt_subject">
 								<label for="txt_subject">Bitte Marke und Modell eingeben*</label>
 							</div>
 							<div class="error-feedback">{{ trans("Ceres::Template.contactEditSubject") }}</div>
