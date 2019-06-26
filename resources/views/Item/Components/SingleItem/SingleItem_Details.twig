@@ -27,6 +27,10 @@
       <div class="mb-2" v-if="variations.length > 0">
         <variation-select template="#vue-variation-select" :attributes="attributeNameMap" :variation-units="variationUnits" :variations="variations" :preselect="currentVariation.variation.id" :unitPreselect="currentVariation.variation.unitCombinationId" @is-valid-change="isVariationSelected = $event"></variation-select>
       </div>
+      <div v-if="currentVariation.attributes[0].attribute.names.name == 'Rahmengröße'">
+        <hr>
+        <p>Ben&ouml;tigst Du Hilfe bei der Auswahl der Rahmenh&ouml;he?</p>
+      </div>
 
     <!-- /Variation -->
 
