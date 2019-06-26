@@ -70,10 +70,10 @@
 				</div>
 
 				<div class="col-12">
-					<accept-privacy-policy-check class="mb-3" v-if="enableConfirmingPrivacyPolicy" v-model="privacyPolicyAccepted" @input="privacyPolicyValueChanged($event)" :show-error="privacyPolicyShowError"></accept-privacy-policy-check>
+					<accept-privacy-policy-check class="mb-3 medium" v-if="enableConfirmingPrivacyPolicy" v-model="privacyPolicyAccepted" @input="privacyPolicyValueChanged($event)" :show-error="privacyPolicyShowError"></accept-privacy-policy-check>
 				</div>
 
-				<div class="col-12 col-md-3 offset-md-9 send-mail">
+				<div class="col-12 col-md-5 send-mail">
 					<button type="submit" class="btn btn-primary btn-block" :disabled="waiting" @click="validate({{ gCapture | length > 0 }})">
 						<i v-waiting-animation="waiting" class="fa fa-paper-plane-o" aria-hidden="true"></i>
 						{{ trans("Ceres::Template.contactSend") }}
