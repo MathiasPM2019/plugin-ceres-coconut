@@ -1,1 +1,20 @@
-<!-- Insert markup for contact mail here -->
+{% if name | length > 0 %}
+    <b>{{ trans("Ceres::Template.contactName") }}:</b> {{ name }} <br>
+{% endif %}
+
+<b>{{ trans("Ceres::Template.contactSenderMail") }}:</b> {{ userMail }}<br>
+
+{% if orderId | length > 0 %}
+    <b>Telefonnumer:</b> {{ contactTelefon }}<br><br>
+{% endif %}
+
+
+{% if orderId | length > 0 %}
+    <b>{{ trans("Ceres::Template.contactOrderId") }}:</b> {{ orderId }}<br><br>
+{% endif %}
+
+_________________________________________________________<br><br>
+
+{% autoescape false %}
+    {{ message }}
+{% endautoescape %}
