@@ -18,6 +18,14 @@
 								<label for="txt_name">Mein Name</label>
 							</div>
 						</div>
+						<div class="col-12 col-md-6 mb-3">
+							<div class="input-unit input-mail-field" data-validate="regex" data-model="userMail">
+								{% set uid_mail = uid() %}
+								<input type="email" name="email" v-model="userMail" id="{{ uid_mail }}" data-validate-ref="{{ mailRegex }}">
+								<label for="{{ uid_mail }}">Meine {{ trans("Ceres::Template.contactMail") }}*</label>
+							</div>
+							<div class="error-feedback">abc@123.de</div>
+						</div>
 						<div class="col-12 mb-3">
 							<div class="input-unit" data-validate="text" data-model="subject">
 								<input type="subject" placeholder="" name="subject" v-model="subject" id="txt_subject">
