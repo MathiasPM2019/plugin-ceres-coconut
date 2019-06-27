@@ -18,19 +18,12 @@
 								<label for="txt_name">Mein Name</label>
 							</div>
 						</div>
-						<div class="col-12 col-md-6 mb-3">
-							<div class="input-unit">
-								<input type="subject" name="contactTelefon" v-model="subject" id="txt_contactTelefon">
-								<label for="txt_contactTelefon">Deine Telefonnummer</label>
-								<div class="error-feedback">Bitte Telefonnummer angeben.</div>
-							</div>
-						</div>
 						<div class="col-12 mb-3">
 							<div class="input-unit" data-validate="text" data-model="subject">
 								<input type="subject" placeholder="" name="subject" v-model="subject" id="txt_subject">
 								<label for="txt_subject">Bitte Marke und Modell angeben *</label>
 							</div>
-							<div class="error-feedback">{{ trans("Ceres::Template.contactEditSubject") }}</div>
+							<div class="error-feedback">Modell Bulls Crossbike 1</div>
 						</div>
 						<div class="col-12 mb-3">
 						<div class="input-unit">
@@ -69,7 +62,7 @@
 				</div>
 
 				<div class="mt-2 col-12 col-md-5 send-mail">
-					<button type="submit" class="btn btn-primary btn-block btn-red" :disabled="waiting" @click="validate({{ gCapture | length > 0 }})">
+					<button type="submit" class="btn btn-primary btn-block btn-red" :disabled="waiting" >
 						<i v-waiting-animation="waiting" class="fa fa-phone" aria-hidden="true"></i>
 						R&uuml;ckruf anfordern
 					</button>
