@@ -32,6 +32,12 @@
 							</div>
 							<div class="error-feedback">{{ trans("Ceres::Template.contactEditSubject") }}</div>
 						</div>
+						<div class="col-12 mb-3">
+						<div class="input-unit">
+							<input type="order" name="order" v-model="orderId" id="txt_order">
+							<label for="txt_order">{{ trans("Ceres::Template.contactOrderId") }} ({{ trans("Ceres::Template.contactOptional") }})</label>
+						</div>
+					</div>
 					  <div class="col-12">
 							<div class="input-unit textarea" data-validate="text" data-model="message">
 								<textarea name="message" id="txt_message" v-model="message" class="no-resize" rows="1" cols="1"></textarea>
