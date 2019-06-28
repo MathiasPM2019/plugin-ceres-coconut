@@ -35,7 +35,7 @@
 						</div>
 						<div class="col-12 mb-3">
 						<div class="input-unit">
-							<input type="order" name="order" v-model="orderId" id="txt_order">
+							<input type="order" name="order" v-model="orderId" id="txt_order" value="${ currentVariation | itemName }">
 							<label for="txt_order">{{ trans("Ceres::Template.contactOrderId") }} ({{ trans("Ceres::Template.contactOptional") }})</label>
 						</div>
 					</div>
