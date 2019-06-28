@@ -27,8 +27,8 @@
       <div class="mb-2" v-if="variations.length > 0">
         <variation-select template="#vue-variation-select" :attributes="attributeNameMap" :variation-units="variationUnits" :variations="variations" :preselect="currentVariation.variation.id" :unitPreselect="currentVariation.variation.unitCombinationId" @is-valid-change="isVariationSelected = $event"></variation-select>
       </div>
-      {% if currentVariation.attributes[0].attribute.names.name == 'Rahmengröße' %}
-      <div>
+
+      <div v-if="currentVariation.attributes && currentVariation.attributes[0].attribute.names.name == 'Rahmengröße'">
         <hr>
         <div class="col-12 mb-3">
           <a data-toggle="modal" href="#Groessen-check" class="text-muted">
@@ -40,7 +40,6 @@
         </div>
         <hr>
       </div>
-      {% endif %}
     <!-- /Variation -->
 
     <!-- Item Bundle -->
