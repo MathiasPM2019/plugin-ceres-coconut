@@ -17,6 +17,15 @@
           <dd v-if="currentVariation.unit">
             <span>${ currentVariation.unit.content | numberFormat }</span>
             <span>${ currentVariation.unit.names.name }</span></dd>
+            <dt class="font-weight-bold">Gewicht:</dt>
+              <dd>${ currentVariation.variation.weightG }</dd>
+              <dt class="font-weight-bold">Lieferzeit:</dt>
+              {% if currenVariation.defaultCategories[0].parentCategoryId == 429 %}
+                  <dd>3 bis 5 Werktage</dd>
+              {% else %}
+              <dd>2 bis 3 Werktage</dd>
+
+
         <dt class="font-weight-bold" v-if="currentVariation.variation.mayShowUnitPrice">{{ trans("Ceres::Template.singleItemUnitPrice") }}</dt>
           <dd v-if="currentVariation.variation.mayShowUnitPrice">${ variationGraduatedPrice.basePrice | specialOffer(currentVariation.prices, "basePrice") }</dd>
       </dl>
