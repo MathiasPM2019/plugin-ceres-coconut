@@ -17,8 +17,10 @@
           <dd v-if="currentVariation.unit">
             <span>${ currentVariation.unit.content | numberFormat }</span>
             <span>${ currentVariation.unit.names.name }</span></dd>
+            {% if currentVariation.variation.weightG > 0 %}
             <dt class="font-weight-bold">Gewicht:</dt>
               <dd>${ currentVariation.variation.weightG } KG</dd>
+              {% endif %}
               <dt class="font-weight-bold">Lieferzeit:</dt>
               {% if currentVariation.defaultCategories[0].parentCategoryId == 429 %}
                   <dd>3 bis 5 Werktage</dd>
