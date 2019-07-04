@@ -17,18 +17,11 @@
           <dd v-if="currentVariation.unit">
             <span>${ currentVariation.unit.content | numberFormat }</span>
             <span>${ currentVariation.unit.names.name }</span></dd>
-            <dt v-if="currentVariation.variation.weightG !== ''" class="font-weight-bold">Gewicht:</dt>
-              <dd v-if="currentVariation.variation.weightG !== ''" class="font-weight-bold">Gewicht:${ currentVariation.variation.weightG } KG</dd>
+            <dt v-if="currentVariation.categories.all[429] == 429" class="font-weight-bold">Gewicht:</dt>
+              <dd v-if="currentVariation.categories.all[429] == 429" class="font-weight-bold">Gewicht:${ currentVariation.variation.weightG } KG</dd>
               <dt class="font-weight-bold">Lieferzeit:</dt>
-              {% if "currentVariation.defaultCategories[0].parentCategoryId == 429" %}
                   <dd>3 bis 5 Werktage</dd>
-              {% else %}
-              <dd>2 bis 3 Werktage</dd>
-              {% endif %}
-              <dt>Kategorie ID (Test)</dt>
-              <dd>${ currentVariation.categories.all[0] }</dd>
-
-        <dt class="font-weight-bold" v-if="currentVariation.variation.mayShowUnitPrice">{{ trans("Ceres::Template.singleItemUnitPrice") }}</dt>
+                  <dt class="font-weight-bold" v-if="currentVariation.variation.mayShowUnitPrice">{{ trans("Ceres::Template.singleItemUnitPrice") }}</dt>
           <dd v-if="currentVariation.variation.mayShowUnitPrice">${ variationGraduatedPrice.basePrice | specialOffer(currentVariation.prices, "basePrice") }</dd>
       </dl>
     </div>
