@@ -17,8 +17,8 @@
           <dd v-if="currentVariation.unit">
             <span>${ currentVariation.unit.content | numberFormat }</span>
             <span>${ currentVariation.unit.names.name }</span></dd>
-            <dt v-if="currentVariation.categories.all[429] == 429" class="font-weight-bold">Gewicht:</dt>
-              <dd v-if="currentVariation.categories.all[429] == 429" class="font-weight-bold">Gewicht:${ currentVariation.variation.weightG } KG</dd>
+            <dt v-if="currentVariation.ids.categories.all[429] == 429" class="font-weight-bold">Gewicht:</dt>
+              <dd v-if="currentVariation.ids.categories.all[429] == 429" class="font-weight-bold">Gewicht:${ currentVariation.variation.weightG } KG</dd>
               <dt class="font-weight-bold">Lieferzeit:</dt>
                   <dd>3 bis 5 Werktage</dd>
                   <dt class="font-weight-bold" v-if="currentVariation.variation.mayShowUnitPrice">{{ trans("Ceres::Template.singleItemUnitPrice") }}</dt>
