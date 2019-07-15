@@ -15,7 +15,7 @@
           <dd>${ currentVariation.variation.number }</dd>
         <dt class="font-weight-bold" v-if="currentVariation.unit">Inhalt / Menge:</dt>
           <dd v-if="currentVariation.unit">
-            <dd v-if="currentVariation.ids.categories.all[1] == 429">1x Fahrrad, 1x Pedalschl&uuml;ssel, 1x Inbusschl&uuml;ssel</dd>
+            <dd v-if="currentVariation.ids.categories.all[1] == 429">1x Fahrrad, 1x Werkzeug-Set</dd>
             <dd v-else>
               <span>${ currentVariation.unit.content | numberFormat }</span>
               <span>${ currentVariation.unit.names.name }</span>
@@ -124,7 +124,7 @@
     <slot name="AdditionalContentAfterAddToBasket"></slot>
 
     <slot name="AdditionalContentAfterVAT"></slot>
-    
+
   </div>
 </div>
 <!-- Frage stellen am  Artikel -->

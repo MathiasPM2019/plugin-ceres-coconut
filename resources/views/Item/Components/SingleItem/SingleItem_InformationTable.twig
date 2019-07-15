@@ -25,12 +25,20 @@
             <div class="tab-pane active overflow-auto" :id="'details-' + currentVariation.variation.id" role="tabpanel" v-if="isDescriptionTabActive">
                 <div class="my-4" v-html="currentVariation.texts.description">
                 </div>
-                <dl>
-                  <dt><img class="m-2" style="max-height:40px" src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/fahrrad_testen.svg"></dt>
-                  <dd style="height:40px">Dieses Modell kannst du in unseren Filialen testen!</dd>
-                  <dt><img class="pull-left m-2" style="max-height:40px" src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/fahrrad_testen.svg"></dt>
-                  <dd style="height:40px">Dein Wunschfahrrad wird fahrbereit montiert<br> und stehend versendet!</dd>
-                </dl>
+                <div class="row m-0">
+                  <div class="col-12 col-lg-6">
+                    <div class="row m-0">
+                      <div class="col-2"><img src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/fahrrad_testen.svg" class="m-2" style="max-height: 40px;"></div>
+                      <div class="col-8 p-0">Dieses Modell kannst du auch in unseren Filialen testen!</div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <div class="row m-0">
+                      <div class="col-2"><img src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/fahrrad_testen.svg" class="m-2" style="max-height: 40px;"></div>
+                      <div class="col-8 p-0">Dieses Modell wird für dich fahrbereit montiert, neu verpackt und stehend versendet!</div>
+                    </div>
+                  </div>
+                </div>
             </div>
         {% endif %}
 
