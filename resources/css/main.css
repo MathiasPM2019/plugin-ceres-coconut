@@ -728,3 +728,34 @@ transform: translate(-50%) rotate(170deg);
     padding: 0 10px 0 10px;
   }
 }
+
+/* technical Data */
+
+.tab-content dl {
+  width: 33%;
+  float: left;
+}
+
+.tab-content dl dt {
+  font-size: 16px;
+  font-weight: 600;
+  color: #666;
+}
+
+.tab-content dl dd  {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.tab-content dl dd:before  {
+  content: "// ";
+  font-size: 16px;
+}
+
+.tab-content table td:nth-child(1) {
+  font-size: 16px;
+  width: 40%;
+  padding: 4px;
+  font-weight: 600;
+  color: #666;
+}
