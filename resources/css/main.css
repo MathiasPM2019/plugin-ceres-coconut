@@ -740,16 +740,19 @@ transform: translate(-50%) rotate(170deg);
   font-size: 16px;
   font-weight: 600;
   color: #666;
+  margin-bottom: 5px;
 }
 
 .tab-content dl dd  {
   font-size: 12px;
   margin-left: 5px;
+  line-height: 16px;
 }
 
 .tab-content dl dd:before  {
-  content: "// ";
+  content: "• ";
   font-size: 16px;
+  color: #666;
 }
 
 .tab-content table td:nth-child(1) {
