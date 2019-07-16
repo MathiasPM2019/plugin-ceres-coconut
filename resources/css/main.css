@@ -760,13 +760,23 @@ transform: translate(-50%) rotate(170deg);
 @media (max-width:767px){
 
 .tab-content dl {
-  width: 50%;
-  float: left;
+  width: 100%;
+  margin-left: 30px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+  .tab-content dl:nth-last-of-type(1){
+  margin-bottom: 20px;
 }
 
   .tab-content dl dt {
-  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #777;
+  margin-top: 0px;
   margin-bottom: 4px;
+
 }
 }
 
