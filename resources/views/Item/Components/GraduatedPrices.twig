@@ -5,9 +5,9 @@
 
             <table class="graduated-prices-table text-muted">
                 <tr v-for="(price, index) in graduatedPrices">
-                    <td>{{ trans("Ceres::Template.singleItemMinimumQuantity") }} ${ price.minimumOrderQuantity }</td>
+                    <td>ab Bestellmenge ${ price.minimumOrderQuantity }</td>
                     <td>
-                        ${ price.unitPrice.formatted }
+                        <span style="color:#c00418;">je ${ price.unitPrice.formatted }</span>
                         <transition name="fade">
                             <i class="fa fa-lg fa-check-circle-o ml-3" v-if="index === activeGraduationIndex" aria-hidden="true"></i>
                         </transition>
