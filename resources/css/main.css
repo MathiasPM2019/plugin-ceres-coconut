@@ -612,6 +612,10 @@ transform: translate(-50%) rotate(170deg);
 }
 
 /* ItemSingelView */
+div.owl-stage>div {
+  padding: 20px;
+}
+
 .item-facts * {
   color: #666;
 }
