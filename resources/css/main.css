@@ -737,6 +737,10 @@ transform: translate(-50%) rotate(170deg);
 
 /* technical Data */
 
+.tab-content {
+  color: #666;
+}
+
 .tab-content dl {
   width: 33%;
   float: left;

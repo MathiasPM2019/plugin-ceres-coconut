@@ -25,7 +25,7 @@
             <div class="tab-pane active overflow-auto" :id="'details-' + currentVariation.variation.id" role="tabpanel" v-if="isDescriptionTabActive">
                 <div class="my-4" v-html="currentVariation.texts.description">
                 </div>
-                <div v-if="currentVariation.ids.categories.all[1] == 429" class="row m-0 border-top pt-3">
+                <div v-if="currentVariation.ids.categories.all[1] == 429" class="row m-0 border-top p-0 pt-3">
                   <div class="col-12 col-lg-6">
                     <div class="row m-0">
                       <div class="col-3"><img src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/fahrrad_testen.svg" class="m-2" style="max-height: 40px;"></div>
@@ -38,8 +38,28 @@
                       <div class="col-8 p-0">Dieses Modell wird für dich fahrbereit montiert, neu verpackt und stehend versendet!</div>
                     </div>
                   </div>
+                  <div class="col-12 mt-4 pt-4 border-top">
+                    <h4>Was ist in der Packung?</h4>
+
+                      &middot; dein Fahrrad, bereits montiert und vollständig überprüft<br>
+                      &middot; eine Bedienungsanleitung mit vielen Tipps zur Pflege und Handhabung<br>
+                      &middot; ein 15mm Maulschlüssel zum festziehen der Pedale (Starter-Kit Werkzeug)<br>
+                      &middot; ein 3-fach Inbusschlüssel in 4mm, 5mm und 6mm für die Ausrichtung und Verstellen des Lenkers (Starter-Kit Werkzeug)<br>
+                      &middot; eine Anleitung zur Montage der Pedalen und des Lenkers<br>
+                      &middot; optionales Zubehör, je nach Fahrradtyp (z.B. Ladegerät für Akkus)<br>
+
+                    <h4 class="mt-4">In 5 Minuten ist dein Fahrrad fahrbereit!</h4>
+                    <p>• Fahrrad auspacken<br>
+                      • Pedalen einschrauben und festziehen<br>
+                      • Lenker ausrichten und los geht's!<br><br>
+                      Unser Werkstatt-Team hat für dich bereits alle technisch notwendigen Schritte am Fahrrad durchgeführt.
+                       Wir fahren <span class="font-weight-bold">jedes</span> Fahrrad nach der Montage probe und stellen Bremsen und Schaltung sowie Luftdruck sorgfältig ein.
+                    </p>
+                  </div>
+
                 </div>
             </div>
+
         {% endif %}
 
         {% if 'item.technical_data' in itemData or 'all' in itemData %}
