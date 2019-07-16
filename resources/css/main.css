@@ -81,6 +81,12 @@ div.grey-dark hr, div.grey-dark-mobile hr {
 .lh-025  {
   min-height: 5px;
 }
+
+.font-size-075 {
+  font-size: 0.9rem;
+}
+
+
 .padding-y-1 {padding: 0.7rem 0;}
 .padding-y-075 {padding: 0.5rem 0;}
 .padding-y-05 {padding: 0.3rem 0;}
@@ -734,6 +740,7 @@ transform: translate(-50%) rotate(170deg);
 .tab-content dl {
   width: 33%;
   float: left;
+  padding-right: 15px;
 }
 
 .tab-content dl dt {
@@ -749,7 +756,7 @@ transform: translate(-50%) rotate(170deg);
   font-size: 14px;
   font-weight:500;
   color: #777;
-  line-height: 10px;
+  line-height: 14px;
 }
 
 .tab-content dl dd:before  {
