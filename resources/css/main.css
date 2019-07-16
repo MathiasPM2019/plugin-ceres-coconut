@@ -739,20 +739,35 @@ transform: translate(-50%) rotate(170deg);
 .tab-content dl dt {
   font-size: 16px;
   font-weight: 600;
-  color: #666;
+  color: #777;
+  margin-top: 35px;
   margin-bottom: 5px;
+
 }
 
 .tab-content dl dd  {
-  font-size: 12px;
-  margin-left: 5px;
-  line-height: 16px;
+  font-size: 14px;
+  font-weight:500;
+  color: #777;
+  line-height: 10px;
 }
 
 .tab-content dl dd:before  {
-  content: "• ";
-  font-size: 16px;
-  color: #666;
+  content: "•";
+  font-size: 12px;
+}
+
+@media (max-width:767px){
+
+.tab-content dl {
+  width: 50%;
+  float: left;
+}
+
+  .tab-content dl dt {
+  margin-top: 15px;
+  margin-bottom: 4px;
+}
 }
 
 .tab-content table td:nth-child(1) {
