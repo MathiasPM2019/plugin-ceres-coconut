@@ -133,6 +133,20 @@ div.grey-dark hr, div.grey-dark-mobile hr {
   color: #c00418;
 }
 
+.btn-primary {
+  border: 2px solid #c00418;
+  background: #efefef;
+  border-radius: 0;
+  color: #c00418;
+}
+
+.btn-primary:hover {
+  border: 2px solid #c00418;
+  background: #fff;
+  border-radius: 0;
+  color: #c00418;
+  }
+
 /* Bereich Header */
 .header-top-scroll {
   position: relative;
