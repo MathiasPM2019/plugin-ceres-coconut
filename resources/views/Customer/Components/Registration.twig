@@ -1,1 +1,63 @@
-<!-- Insert markup for registration here -->
+{% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
+
+{{ component( "Ceres::Customer.Components.AddressInputGroup.AddressInputGroup" ) }}
+<script type="x/template" id="vue-registration">
+    <div>
+        <div class="modal-body">
+            <div class="row" :id="'registration' + _uid">
+                <div class="col-sm-12">
+                    <div class="input-unit" data-validate="mail">
+                        {% set uid_mail = uid() %}
+                        <input type="text" name="email" id="{{ uid_mail }}" v-model="username" data-autofocus>
+                        <label for="{{ uid_mail }}">{{ trans("Ceres::Template.regEmail") }}*</label>
+                    </div>
+                </div>
+
+                <div class="col-sm-6" v-if="!guestMode">
+                    <div class="input-unit" :class="{'no-bottom media-xs-d': modalElement}" data-validate="password" ref="passwordInput">
+                        <popper v-cloak trigger="focus" placement="left" ref="passwordHint">
+                            {% set uid_pwd = uid() %}
+                            <input slot="handle" type="password" name="password" id="{{ uid_pwd }}" v-model="password">
+                            <div slot="title">
+                                {{ trans("Ceres::Template.regPasswordHintTitle") }}
+                            </div>
+                            <ul slot="content" class="pl-3">
+                                <li>{{ trans("Ceres::Template.regPasswordHintLength") }}</li>
+                                <li>{{ trans("Ceres::Template.regPasswordHintDigit") }}</li>
+                                <li>{{ trans("Ceres::Template.regPasswordHintChar") }}</li>
+                            </ul>
+                        </popper>
+
+                        <label for="{{ uid_pwd }}">{{ trans("Ceres::Template.regPassword") }}*</label>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 input-unit-group" v-if="!guestMode">
+                    <div class="input-unit" :class="{'no-bottom': modalElement}" data-validate="ref">
+                        {% set uid_pwd_repeat = uid() %}
+                        <input type="password" name="password-repeat" id="{{ uid_pwd_repeat }}" v-model="passwordRepeat" data-validate-ref="#{{ uid_pwd }}">
+                        <label for="{{ uid_pwd_repeat }}">{{ trans("Ceres::Template.regRepeatPassword") }}*</label>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <address-input-group
+                        template="#vue-address-input-group"
+                        v-if="!isSimpleRegistration"
+                        address-type="1"
+                        :value="billingAddress"
+                        @input="setAddressDataField($event)">
+                    </address-input-group>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            {{ LayoutContainer.show("Ceres::RegistrationOverlay.ExtendOverlayButtons") }}
+
+            <button @click="validateRegistration" :disabled="isDisabled" class="btn btn-primary btn-medium btn-right">
+                <i class="fa fa-user-plus" v-waiting-animation="isDisabled" aria-hidden="true"></i>
+                {{ trans("Ceres::Template.regRegister") }}
+            </button>
+        </div>
+    </div>
+</script>
