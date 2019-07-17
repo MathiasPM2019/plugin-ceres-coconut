@@ -147,6 +147,52 @@ div.grey-dark hr, div.grey-dark-mobile hr {
   color: #c00418;
   }
 
+  /* Widgtes manipuliert */
+
+  .widget-image-box.widget-image-box-block-caption > .widget-inner .widget-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 1.2rem;
+      color: #666;
+      background-color: #efefef;
+  }
+
+  .widget-image-box.widget-image-box-block-caption > .widget-inner .widget-caption h2 {
+     font-size: 18px;
+  }
+
+  .widget-image-box.widget-image-box-block-caption > .widget-inner .widget-caption i {
+    display: none;
+  }
+
+  .widget-image-box.widget-image-box-block-caption > .widget-inner .widget-caption h2:after {
+    font-family: FontAwesome;
+    content: "\f105";
+    margin-left: 8px;
+    transition: all ease 500ms;
+  }
+
+  .widget-image-box.widget-image-box-block-caption > a[href].widget-inner:hover .widget-caption h2:after {
+    font-family: FontAwesome;
+    content: "\f105";
+    margin-left: 100px;
+    color: transparent;
+    transition: all ease 500ms;
+  }
+
+  @media (max-width:575.98px) {
+.widget-image-box.widget-image-box-block-caption > .widget-inner {
+    position: absolute;
+    padding: 0.2rem;
+  }
+
+  .widget-image-box.widget-image-box-block-caption > .widget-inner .widget-caption {
+    padding: 0.8rem;
+      }
+}
+
 /* Bereich Header */
 .header-top-scroll {
   position: relative;
