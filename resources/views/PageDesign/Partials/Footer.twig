@@ -82,7 +82,7 @@
                   <li><a href="{{ services.category.getURLById(856)  }}">Zahlungsm&ouml;glichkeiten</a></li>
                   <li><a href="{{ services.category.getURLById(855) }}">Versandkosten &amp; Lieferm&ouml;glichkeiten</a></li>
                   <li><a href="{{ services.category.getURLById(1173) }}">kostenfreie R&uuml;cksendung</a></li>
-                  {% if services.customer.getContactId() > 0 %}
+                  {% if services.customer.getContactId() == 0 %}
                   <li><a href="/register">Registrieren</a></li>
                   {% endif %}
                   <li><a href="/my-account">Mein Konto</a></li>
