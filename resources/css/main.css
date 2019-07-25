@@ -193,6 +193,11 @@ div.grey-dark hr, div.grey-dark-mobile hr {
       }
 }
 
+.widget-image-box {
+    padding-bottom: 0 !important;
+    min-height: 14rem;
+}
+
 /* Bereich Header */
 .header-top-scroll {
   position: relative;
