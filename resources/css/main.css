@@ -149,6 +149,23 @@ div.grey-dark hr, div.grey-dark-mobile hr {
 
   /* Widgtes manipuliert */
 
+  .widget ol.carousel-indicators {
+  display: none;
+}
+
+.carousel-control-next, .carousel-control-prev {
+  opacity: 1;
+}
+
+.widget-image-carousel.widget-primary .carousel-control .fa {
+    color: #fff;
+}
+
+.widget-image-carousel.widget-primary .carousel-control .fa {
+    color: #fff;
+    text-shadow: 0px 0px 3px rgba(10,10,10,0.8)
+}  
+
   .widget-image-box.widget-image-box-block-caption > .widget-inner .widget-caption {
       position: absolute;
       left: 0;
@@ -181,6 +198,11 @@ div.grey-dark hr, div.grey-dark-mobile hr {
     color: transparent;
     transition: all ease 500ms;
   }
+
+  .widget-image-box.widget-primary a[href].widget-inner:hover .widget-caption {
+    color: #666;
+    background-color: #efefef;
+}
 
   @media (max-width:575.98px) {
 .widget-image-box.widget-image-box-block-caption > .widget-inner {
