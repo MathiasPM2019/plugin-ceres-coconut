@@ -164,7 +164,7 @@ div.grey-dark hr, div.grey-dark-mobile hr {
 .widget-image-carousel.widget-primary .carousel-control .fa {
     color: #fff;
     text-shadow: 0px 0px 3px rgba(10,10,10,0.8)
-}  
+}
 
   .widget-image-box.widget-image-box-block-caption > .widget-inner .widget-caption {
       position: absolute;
@@ -213,11 +213,16 @@ div.grey-dark hr, div.grey-dark-mobile hr {
   .widget-image-box.widget-image-box-block-caption > .widget-inner .widget-caption {
     padding: 0.8rem;
       }
+
+.widget-image-box {
+          padding-bottom: 0 !important;
+          min-height: 14rem;
+      }
 }
 
 .widget-image-box {
     padding-bottom: 0 !important;
-    min-height: 14rem;
+    min-height: 16rem;
 }
 
 /* Bereich Header */
