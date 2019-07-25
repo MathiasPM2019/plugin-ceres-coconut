@@ -38,7 +38,7 @@
 
             <!-- STORE SPECIALS -->
             <slot name="store-special">
-                <item-store-special v-if="storeSpecial || itemData.variation.bundleType == 'bundle'"
+                <item-store-special v-if="storeSpecial"
                                     :store-special="storeSpecial"
                                     :recommended-retail-price="itemData.prices.rrp"
                                     :variation-retail-price="itemData.prices.default"
