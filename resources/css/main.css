@@ -105,6 +105,7 @@ div.grey-dark hr, div.grey-dark-mobile hr {
 .modal-content {
     border: 2px solid #c00418;;
     border-radius: 0px;
+    overflow: hidden;
   }
 
 /*ELEMENTE*/
