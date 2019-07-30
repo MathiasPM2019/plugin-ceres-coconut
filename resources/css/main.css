@@ -148,6 +148,14 @@ div.grey-dark hr, div.grey-dark-mobile hr {
   color: #c00418;
   }
 
+  hr.border-50 {
+    width:50%;
+  }
+  @media (max-width:576px) {
+    hr.border-50 {
+    width:30%;
+  }
+  }
   /* Widgtes manipuliert */
 
   .widget ol.carousel-indicators {
