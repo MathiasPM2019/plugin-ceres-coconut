@@ -162,12 +162,14 @@ div.grey-dark hr, div.grey-dark-mobile hr {
 .welcome-wrapper {
    background:url(https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Content-Pages/Startseite/startseite-2-fach-neu.jpg) 50% 50% no-repeat;
    background-size:100% auto;
+   height: 550px;
 }
 
 @media (max-width:992px) {
   .welcome-wrapper {
    background:url(https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Content-Pages/Startseite/startseite-2-fach-neu.jpg) 50% 50% no-repeat;
    background-size:130% auto;
+   height: 350px;
 }
 }
 
@@ -175,6 +177,7 @@ div.grey-dark hr, div.grey-dark-mobile hr {
   .welcome-wrapper {
    background:url(https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Content-Pages/Startseite/startseite-2-fach-neu.jpg) 50% 50% no-repeat;
    background-size:140% auto;
+   height: 250px;
 }
 }
 
@@ -182,6 +185,7 @@ div.grey-dark hr, div.grey-dark-mobile hr {
   .welcome-wrapper {
    background:url(https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Content-Pages/Startseite/startseite-2-fach-neu.jpg) 50% 50% no-repeat;
    background-size:150% auto;
+   height: 220px;
 }
 }
 
