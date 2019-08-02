@@ -25,9 +25,8 @@
 {% block PageBody %}
 
     {% if ceresConfig.homepage.showShopBuilderContent or request.get('isContentBuilder') == 1 %}
-
+      {% include 'CeresCoconut::Homepage.StartHomepage.twig' %}
         <div class="home container-max">
-            {% include 'CeresCoconut::Homepage.StartHomepage.twig' %}
             <div class="row">
                 <div class="col">
                     {% for content in container("Ceres::Homepage") if content.plugin == "Plenty" %}
