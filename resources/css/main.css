@@ -243,11 +243,37 @@ div.grey-dark hr, div.grey-dark-mobile hr {
   }
 
   .container-max .logo img {
-      max-width: 100px;
-      max-height:40px;
-      margin: auto;
-     }
+    max-width: 100px;
+    max-height:40px;
+    margin: auto;
+  }
 
+  .img-kachel {
+      overflow: hidden;
+        }
+  .img-kachel-wrapper {
+      height: 200px;
+      overflow: hidden;
+       }
+  .img-kachel img {
+        max-width: 330px;
+        transition: all 400ms;
+        }
+  .img-kachel img:hover {
+      position: relative;
+      transform:scale(1.1);
+      transition: all 400ms;
+    }
+
+  .img-kachel p {
+      margin-top: -2px;
+      width: 100%;
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+      color: #444;
+      background-color: #f0f0f0;
+  }
   /* Widgtes manipuliert */
 
   .widget ol.carousel-indicators {
