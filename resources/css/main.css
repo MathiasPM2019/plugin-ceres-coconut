@@ -246,6 +246,14 @@ div.grey-dark hr, div.grey-dark-mobile hr {
     max-width: 70px;
     max-height:40px;
     margin: auto;
+    filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: url(desaturate.svg#greyscale);
+  filter: gray;
+  -webkit-filter: grayscale(1);
   }
 
   .img-kachel {
@@ -256,7 +264,7 @@ div.grey-dark hr, div.grey-dark-mobile hr {
       overflow: hidden;
        }
   .img-kachel img {
-        max-width: 330px;
+        max-width: 350px;
         transition: all 400ms;
         }
   .img-kachel img:hover {
