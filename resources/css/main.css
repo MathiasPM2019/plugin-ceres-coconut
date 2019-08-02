@@ -273,14 +273,22 @@ div.grey-dark hr, div.grey-dark-mobile hr {
       transition: all 400ms;
     }
 
-  .img-kachel p {
-      margin-top: -2px;
-      width: 100%;
-      padding: 15px;
-      text-align: center;
-      font-size: 14px;
-      color: #444;
-      background-color: #f0f0f0;
+.img-kachel p {
+    margin-top: -2px;
+    width: 100%;
+    height: 150px;
+     overflow: hidden;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #444;
+    background-color: #f0f0f0;
+    }
+
+.img-kachel p span {
+    border-bottom: 1px solid #444;
+    display: inline-block;
+    margin-bottom: 15px;
   }
   /* Widgtes manipuliert */
 
