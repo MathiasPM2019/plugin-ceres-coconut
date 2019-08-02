@@ -232,6 +232,22 @@ div.grey-dark hr, div.grey-dark-mobile hr {
     align-items: center;
   }
 
+  /* Bereich unter Startwrapper */
+
+  .logowrapper {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container-max .logo img {
+      max-width: 100px;
+      max-height:40px;
+      margin: auto;
+     }
+
   /* Widgtes manipuliert */
 
   .widget ol.carousel-indicators {
