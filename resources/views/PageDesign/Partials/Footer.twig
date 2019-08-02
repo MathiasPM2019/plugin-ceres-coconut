@@ -8,6 +8,14 @@
 {% set footerContainer = LayoutContainer.show("CeresCoconut::Footer") | trim %}
 {% if footerContainer is empty %}
 
+<!-- Newsletter -->
+<div class="row">
+  <div class="col-12">
+    <h2>Newsletter</h2>
+    {% include "Ceres::Newsletter.Components.NewsletterInput" %}
+  </div>
+</div>
+
 <div class="footer">
 
     <div class="{% if topButtonPosition == "right" %}back-to-top{% else %}back-to-top-center{% endif %} hidden-sm-down">
