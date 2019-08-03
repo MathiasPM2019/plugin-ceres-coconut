@@ -273,6 +273,10 @@ div.grey-dark hr, div.grey-dark-mobile hr {
       transition: all 400ms;
     }
 
+.mkt-homepage row {
+  align-items: stretch;
+}
+
 .img-kachel p {
     margin-top: -2px;
     width: 100%;
@@ -289,6 +293,7 @@ div.grey-dark hr, div.grey-dark-mobile hr {
     border-bottom: 1px solid #444;
     display: inline-block;
     margin-bottom: 15px;
+    font-family: handlee;
   }
   /* Widgtes manipuliert */
 
