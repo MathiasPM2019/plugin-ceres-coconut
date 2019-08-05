@@ -569,6 +569,21 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
 	text-decoration: underline;
 }
 
+.image-list {
+	list-style: none;
+	padding: 0;
+	text-align: center;
+}
+.image-list > li {
+	display: inline-block;
+	margin: 2px 12px;
+	vertical-align: middle;
+}
+
+ul.image-list img {
+    max-height: 20px;
+}
+
 /* START Kategorie */
 
 .parallax-img-container {
