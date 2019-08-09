@@ -438,9 +438,9 @@ div.grey-dark hr, div.grey-dark-mobile hr {
 nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu {
   justify-content: center;
 }
-li.mainddown {
-  width: 25%;
-  font-size: 18px;
+#mainNavbarCollapsable ul.mainmenu li.mainddown {
+   font-size: 18px;
+  float: none;
 }
 .no-touch nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li:hover{
   color: #fff !important;
