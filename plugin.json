@@ -7,10 +7,10 @@
     "phone"             :   "+49 561 98 681 100",
     "description"       :   "Theme angepasst von Mathias, Update-Versuch auf 1.0.7",
     "namespace"         :   "CeresCoconut",
-    "author"            :   "plentymarkets GmbH",
+    "author"            :   "plentymarkets AG",
     "type"              :   "theme",
     "require"           :   {
-                                "Ceres":"~3.0"
+                                "Ceres":">= 3.0.0"
                             },
     "serviceProvider"   :   "CeresCoconut\\Providers\\CeresCoconutServiceProvider",
     "dataProviders"     :
