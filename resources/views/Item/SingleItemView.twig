@@ -7,7 +7,7 @@
 {{ component( "Ceres::Item.Components.OrderProperties" ) }}
 {{ component( "Ceres::Item.Components.OrderPropertyList" ) }}
 {{ component( "CeresCoconut::Item.Components.SingleItem" ) }}
-{{ component( "CeresCoconut::Item.Components.VariationSelect" ) }}
+{{ component( "Ceres::Item.Components.VariationSelect" ) }}
 
 <single-item v-cloak item-data="{{ item | json_data }}" attributes-data="{{ attributes | json_data }}" variations="{{ variations | json_data }}">
     <template #before-price>{{ LayoutContainer.show("Ceres::SingleItem.BeforePrice", item.documents[0].data) }}</template>
