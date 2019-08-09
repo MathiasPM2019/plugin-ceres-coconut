@@ -437,10 +437,16 @@ div.grey-dark hr, div.grey-dark-mobile hr {
 }
 nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu {
   justify-content: center;
+  float: none;
 }
 #mainNavbarCollapsable ul.mainmenu li.mainddown {
    font-size: 18px;
   float: none;
+}
+
+#mainNavbarCollapsable ul.mainmenu li.mainddown:hover {
+   background-color: transparent;
+  text-shadow: 0px 0px 5px rgba(255,255,255,0.7);
 }
 .no-touch nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li:hover{
   color: #fff !important;
