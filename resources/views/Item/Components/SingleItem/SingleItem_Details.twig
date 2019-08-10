@@ -28,9 +28,9 @@
 
     <!-- Variation enthaelt groessen-check-->
 
-      <div class="mb-2" v-if="variations.length > 0">
-        <variation-select template="#vue-variation-select" :attributes="attributeNameMap" :variation-units="variationUnits" :variations="variations" :preselect="currentVariation.variation.id" :unitPreselect="currentVariation.variation.unitCombinationId" @is-valid-change="isVariationSelected = $event"></variation-select>
-      </div>
+    <div class="mb-3" v-if="attributes.length || Object.keys(units).length">
+        <variation-select></variation-select>
+    </div>
 
       <div v-if="currentVariation.attributes.length && currentVariation.attributes[0].attribute.names.name == 'Rahmengröße'">
         <hr>
