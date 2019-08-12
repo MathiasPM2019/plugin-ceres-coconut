@@ -74,7 +74,7 @@
 
 {% block PageBody %}
     {{ set_item_data_base(item.documents[0].data) }}
-    {{ component("CeresCoconut::Item.Components.SingleItem") }}
+    {{ component("Ceres::Item.Components.SingleItem") }}
 
     {% set shopBuilderTemplate = "" %}
     {% set currentCategory = services.category.getCurrentCategory() %}
@@ -109,7 +109,7 @@
         {# Empty shop builder template is loading #}
     {% else %}
         {# No item template defined in ShopBuilder => use default template from plugin #}
-        {% include "CeresCoconut::Item.SingleItemView" %}
+        {% include "Ceres::Item.SingleItemView" %}
     {% endif %}
 
 {% endblock %}
