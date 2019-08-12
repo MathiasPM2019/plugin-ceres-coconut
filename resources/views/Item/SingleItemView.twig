@@ -2,11 +2,11 @@
 {{ component( "CeresCoconut::Item.Components.AddToWishList" ) }}
 {{ component( "CeresCoconut::Item.Components.GraduatedPrices" ) }}
 {{ component( "Ceres::Item.Components.ItemBundle" ) }}
-{{ component( "CeresCoconut::Item.Components.ItemImageCarousel" ) }}
+{{ component( "Ceres::Item.Components.ItemImageCarousel" ) }}
 {{ component( "Ceres::Item.Components.OldVariationSelect" ) }}
 {{ component( "Ceres::Item.Components.OrderProperties" ) }}
 {{ component( "Ceres::Item.Components.OrderPropertyList" ) }}
-{{ component( "CeresCoconut::Item.Components.SingleItem" ) }}
+{{ component( "Ceres::Item.Components.SingleItem" ) }}
 {{ component( "Ceres::Item.Components.VariationSelect" ) }}
 
 <single-item v-cloak item-data="{{ item | json_data }}" attributes-data="{{ attributes | json_data }}" variations="{{ variations | json_data }}">
@@ -21,7 +21,7 @@
     <template #item-list-container>{{ LayoutContainer.show("Ceres::SingleItem.ItemListContainer", item) }}</template>
     <template #feedback-container>{{ LayoutContainer.show("Ceres::SingleItem.FeedbackContainer", item) }}</template>
     <template #image-carousel>
-        {% set ImageCarouselOverride = LayoutContainer.show("CeresCoconut::SingleItem.ImageCarousel") %}
+        {% set ImageCarouselOverride = LayoutContainer.show("Ceres::SingleItem.ImageCarousel") %}
         {% if ImageCarouselOverride|trim is empty %}
             <item-image-carousel image-url-accessor="url" template="#vue-item-image-carousel"></item-image-carousel>
         {% else %}
