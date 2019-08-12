@@ -1,13 +1,13 @@
 {{ component( "Ceres::Basket.Components.AddToBasket" ) }}
-{{ component( "Ceres::Item.Components.AddToWishList" ) }}
-{{ component( "Cerest::Item.Components.GraduatedPrices" ) }}
+{{ component( "CeresCoconut::Item.Components.AddToWishList" ) }}
+{{ component( "CeresCoconutt::Item.Components.GraduatedPrices" ) }}
 {{ component( "Ceres::Item.Components.ItemBundle" ) }}
 {{ component( "Ceres::Item.Components.ItemImageCarousel" ) }}
 {{ component( "Ceres::Item.Components.OldVariationSelect" ) }}
 {{ component( "Ceres::Item.Components.OrderProperties" ) }}
 {{ component( "Ceres::Item.Components.OrderPropertyList" ) }}
-{{ component( "Ceres::Item.Components.SingleItem" ) }}
-{{ component( "Ceres::Item.Components.VariationSelect" ) }}
+{{ component( "CeresCoconut::Item.Components.SingleItem" ) }}
+{{ component( "CeresCoconut::Item.Components.VariationSelect" ) }}
 
 <single-item v-cloak item-data="{{ item | json_data }}" attributes-data="{{ attributes | json_data }}" variations="{{ variations | json_data }}">
     <template #before-price>{{ LayoutContainer.show("Ceres::SingleItem.BeforePrice", item.documents[0].data) }}</template>
