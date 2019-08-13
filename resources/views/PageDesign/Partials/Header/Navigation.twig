@@ -7,8 +7,8 @@
 <nav class="grey-dark navbar{% if useMegaMenu %} megamenu{%endif%}">
     <div class="container-max grey-dark">
         <div class="row">
-            <div class="brand-wrapper hidden-lg-up" {% if showHeaderNavBar == "side" %}style="position: relative"{% endif %}>
-                <a class="navbar-brand float-lg-left d-lg-none" href="{{ homepageURL }}">
+            <div class="brand-wrapper hidden-lg-up mx-3" {% if showHeaderNavBar == "side" %}style="position: relative"{% endif %}>
+                <a class="navbar-brand d-lg-none" href="{{ homepageURL }}">
                     {% if ('http' in companyLogo) or ('layout/' in companyLogo) %}
                         <img alt="{{ companyName }}" src="{{ companyLogo }}" class="img-fluid" crossorigin="anonymous" />
                     {% else %}
@@ -16,7 +16,7 @@
                     {% endif %}
                 </a>
 
-                <button id="btnMainMenuToggler" v-open-mobile-navigation class="navbar-toggler d-lg-none" type="button">
+                <button id="btnMainMenuToggler" v-open-mobile-navigation class="navbar-toggler d-lg-none mr-3" type="button">
                     &#9776;
                 </button>
             </div>
