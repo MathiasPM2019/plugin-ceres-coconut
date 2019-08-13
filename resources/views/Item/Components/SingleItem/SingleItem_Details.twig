@@ -15,12 +15,14 @@
           <dd>${ currentVariation.variation.number }</dd>
         <dt class="font-weight-bold" v-if="currentVariation.unit">Inhalt / Menge:</dt>
           <dd v-if="currentVariation.unit">
-            <dd>
+            <dd v-if="currentVariation.ids.categories.all[1] == 429">1x Fahrrad, 1x Starter-Kit Werkzeug</dd>
+            <dd v-else>
               <span>${ currentVariation.unit.content | numberFormat }</span>
               <span>${ currentVariation.unit.names.name }</span>
             </dd>
             <dt class="font-weight-bold">Lieferzeit</dt>
-              <dd>ca. 1 bis 2 Werktage</dd>
+              <dd v-if="currentVariation.ids.categories.all[1] == 429">ca. 3 bis 5 Werktage</dd>
+              <dd v-else>ca. 1 bis 2 Werktage</dd>
             <dt class="font-weight-bold" v-if="currentVariation.variation.mayShowUnitPrice">{{ trans("Ceres::Template.singleItemUnitPrice") }}</dt>
           <dd v-if="currentVariation.variation.mayShowUnitPrice">${ variationGraduatedPrice.basePrice | specialOffer(currentVariation.prices, "basePrice") }</dd>
       </dl>
@@ -67,14 +69,14 @@
                             <span :content="currentVariation.prices.default.currency"></span>
     </span>
 
-    <span class="vat small text-muted">
+    <span class="vat small text-muted" style="display:block;">
           {% if services.customer.showNetPrices() %}{{ trans("Ceres::Template.singleItemExclVAT") }}{% else %}{{ trans("Ceres::Template.singleItemInclVAT") }}{% endif %} zzgl. optionaler
         <a {% if shippingCat is not empty %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.singleItemShippingCosts") }}">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a>
     </span>
 
     <slot name="AfterPrice"></slot>
 
-    <span v-if="currentVariation.variation.availability" :class="'mt-4 availability badge availability_' + currentVariation.variation.availability.id">
+    <span v-if="currentVariation.variation.availability" :class="'mt-1 availability badge availability_' + currentVariation.variation.availability.id">
                             <span>
                                 ${ currentVariation.variation.availability.names.name }
                             </span>
