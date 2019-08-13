@@ -567,7 +567,22 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
 
 /*Footer*/
 .newsletter-bild {
+  height: 350px;
   background-image: url(https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Content-Pages/Startseite/newsletter_intersport_kloepping.jpg);
+  background-position: 50%;
+  background-size:  cover;
+}
+
+@media (max-width:768px) {
+  .newsletter-bild {
+    height: 250px;
+  }
+}
+
+@media (max-width:576px) {
+  .newsletter-bild {
+    height: 200px;
+  }
 }
 
 ul.newsletter-benefits li {
