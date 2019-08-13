@@ -5,6 +5,10 @@ body {
 
 /* Farben definieren 2019 */
 
+.text-color-red {
+  color: #c00418;
+}
+
 body > #vue-app, body > #vue-error {
   background-color: #fff;
 }
@@ -562,6 +566,14 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
 /*ENDE Megamenu*/
 
 /*Footer*/
+.newsletter-bild {
+  background-image: url(https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Content-Pages/Startseite/newsletter_intersport_kloepping.jpg);
+}
+
+ul.newsletter-benefits li {
+  list-style-type: none;
+}
+
 .footerList {
 	padding-left: 0;
 	list-style: none;
