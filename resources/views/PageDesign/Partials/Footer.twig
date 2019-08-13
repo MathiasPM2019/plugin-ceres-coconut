@@ -1,4 +1,5 @@
 {% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
+{% include "Ceres::Newsletter.Components.NewsletterInput" %}
 
 {% set numberOfCols = config('Ceres.footer.number_of_cols') %}
 {% set colSize = (12 / (numberOfCols + 1)) %}
@@ -13,7 +14,11 @@
   <div class="row">
     <div class="col-12">
       <h2 class="text-center my-4">Newsletter</h2>
-      {% include "Ceres::Newsletter.Components.NewsletterInput" %}
+    <newsletter-input
+       :show-name-inputs="{{ showNameInputs }}"
+       :show-privacy-policy-checkbox="{{ showPrivacyPolicyCheckbox }}"
+       :email-folder="{{ emailFolder }}">
+   </newsletter-input>
     </div>
   </div>
 

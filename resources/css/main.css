@@ -584,7 +584,7 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
 }
 .image-list > li {
 	display: inline-block;
-	margin: 2px 12px;
+	margin: 8px 12px;
 	vertical-align: middle;
 }
 
