@@ -10,37 +10,7 @@
 {% if footerContainer is empty %}
 
 <!-- Newsletter -->
-<div class="container-max">
-  <div class="row mb-4">
-    <div class="col-12 mb-5">
-      <h2 class="text-center">Exklusiv informiert - unser Newsletter</h2>
-      <hr class="border-50">
-      <h5 class="text-center">Immer zum richtigen Zeitpunkt: Lass dich &uuml;ber Preisnachlässe, Aktionen und Events auf dem Laufendem halten.</h5>
-    </div>
-    <div class="col-xs-12 col-md-6 col-lg-6 mb-4">
-      <div class="newsletter-bild">
-      </div>
-    </div>
-    <div class="col-xs-12 col-md-4 col-lg-4">
-      <h4 class="font-weight-bold">Deine Vorteile auf einen Blick</h4>
-      <ul class="newsletter-benefits m-0 p-0">
-        <li><i class="text-color-red fa fa-heart-o"></i>&nbsp;&nbsp;Exklusive Angebote &amp; Preisvorteile</li>
-        <li><i class="text-color-red fa fa-heart-o"></i>&nbsp;&nbsp;Einladung zu Events</li>
-        <li><i class="text-color-red fa fa-heart-o"></i>&nbsp;&nbsp;Infos zu Aktionen im neuen Onlineshop</li>
-        <li><i class="text-color-red fa fa-heart-o"></i>&nbsp;&nbsp;Hinweis zu Sonder&ouml;ffnungszeiten</li>
-        <li><i class="text-color-red fa fa-heart-o"></i>&nbsp;&nbsp;Stories &uuml;ber die "INTERSPORT-Kl&ouml;ppinge"</li>
-        <li><i class="text-color-red fa fa-heart-o"></i>&nbsp;&nbsp;und einiges mehr...</li>
-      </ul>
-      <div class="mt-2">
-          <newsletter-input
-            :show-name-inputs="{{ showNameInputs }}"
-            :show-privacy-policy-checkbox="{{ showPrivacyPolicyCheckbox }}"
-            :email-folder="{{ emailFolder }}">
-        </newsletter-input>
-      </div>
-    </div>
-  </div>
-</div>
+
 <div class="grey-mid">
 <div class="container-max">
   <div class="row">
@@ -85,6 +55,37 @@
     </div>
   </div>
 </div>
+</div>
+<div class="container-max">
+  <div class="row mb-4">
+    <div class="col-12 mb-5">
+      <h2 class="text-center">Exklusiv informiert - unser Newsletter</h2>
+      <hr class="border-50">
+      <h5 class="text-center">Immer zum richtigen Zeitpunkt: Lass dich &uuml;ber Preisnachlässe, Aktionen und Events auf dem Laufendem halten.</h5>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-6 mb-4">
+      <div class="newsletter-bild">
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4 col-lg-4">
+      <h4 class="font-weight-bold">Deine Vorteile auf einen Blick</h4>
+      <ul class="newsletter-benefits m-0 p-0">
+        <li><i class="text-color-red fa fa-heart-o"></i>&nbsp;&nbsp;Exklusive Angebote &amp; Preisvorteile</li>
+        <li><i class="text-color-red fa fa-heart-o"></i>&nbsp;&nbsp;Einladung zu Events</li>
+        <li><i class="text-color-red fa fa-heart-o"></i>&nbsp;&nbsp;Infos zu Aktionen im neuen Onlineshop</li>
+        <li><i class="text-color-red fa fa-heart-o"></i>&nbsp;&nbsp;Hinweis zu Sonder&ouml;ffnungszeiten</li>
+        <li><i class="text-color-red fa fa-heart-o"></i>&nbsp;&nbsp;Stories &uuml;ber die "INTERSPORT-Kl&ouml;ppinge"</li>
+        <li><i class="text-color-red fa fa-heart-o"></i>&nbsp;&nbsp;und einiges mehr...</li>
+      </ul>
+      <div class="mt-2">
+          <newsletter-input
+            :show-name-inputs="{{ showNameInputs }}"
+            :show-privacy-policy-checkbox="{{ showPrivacyPolicyCheckbox }}"
+            :email-folder="{{ emailFolder }}">
+        </newsletter-input>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="footer">
 

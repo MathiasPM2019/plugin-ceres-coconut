@@ -1,4 +1,4 @@
-<div>
+
   <div class="item-facts">
     <ul class="product-names">
       <li class="h5 title"><img :src="currentVariation.item.manufacturer.logo" :alt="currentVariation.item.manufacturer.externalName"></li>
@@ -95,6 +95,7 @@
                 {
                     ":missing-order-properties":"variationMissingProperties",
                     ":is-variation-selected": "isVariationSelected && currentVariation.filter.isSalable"
+                    ":has-price": "currentVariation | hasItemDefaultPrice"
                 }
             ) }}
         </div>
@@ -136,7 +137,7 @@
     <slot name="AdditionalContentAfterVAT"></slot>
 
   </div>
-</div>
+
 <!-- Frage stellen am  Artikel -->
 <div id="frage-modal-wrapper">
     <div class="modal fade" id="Frage-stellen" tabindex="-1" role="dialog">
