@@ -68,10 +68,10 @@
                         <ul class="px-0 justify-content-end text-right">
                             <li v-if="itemData.prices.rrp && itemData.prices.rrp.price.value > 0 && itemData.prices.rrp.price.value > itemData.prices.default.unitPrice.value" class="justify-content-end text-right price-view-port">
                                 <del class="crossprice" v-if="itemData.prices.specialOffer">
-                                    ${ itemData.prices.default.unitPrice.formatted }
+                                    ${ item.prices.default.unitPrice.formatted | itemCrossPrice(true) }
                                 </del>
                                 <del class="crossprice" v-else>
-                                    ${ itemData.prices.rrp.unitPrice.formatted }
+                                    ${ item.prices.rrp.unitPrice.formatted | itemCrossPrice }
                                 </del>
                             </li>
 
@@ -83,7 +83,13 @@
 
                     <slot name="AfterPrices"></slot>
 
-                  {{ AddToBasket.printVueComponent( "itemData" ) }}
+                    <div class="category-unit-price" v-if="!(item.unit.unitOfMeasurement === 'C62' && item.unit.content === 1)">
+                        <span>${ item.unit.content }</span>
+                        <span>&nbsp;${ item.unit.names.name }</span>
+                        <span v-if="item.variation.mayShowUnitPrice">&nbsp;| ${ item.prices.default.basePrice }</span>
+                    </div>
+
+                    {{ AddToBasket.printVueComponent( "item", false, false, { ":has-price": "item | hasItemDefaultPrice" } ) }}
                     </div>
                 </div><!-- row Ende -->
               </a>
