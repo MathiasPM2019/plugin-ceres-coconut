@@ -6,7 +6,7 @@
 
 {% block PageBody %}
 
-    {{ component( "Ceres::ItemList.Components.CategoryItem") }}
+    {{ component( "CeresCoconut::ItemList.Components.CategoryItem") }}
     {{ component( "Ceres::ItemList.Components.Filter.ItemFilterList") }}
     {{ component( "Ceres::ItemList.Components.Filter.ItemFilterTagList") }}
 
@@ -89,19 +89,28 @@
               {% if categoryDescriptionTop == "description2" or categoryDescriptionTop == "both" and category.details[0].description2 | trim is not empty %}
                   <div class="category-description mb-3">{{ category.details[0].description2 | raw }}</div>
               {% endif %}
-
+              {% if itemList is not empty %}
                 <ul class="product-list row grid">
                     {% for item in itemList %}
-                        <li class="col-6 col-sm-6 col-md-4 col-lg-{% if ceresConfig.header.showNavBars == "side" or ceresConfig.header.showNavBars == "both" %}4{% else %}3{% endif %}">
-                          <category-item
-                                :item-data="{{ item.data | json_encode }}"
+                        <li class="col-12 col-sm-6 col-md-4 col-lg-{% if category is defined and ceresConfig.header.showNavBars in ["side", "both"] %}4{% else %}3{% endif %}">
+                            <category-item
+                                item-data-ref="{{ item.data | json_data }}"
                                 :decimal-count="{{ ceresConfig.item.storeSpecial }}">
-                                <template slot="BeforePrices">{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
-                                <template slot="AfterPrices">{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
+                                <template #before-prices>{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
+                                <template #after-prices>{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
+
+                                <a href="{{ item.data | itemURL }}" class="small">
+                                    <i class="fa fa-image"></i>
+                                    <span>{{ item.data | itemName }}</span>
+                                </a>
                             </category-item>
                         </li>
                     {% endfor %}
                 </ul>
+              {% endif %}
+              {% if category is not defined and itemList is empty %}
+                  <p class="h3 text-muted mb-5 text-center">{{ trans("Ceres::Template.itemSearchNoResults", {"searchString": searchString}) }}</p>
+              {% endif %}
             </div>
         </div>
       </div>
@@ -127,8 +136,6 @@
 {% endblock %}
 
 {% block PartialHead %}
-    <script type="application/ld+json">{"@context": "http://schema.org","@type": "WebSite","url": "{{ webstoreConfig.domainSsl }}","potentialAction":{"@type": "SearchAction","target": "{{ webstoreConfig.domainSsl }}/search?query={search_term}","query-input": "required name=search_term"}}</script>
-
     {% set canonicalUrl = services.url.getCanonicalURL() %}
     {% if currentPage - 1 > 0 %}
         <link rel="prev" href="{{ canonicalUrl ~ queryString({'page': currentPage - 1}) }}" />
@@ -138,9 +145,10 @@
         <link rel="next" href="{{ canonicalUrl ~ queryString({'page': currentPage + 1}) }}" />
     {% endif %}
 
-    <title>{% if category.details[0].metaTitle %}{{ category.details[0].metaTitle }}{% else %}{{ category.details[0].name }}{% endif %} | {{ trans("Ceres::Template.headerCompanyName") }}</title>
-
-    <meta name="description" content="{{ category.details[0].metaDescription }}">
-    <meta name="keywords" content="{{ category.details[0].metaKeywords }}">
-    <meta name="robots" content="{% if forceNoIndex or (currentPage >= config("Ceres.pagination.noIndex") and config("Ceres.pagination.noIndex") != 0 )%}NOINDEX{% else %}{{ metaRobots }}{% endif %}">
+    {% embed getPartial('page-metadata') %}
+        {% if category is not defined %}
+            {% block title      trans("Ceres::Template.itemSearchResults") ~ " " ~ searchString %}
+            {% block robots     ceresConfig.meta.robotsSearchResult %}
+        {% endif %}
+    {% endembed %}
 {% endblock %}
