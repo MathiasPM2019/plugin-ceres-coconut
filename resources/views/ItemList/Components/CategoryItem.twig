@@ -15,9 +15,9 @@
 <script type="x/template" id="vue-category-item">
     <article class="cmp cmp-product-thumb cmp-product-thumb--grid">
         <div class="thumb-inner" :class="paddingClasses" :style="paddingInlineStyles">
-
+          <!--
             {{ AddToBasket.printVueComponent( "item", true, false, { ":has-price": "item | hasItemDefaultPrice" } ) }}
-
+            -->
             <div class="thumb-background"></div>
 
             <div class="thumb-image">
@@ -57,7 +57,7 @@
                     <div class="col-12 col-sm-8 px-0">
                         <div class="thumb-title small">
                           <ul class="px-0">
-                          <li class="h4 price font-weight-bold">Hersteller</li>
+                          <li class="h4 price font-weight-bold">${ item.manufacturer.externalname }</li>
                           <li class="h5">${ item.texts.name1 }</li>
                           <li class="h5">${ item.texts.name3 }</li>
                           </ul>
