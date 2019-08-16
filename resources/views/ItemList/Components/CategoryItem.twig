@@ -4,9 +4,6 @@
 
 {% import "Ceres::Basket.Macros.AddToBasket" as AddToBasket %}
 
-{% set lang = services.sessionStorage.getLang() %}
-{% set shippingCat = config("Ceres.global.shippingCostsCategoryId") %}
-
 {% if enableCarousel is not defined %}
     {% if config("Ceres.item.enable_image_carousel") == "true" %}
         {% set enableCarousel = "true" %}
@@ -18,23 +15,26 @@
 <script type="x/template" id="vue-category-item">
     <article class="cmp cmp-product-thumb cmp-product-thumb--grid">
       <div class="thumb-inner">
-              <div class="thumb-image my-2">
-                <div class="square-container">
-                    <div class="square-inner main-image">
-                        <slot name="item-image">
-                            <category-image-carousel template="#vue-category-image-carousel"
-                                                    :image-urls-data="itemData.images | itemImages(imageUrlAccessor)"
-                                                    :alt-text="itemData | itemName"
-                                                    :title-text="itemData | itemName"
-                                                    :item-url="itemData | itemURL"
-                                                    :enable-carousel="{{ enableCarousel }}"
-                                                    :disable-carousel-on-mobile="disableCarouselOnMobile"
-                                                    ref="categoryImageCarousel">
-                            </category-image-carousel>
-                        </slot>
-                    </div>
-                </div>
-            </div>
+
+          {{ AddToBasket.printVueComponent( "item", true, false, { ":has-price": "item | hasItemDefaultPrice" } ) }}
+
+          <div class="thumb-image my-2">
+              <div class="square-container">
+                  <div class="square-inner main-image">
+                      <slot name="item-image">
+                          <category-image-carousel template="#vue-category-image-carousel"
+                                                  :image-urls-data="item.images | itemImages(imageUrlAccessor)"
+                                                  :alt-text="item | itemName"
+                                                  :title-text="item | itemName"
+                                                  :item-url="item | itemURL"
+                                                  :enable-carousel="{{ enableCarousel }}"
+                                                  :disable-carousel-on-mobile="disableCarouselOnMobile"
+                                                  ref="categoryImageCarousel">
+                          </category-image-carousel>
+                      </slot>
+                  </div>
+              </div>
+          </div>
 
             <!-- STORE SPECIALS -->
             <slot name="store-special">
