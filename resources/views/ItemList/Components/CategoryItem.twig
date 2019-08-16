@@ -68,8 +68,8 @@
                           <slot name="BeforePrices"></slot>
 
                           <ul class="px-0 justify-content-end text-right">
-                              <li v-if="itemData.prices.rrp && itemData.prices.rrp.price.value > 0 && itemData.prices.rrp.price.value > itemData.prices.default.unitPrice.value" class="justify-content-end text-right price-view-port">
-                                  <del class="crossprice" v-if="itemData.prices.specialOffer">
+                              <li v-if="item.prices.rrp && item.prices.rrp.price.value > 0 && item.prices.rrp.price.value > item.prices.default.unitPrice.value" class="justify-content-end text-right price-view-port">
+                                  <del class="crossprice" v-if="item.prices.specialOffer">
                                       ${ item.prices.default.unitPrice.formatted | itemCrossPrice(true) }
                                   </del>
                                   <del class="crossprice" v-else>
@@ -78,7 +78,7 @@
                               </li>
 
                               <li class="price justify-content-end text-right">
-                                  ${ itemData.prices.default.unitPrice.formatted | specialOffer(itemData.prices, "unitPrice", "formatted") }
+                                  ${ item.prices.default.unitPrice.formatted | specialOffer(item.prices, "unitPrice", "formatted") }
                               </li>
                           </ul>
                       </div>
