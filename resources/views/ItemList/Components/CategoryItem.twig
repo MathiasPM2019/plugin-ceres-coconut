@@ -52,50 +52,49 @@
             <!-- ITEM DETAILS -->
             <slot name="item-details">
                 <div class="thumb-content">
-                    <a :href="item | itemURL" class="thumb-title small">
-                        ${ item | itemName }<!--
-                        --><span v-for="attribute in item.groupedAttributes">${ "Ceres::Template.itemGroupedAttribute" | translate(attribute) }</span>
-                        <ul class="px-0">
-                        
-                        <li class="h5">${ item.texts.name1 }</li>
-                        <li class="h5">${ item.texts.name3 }</li>
-                        </ul>
-                    </a>
-                    <div class="thumb-meta">
-                        <slot name="before-prices"></slot>
-
-                        <div class="prices">
-                            <div v-if="item.prices.rrp && item.prices.rrp.price.value > 0 && item.prices.rrp.price.value > item.prices.default.unitPrice.value" class="price-view-port">
-                                <del class="crossprice" v-if="item.prices.specialOffer">
-                                    ${ item.prices.default.unitPrice.formatted | itemCrossPrice(true) }
-                                </del>
-                                <del class="crossprice" v-else>
-                                    ${ item.prices.rrp.unitPrice.formatted | itemCrossPrice }
-                                </del>
-                            </div>
-
-                            <div class="price">
-                                ${ item.prices.default.unitPrice.formatted | specialOffer(item.prices, "unitPrice", "formatted") } *
-                            </div>
+                <a  :href="itemData | itemURL">
+                  <div class="row m-0">
+                    <div class="col-12 col-sm-8 px-0">
+                        <div class="thumb-title small">
+                          <ul class="px-0">
+                          <li class="h4 price font-weight-bold">${ item.item.manufacturer.externalName }</li>
+                          <li class="h5">${ item.texts.name1 }</li>
+                          <li class="h5">${ item.texts.name3 }</li>
+                          </ul>
                         </div>
                     </div>
+                    <div class="col-12 col-sm-4 px-0">
+                      <div class="thumb-meta mt-0">
+                          <slot name="BeforePrices"></slot>
 
-                    <slot name="after-prices"></slot>
+                          <ul class="px-0 justify-content-end text-right">
+                              <li v-if="itemData.prices.rrp && itemData.prices.rrp.price.value > 0 && itemData.prices.rrp.price.value > itemData.prices.default.unitPrice.value" class="justify-content-end text-right price-view-port">
+                                  <del class="crossprice" v-if="itemData.prices.specialOffer">
+                                      ${ item.prices.default.unitPrice.formatted | itemCrossPrice(true) }
+                                  </del>
+                                  <del class="crossprice" v-else>
+                                      ${ item.prices.rrp.unitPrice.formatted | itemCrossPrice }
+                                  </del>
+                              </li>
 
-                    <div class="category-unit-price" v-if="!(item.unit.unitOfMeasurement === 'C62' && item.unit.content === 1)">
-                        <span>${ item.unit.content }</span>
-                        <span>&nbsp;${ item.unit.names.name }</span>
-                        <span v-if="item.variation.mayShowUnitPrice">&nbsp;| ${ item.prices.default.basePrice }</span>
-                    </div>
+                              <li class="price justify-content-end text-right">
+                                  ${ itemData.prices.default.unitPrice.formatted | specialOffer(itemData.prices, "unitPrice", "formatted") }
+                              </li>
+                          </ul>
+                      </div>
 
-                    {{ AddToBasket.printVueComponent( "item", false, false, { ":has-price": "item | hasItemDefaultPrice" } ) }}
+                      <slot name="AfterPrices"></slot>
 
-                    <span class="vat small text-muted">
-                        * <span v-if="showNetPrices">{{ trans("Ceres::Template.itemExclVAT") }}</span>
-                        <span v-else>{{ trans("Ceres::Template.itemInclVAT") }}</span>
-                        {{ trans("Ceres::Template.itemExclusive") }}
-                        <a {% if ceresConfig.global.shippingCostsCategoryId > 0 %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.itemShippingCosts") }}">{{ trans("Ceres::Template.itemShippingCosts") }}</a>
-                    </span>
+                      <div class="category-unit-price" v-if="!(item.unit.unitOfMeasurement === 'C62' && item.unit.content === 1)">
+                          <span>${ item.unit.content }</span>
+                          <span>&nbsp;${ item.unit.names.name }</span>
+                          <span v-if="item.variation.mayShowUnitPrice">&nbsp;| ${ item.prices.default.basePrice }</span>
+                      </div>
+
+                      {{ AddToBasket.printVueComponent( "item", false, false, { ":has-price": "item | hasItemDefaultPrice" } ) }}
+                      </div>
+                  </div><!-- row Ende -->
+                </a>
                 </div>
             </slot>
             <!-- ./ITEM DETAILS  -->
