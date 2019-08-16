@@ -53,9 +53,13 @@
             <slot name="item-details">
                 <div class="thumb-content">
                     <a :href="item | itemURL" class="thumb-title small">
-                        ${ item | }<!--
+                        ${ item | itemName }<!--
                         --><span v-for="attribute in item.groupedAttributes">${ "Ceres::Template.itemGroupedAttribute" | translate(attribute) }</span>
-
+                        <ul class="px-0">
+                        
+                        <li class="h5">${ item.texts.name1 }</li>
+                        <li class="h5">${ item.texts.name3 }</li>
+                        </ul>
                     </a>
                     <div class="thumb-meta">
                         <slot name="before-prices"></slot>
