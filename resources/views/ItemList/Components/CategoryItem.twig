@@ -55,6 +55,11 @@
                     <a :href="item | itemURL" class="thumb-title small">
                         ${ item | itemName }<!--
                         --><span v-for="attribute in item.groupedAttributes">${ "Ceres::Template.itemGroupedAttribute" | translate(attribute) }</span>
+                        <ul class="px-0">
+                        <li class="h4 price font-weight-bold">${ itemData.item.manufacturer.externalName }</li>
+                        <li class="h5">${ itemData.texts.name1 }</li>
+                        <li class="h5">${ itemData.texts.name3 }</li>
+                        </ul>
                     </a>
                     <div class="thumb-meta">
                         <slot name="before-prices"></slot>
