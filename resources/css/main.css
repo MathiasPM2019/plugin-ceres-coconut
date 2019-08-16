@@ -155,7 +155,8 @@ div.grey-dark hr, div.grey-dark-mobile hr {
   hr.border-50 {
     width:50%;
   }
-  @media (max-width:576px) {
+
+@media (max-width:576px) {
     hr.border-50 {
     width:30%;
   }
