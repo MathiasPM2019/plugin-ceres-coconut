@@ -846,6 +846,29 @@ transform: translate(-50%) rotate(170deg);
   .thumb-content li {
   list-style-type: none;
 }
+
+.cmp-product-thumb .special-tags .badge {
+    margin-top: 5px;
+    display: block;
+    padding: 5px;
+    font-size: 1.0rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    margin-bottom: 5px;
+    border: 1px solid #c00418;
+    border-radius: 0px;
+    background: #fff;
+    color: #c00418;
+    transform: rotate(-5deg)
+}
+
+.cmp-product-thumb .special-tags .badge:before {
+  font-family: FontAwesome;
+    content: "\f061";
+}
+
 /* Mobile Ansichten */
 @media(max-width:576px){
 .cmp-product-thumb .thumb-image {

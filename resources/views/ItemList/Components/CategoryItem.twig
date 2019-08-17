@@ -40,12 +40,12 @@
 
             <!-- STORE SPECIALS -->
             <slot name="store-special">
-                <item-store-special v-if="storeSpecial || item.variation.bundleType == 'bundle'"
+                <item-store-special v-if="storeSpecial"
                                     :store-special="storeSpecial"
                                     :recommended-retail-price="item.prices.rrp"
                                     :variation-retail-price="item.prices.default"
-                                    :decimal-count="decimalCount"
-                                    :bundle-type="item.variation.bundleType"></item-store-special>
+                                    :decimal-count="decimalCount">
+                </item-store-special>
             </slot>
             <!-- ./STORE SPECIALS -->
 
@@ -91,7 +91,7 @@
                           <span v-if="item.variation.mayShowUnitPrice">&nbsp;| ${ item.prices.default.basePrice }</span>
                       </div>
 
-                      {{ AddToBasket.printVueComponent( "item", false, false, { ":has-price": "item | hasItemDefaultPrice" } ) }}
+                  
                       </div>
                   </div><!-- row Ende -->
                 </a>
