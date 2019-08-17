@@ -34,7 +34,7 @@
         <variation-select></variation-select>
     </div>
 
-      <div v-if="currentVariation.attributes.length && currentVariation.attributes[0].attribute.names.name == 'Rahmengröße'">
+      <div v-if="currentVariation.attributes.length && currentVariation.attributes[0].attribute.names.name == 'Rahmengr&ouml;&szlig;e'">
         <hr>
         <div class="col-12 mb-3">
           <a data-toggle="modal" href="#Groessen-check" class="text-muted">
@@ -118,7 +118,7 @@
       <hr>
 
       <div v-if="currentVariation.ids.categories.all[1] == 429"  class="row">
-        <p class="col-12"> Dieses Fahrrad kannst du auch leasen. Bitte kontaktiere uns in diesem Fall über das <a href="{{ urls.contact }}"><span style="text-decoration:underline">Kontaktformular</span></a>. Wir k&uuml;mmern uns umgehend um deine Leasinganfrage.
+        <p class="col-12"> Dieses Fahrrad kannst du auch leasen. Bitte kontaktiere uns in diesem Fall &uuml;ber das <a href="{{ urls.contact }}"><span style="text-decoration:underline">Kontaktformular</span></a>. Wir k&uuml;mmern uns umgehend um deine Leasinganfrage.
         </p>
         <div class="col-12">
           <ul class="my-1 image-list float-left">
@@ -143,7 +143,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <div class="modal-title h3">Ich habe eine Frage zum Produkt.</div>
+                    <div class="modal-title h3 text-center">Ich habe eine Frage zum Produkt.</div>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
@@ -160,60 +160,60 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <div class="modal-title h3">Wir helfen dir bei der Auswahl der passenden Rahmengr&ouml;&szlig;e!</div>
+                    <div class="modal-title h3 text-center">Wir helfen dir bei der Auswahl der passenden Rahmengr&ouml;&szlig;e!</div>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
                   <div class="row p-0 m-0">
-                    <div class="col-12"><h3 class="text-center mb-3">1. Schrittlänge messen</h3></div>
+                    <div class="col-12"><h3 class="text-center mb-3">1. Schrittl&auml;nge messen</h3></div>
                     <div class="col-xs-6 col-md-7 col-lg-8 font-size-075">
-                      <p>Stell dich zum Messen in gerader Körperhaltung an eine Wand. Nimm eine Wasserwaage und klemme sie zwischen die Beine. Die Wasserwaage
+                      <p>Stell dich zum Messen in gerader K&ouml;rperhaltung an eine Wand. Nimm eine Wasserwaage und klemme sie zwischen die Beine. Die Wasserwaage
                         bis zum Schritt ziehen und waagerecht halten. Statt einer Wasserwaage kannst du auch ein Buch verwenden.
-                        Miss nun den Abstand (in cm) von der Oberkante der Wasserwaage bis zum Boden. Das ist deine Schrittlänge.
+                        Miss nun den Abstand (in cm) von der Oberkante der Wasserwaage bis zum Boden. Das ist deine Schrittl&auml;nge.
                       </p>
                     </div>
                     <div class="col-xs-6 col-md-5 col-lg-4"><img src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/schritthoehe_grafik.png" alt="Grafik Schritthoehe" title="Grafik Schritthoehe"></div>
                   </div>
                   <hr>
                   <div class="row p-0 m-0">
-                    <div class="col-12"><h3 class="text-center mb-3">2. Rahmengröße berechnen</h3></div>
+                    <div class="col-12"><h3 class="text-center mb-3">2. Rahmengr&ouml;&szlig;e berechnen</h3></div>
                     <div class="col-xs-6 col-md-7 col-lg-8 font-size-075">
-                      <p>Die Rahmengröße ist das Maß zwischen Tretlager und Sattelklemme. Diese fällt bei den jeweiligen Fahrradtypen unterschiedlich aus. Alle Maße werden in Zentimeter angegeben.
+                      <p>Die Rahmengr&ouml;&szlig;e ist das Ma&szlig; zwischen Tretlager und Sattelklemme. Diese f&auml;llt bei den jeweiligen Fahrradtypen unterschiedlich aus. Alle Ma&szlig;e werden in Zentimeter angegeben.
                       </p>
                     </div>
                     <div class="col-xs-6 col-md-5 col-lg-4"><img src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/rahmenhoehe_grafik.png" alt="Grafik Schritthoehe" title="Grafik Schritthoehe"></div>
                     <div class="col-12">
                       <dl style="float:left; width:50%">
-                        <dt class="font-weight-bold">Cityfahrrad</dt><dd>Schrittlänge x 0,66</dd>
-                        <dt class="font-weight-bold">Trekkingfahrrad</dt><dd>Schrittlänge x 0,66</dd>
-                        <dt class="font-weight-bold">MTB / Fitness</dt><dd>Schrittlänge x 0,61</dd>
+                        <dt class="font-weight-bold">Cityfahrrad</dt><dd>Schrittl&auml;nge x 0,66</dd>
+                        <dt class="font-weight-bold">Trekkingfahrrad</dt><dd>Schrittl&auml;nge x 0,66</dd>
+                        <dt class="font-weight-bold">MTB / Fitness</dt><dd>Schrittl&auml;nge x 0,61</dd>
                       </dl>
                       <dl style="float:left; width:50%">
-                        <dt class="font-weight-bold">Kinderfahrrad</dt><dd>Schrittlänge x 0,61</dd>
-                        <dt class="font-weight-bold">Crossfahrrad</dt><dd>Schrittlänge x 0,66</dd>
-                        <dt class="font-weight-bold">Rennrad</dt><dd>Schrittlänge x 0,665</dd>
+                        <dt class="font-weight-bold">Kinderfahrrad</dt><dd>Schrittl&auml;nge x 0,61</dd>
+                        <dt class="font-weight-bold">Crossfahrrad</dt><dd>Schrittl&auml;nge x 0,66</dd>
+                        <dt class="font-weight-bold">Rennrad</dt><dd>Schrittl&auml;nge x 0,665</dd>
                       </dl>
                     </div>
                       <div class="col-12 font-size-075">
-                        <p>Sollte das Ergebnis zwischen zwei möglichen Rahmengrößen liegen, empfehlen wir für sportliche Fahrer im Bereich MTB & Rennrad eine kleinere Rahmenhöhe zu wählen.
-                          Bei allen anderen Kategorien ist ein kleinerer Rahmen auch kürzer, was den Komfort verbessert. Ein größerer Rahmen ist länger, was sich bei großen Fahrern positiv auf die Sitzhaltung auswirkt.
+                        <p>Sollte das Ergebnis zwischen zwei m&ouml;glichen Rahmengr&ouml;&szlig;en liegen, empfehlen wir f&uuml;r sportliche Fahrer im Bereich MTB & Rennrad eine kleinere Rahmenh&ouml;he zu w&auml;hlen.
+                          Bei allen anderen Kategorien ist ein kleinerer Rahmen auch k&uuml;rzer, was den Komfort verbessert. Ein gr&ouml;&szlig;erer Rahmen ist l&auml;nger, was sich bei gro&szlig;en Fahrern positiv auf die Sitzhaltung auswirkt.
                         </p>
                       </div>
                     </div>
                     <hr>
                     <div class="row p-0 m-0">
-                      <div class="col-12"><h3 class="text-center mb-3">3. Sattelhöhe einstellen</h3></div>
+                      <div class="col-12"><h3 class="text-center mb-3">3. Sattelh&ouml;he einstellen</h3></div>
                       <div class="col-xs-6 col-md-7 col-lg-8 font-size-075">
-                        <p>Die Sattelhöhe ist bei allen Fahrradtypen gleich und wird vom Tretlager bis zum Sattel gemessen.
-                           Das Maß gibt die empfohlene Sitzhöhe an und sorgt für die richtige Streckung der Beine.<br><br>
-                           <span class="font-weight-bold">Schrittlänge x 0,89</span> = Sattelhöhe bei allen Fahrradtypen
+                        <p>Die Sattelh&ouml;he ist bei allen Fahrradtypen gleich und wird vom Tretlager bis zum Sattel gemessen.
+                           Das Ma&szlig; gibt die empfohlene Sitzh&ouml;he an und sorgt f&uuml;r die richtige Streckung der Beine.<br><br>
+                           <span class="font-weight-bold">Schrittl&auml;nge x 0,89</span> = Sattelh&ouml;he bei allen Fahrradtypen
                         </p>
                       </div>
                       <div class="col-xs-6 col-md-5 col-lg-4"><img src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/sattelhoehe_grafik.png" alt="Grafik Schritthoehe" title="Grafik Schritthoehe"></div>
                     </div>
                     <hr>
                     <div class="row p-0 m-0">
-                      <div class="col-12"><h3 class="text-center mb-3">Bei Rückfragen erreichst Du uns unter:<br>
+                      <div class="col-12"><h3 class="text-center mb-3">Bei R&uuml;ckfragen erreichst Du uns unter:<br>
                       Tel. 0 34 91 / 45 90 114</h3></div>
                     </div>
                 </div>
