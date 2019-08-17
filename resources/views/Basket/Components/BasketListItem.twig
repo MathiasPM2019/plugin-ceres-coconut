@@ -23,12 +23,13 @@
                     <div class="meta-container">
                         <div>
                             <a :href="basketItem.variation.data | itemURL" class="item-name text-primary text-appearance">
-                            <li class="font-weight-bold">${basketItem.variation.data.item.manufacturer.externalName}</li>
-                           <li>${basketItem.variation.data.texts.name1}</li>
-                           <li>${basketItem.variation.data.texts.name3}</li>
-
-                           </ul>
-
+                              <div class="h6">
+                                <ul class="no-sytle-type px-0">
+                                  <li class="text-uppercase">${basketItem.variation.data.item.manufacturer.externalName}</li>
+                                  <li>${basketItem.variation.data.texts.name1}</li>
+                                  <li>${basketItem.variation.data.texts.name3}</li>
+                                </ul>
+                              </div>
                             </a>
 
                             <div class="item-base-price">

@@ -104,6 +104,10 @@ div.grey-dark hr, div.grey-dark-mobile hr {
   .no-padding-xs-up { padding:0;}
 }
 
+ul.no-style-type li {
+  list-style-type: none;
+}
+
 /* Dialog Overlay */
 
 .modal-content {
