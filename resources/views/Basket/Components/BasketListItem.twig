@@ -23,12 +23,8 @@
                     <div class="meta-container">
                         <div>
                             <a :href="basketItem.variation.data | itemURL" class="item-name text-primary text-appearance">
-                            <ul class="p-0">
-                            <li class="font-weight-bold">Hersteller</li>
-                            <li>${ item.texts.name1 }</li>
-                            <li>${ item.texts.name3 }</li>
-                            ${basketItem.data.texts.name3}
-                            </ul>
+                            <p> ${ basketItem.variation.data | }</p>
+
                             </a>
 
                             <div class="item-base-price">
