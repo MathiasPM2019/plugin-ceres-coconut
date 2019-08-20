@@ -166,6 +166,31 @@ ul.no-style-type li {
   }
   }
 
+  /* Checkout */
+
+.cmp-method-list .method-list-item input:checked + label, .cmp-method-list .method-list-item input:checked + .label {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: #f9f9f9;
+}
+
+.checkout-rightside .btn-primary {
+    background-color: #19ad19;
+    border-color: transparent;
+    border-radius: 1px;
+    color: #fff;
+    padding: 10px 5px 10px 5px;
+  }
+  /* Checkout-Gutschein Button */
+.checkout-rightside .cmp .btn-primary {
+      background-color: #fff;
+      border: 2px solid #666;
+      border-radius: 1px;
+      color: #666;
+    margin-left: 15px;
+    padding: 6px 15px;
+    }
+
   /* Startpage */
 
   .welcome-wrapper {
