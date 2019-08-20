@@ -1,1 +1,15 @@
-<!-- Insert markup for item not found page here -->
+{% extends getPartial('page-design') %}
+
+{% block PartialHead %}
+    {% embed getPartial('page-metadata') %}
+        {% block title "404" %}
+    {% endembed %}
+{% endblock %}
+
+{% block PageBody %}
+
+<div class="container-max">
+  <p>Inhalt Test</p>
+</div>
+
+{% endblock %}
