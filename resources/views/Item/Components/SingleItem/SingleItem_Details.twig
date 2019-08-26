@@ -15,13 +15,13 @@
           <dd>${ currentVariation.variation.number }</dd>
         <dt class="font-weight-bold" v-if="currentVariation.unit">Inhalt / Menge:</dt>
           <dd v-if="currentVariation.unit">
-            <dd v-if="currentVariation.ids.categories.all[1] == 429">1x Fahrrad, 1x Starter-Kit Werkzeug</dd>
+            <dd v-if="currentVariation.ids.categories.all[1] == 429 || currentVariation.ids.categories.all[1] == 613">1x Fahrrad, 1x Starter-Kit Werkzeug</dd>
             <dd v-else>
               <span>${ currentVariation.unit.content | numberFormat }</span>
               <span>${ currentVariation.unit.names.name }</span>
             </dd>
             <dt class="font-weight-bold">Lieferzeit</dt>
-              <dd v-if="currentVariation.ids.categories.all[1] == 429">ca. 3 bis 5 Werktage</dd>
+              <dd v-if="currentVariation.ids.categories.all[1] == 429 || currentVariation.ids.categories.all[1] == 613">ca. 3 bis 5 Werktage</dd>
               <dd v-else>ca. 1 bis 2 Werktage</dd>
             <dt class="font-weight-bold" v-if="currentVariation.variation.mayShowUnitPrice">{{ trans("Ceres::Template.singleItemUnitPrice") }}</dt>
           <dd v-if="currentVariation.variation.mayShowUnitPrice">${ variationGraduatedPrice.basePrice | specialOffer(currentVariation.prices, "basePrice") }</dd>
@@ -34,7 +34,7 @@
         <variation-select></variation-select>
     </div>
 
-      <div v-if="currentVariation.attributes.length && currentVariation.attributes[0].attribute.names.name == 'Rahmengr&ouml;&szlig;e'">
+      <div v-if="currentVariation.attributes.length && currentVariation.attributes[0].attribute.names.name == 'Rahmengrösse'">
         <hr>
         <div class="col-12 mb-3">
           <a data-toggle="modal" href="#Groessen-check" class="text-muted">
