@@ -328,7 +328,7 @@ ul.no-style-type li {
     display: inline-block;
     min-height: 48px;
     margin-bottom: 15px;
-    font-family: handlee;
+    font-family: 'handlee', cursive;
   }
 
 /* Widgtes manipuliert */
