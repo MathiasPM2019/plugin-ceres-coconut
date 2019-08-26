@@ -409,6 +409,24 @@ ul.no-style-type li {
     min-height: 16rem;
 }
 
+.widget-primary .bg-appearance {
+    background-color: #fff;
+    color: #c00418;
+  font-weight: 400;
+  font-size: 1.2em;
+}
+
+.widget-primary .bg-appearance a {
+    background-color: #fff;
+    color: #c00418;
+}
+
+@media (max-width:576px) {
+.widget-primary .bg-appearance a {
+    display: none;
+}}
+
+
 /* Bereich Header */
 .header-top-scroll {
   position: relative;
