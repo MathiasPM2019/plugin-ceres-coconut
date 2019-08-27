@@ -426,6 +426,9 @@ ul.no-style-type li {
     display: none;
 }}
 
+.background-white * {
+  background-color: #fff;
+}
 
 /* Bereich Header */
 .header-top-scroll {
