@@ -1133,7 +1133,7 @@ transform: translate(-50%) rotate(170deg);
 }
 
 .tab-content dl dd:before  {
-  content: "•";
+  content: "• ";
   font-size: 12px;
 }
 
