@@ -430,6 +430,11 @@ ul.no-style-type li {
   background-color: #fff;
 }
 
+.bg-primary {
+    background-color: #fff;
+    color: #444;
+}
+
 /* Bereich Header */
 .header-top-scroll {
   position: relative;
