@@ -85,13 +85,13 @@
 
                       <slot name="AfterPrices"></slot>
 
-                      <div class="category-unit-price" v-if="!(item.unit.unitOfMeasurement === 'C62' && item.unit.content === 1)">
+                      <div class="category-unit-price d-none" v-if="!(item.unit.unitOfMeasurement === 'C62' && item.unit.content === 1)">
                           <span>${ item.unit.content }</span>
                           <span>&nbsp;${ item.unit.names.name }</span>
                           <span v-if="item.variation.mayShowUnitPrice">&nbsp;| ${ item.prices.default.basePrice }</span>
                       </div>
 
-                  
+
                       </div>
                   </div><!-- row Ende -->
                 </a>
