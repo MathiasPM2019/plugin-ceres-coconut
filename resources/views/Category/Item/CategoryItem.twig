@@ -8,7 +8,7 @@
 
     {{ component( "CeresCoconut::ItemList.Components.CategoryItem") }}
     {{ component( "Ceres::ItemList.Components.Filter.ItemFilterList") }}
-    {{ component( "Ceres::ItemList.Components.Filter.ItemFilterTagList") }}
+    {{ component( "CeresCoconut::ItemList.Components.Filter.ItemFilterTagList") }}
 
     {% if category is defined and ceresConfig.item.showCategoryImage %}
         {% include "Ceres::Category.Item.Partials.CategoryParallaxImage" with { 'category': category } %}
@@ -28,7 +28,7 @@
             </div>
         {% endif %}
 
-        <div class="list-controls grey-mid mt-2 mb-3 sticky-top">
+        <div class="list-controls grey-mid mt-2 mb-3 pb-2 sticky-top">
             <div class="list-controls-inner">
               <div class="container-max">
                 <div class="row">
@@ -57,6 +57,7 @@
 
             {# TAGS #}
             <item-filter-tag-list></item-filter-tag-list>
+            <br style="clear:both"/>
         </div>
 
         {% if ceresConfig.pagination.position in ['top', 'top_bottom'] %}
