@@ -1,6 +1,6 @@
 <script type="x/template" id="vue-item-filter-tag-list">
+  <div class="container-max">
     <div class="selected-filters clearfix">
-      <div class="container-max">
         <span :class="'selected-filter filter-' + tag.id" v-for="tag in tagList" @click="removeTag(tag)">
             <i class="fa fa-times" aria-hidden="true"></i> ${ tag.name }
         </span>
@@ -8,6 +8,7 @@
         <span class="selected-filter reset-all" v-if="tagList.length >= 2" @click="resetAllTags()">
             {{ trans("Ceres::Template.itemFilterReset") }}
         </span>
-      </div>
     </div>
+    <br style="clear:both;"/>
+  </div>
 </script>

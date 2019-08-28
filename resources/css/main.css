@@ -982,6 +982,14 @@ transform: translate(-50%) rotate(170deg);
   }
 }
 
+/* filter */
+
+.list-controls .selected-filters .selected-filter {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    background-color: #fff;
+}
+
 /* ItemSingelView */
 div.owl-stage>div {
   padding: 20px;
