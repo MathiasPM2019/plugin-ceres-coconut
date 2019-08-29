@@ -532,6 +532,8 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li u
   margin-bottom: 8px;
   font-size: 16px;
   padding: 0 0 0 20px;
+  font-weight: bold;
+  color: #555;
 }
 nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li ul.nav-dropdown-inner > li.level1:hover {
   background-color: #f9f9f9;
@@ -542,6 +544,7 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li u
 nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li ul.nav-dropdown-inner > li.level2 {
   font-size: 12px;
   padding: 0 0 0 20px;
+  color: #555;
 }
 nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse > li ul.nav-dropdown-inner > li.level2:hover {
   background-color: #f9f9f9;
