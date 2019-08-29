@@ -191,6 +191,12 @@ ul.no-style-type li {
     padding: 6px 15px;
     }
 
+    div.myaccount a.bg-primary  {
+    background-color: #fff !important;
+    color: #c00418;
+    padding: 10px 10px;
+    }
+
   /* Startpage */
 
   .welcome-wrapper {
