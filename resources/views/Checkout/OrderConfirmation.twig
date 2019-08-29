@@ -1,1 +1,76 @@
-<!-- Insert markup for order confirmation page here -->
+{% extends getPartial('page-design') %}
+{% import "Ceres::Checkout.Macros.Address" as address %}
+{% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
+
+{% block PartialHead %}
+    {% embed getPartial('page-metadata') %}
+        {% block title trans("Ceres::Template.orderConfirmation") %}
+    {% endembed %}
+{% endblock %}
+
+{% block PageBody %}
+
+    {{ component( "Ceres::MyAccount.Components.ChangePaymentMethod" ) }}
+
+    {% set overrideConfirmation = LayoutContainer.show("Ceres::OrderConfirmation.Override") %}
+    {% set addContentAfterOrderDetailsRow = LayoutContainer.show("Ceres::OrderConfirmation.AddContentAfterOrderDetailsRow") %}
+
+    {% if overrideConfirmation|trim is empty %}
+        <div class="page-content myaccount container-max mb-5 mt-3 pb-5">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h1 class="h2">{{ trans("Ceres::Template.orderConfirmationThanks") }}</h1>
+                    <p>{{ trans("Ceres::Template.orderConfirmationWillBeProcessed") }}</p>
+                    <p class="my-1"><span class="font-weight-bold">Wichtiger Hinweis: Aufgrund einer Umstellung in unseren Systemen werden bis zum 15.9. 2019 keine E-Mails versendet.</span> Dies betrifft:</p>
+                      <ul>
+                        <li>Bestellbestätigung</li>
+                        <li>Zahlungseingang (bei Zahlung durch Vorabüberweisung)</li>
+                        <li>Versandbestätigung (inkl. Paketverfolgung)</li>
+                      </ul>
+                      <p>
+                      Wir bitten hierfür um Verständnis. Wir empfehlen dir unter <a href="{{ urls.myAccount }}">"Mein Konto"</a> ein Kundenkonto anzulegen. Hier ist der Vortgang deiner Bestellung jederzeit ersichtlich.<br><br>
+                      Bei Rückfragen steht dir unser Versandteam unter Tel. 0 34 91 - 45 90 121 zur Verfügung.<br><br>
+                      <a href="#" onclick="window.print();">Bestellbestätigung drucken</a>
+                    </p>
+                    {{ LayoutContainer.show("Ceres::OrderConfirmation.AddContentAfterConfirmationThanks") }}
+
+                </div>
+            </div>
+
+            {{ LayoutContainer.show("Ceres::OrderConfirmation.BeforeOrderDetails", data.order) }}
+
+
+            {% include "Ceres::Checkout.OrderDetails" with { orderData: data } %}
+
+            <hr>
+            {% if addContentAfterOrderDetailsRow|trim is not empty %}
+            <div class="row">
+              {{ addContentAfterOrderDetailsRow }}
+            </div>
+            {% endif %}
+            <div class="row">
+                {% set loggedIn = frontend.Account.getIsAccountLoggedIn %}
+                <div class="col-6 col-md-4 {% if loggedIn %}offset-md-2{% else %}offset-3 offset-md-4{% endif %}">
+                    <a v-waiting-animation-infinite href="{{ homepageURL }}" type="" class="btn btn-primary btn-block bg-primary">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        {{ trans("Ceres::Template.orderConfirmationHomepage") }}
+                    </a>
+                </div>
+
+
+                {% if loggedIn %}
+                    <div class="col-6 col-md-4">
+                        <a v-waiting-animation-infinite href="{{ urls.myAccount }}" type="" class="btn btn-primary btn-block bg-primary">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            {{ trans("Ceres::Template.orderConfirmationMyAccount") }}
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+
+        </div>
+    {% else %}
+        {{ overrideConfirmation }}
+    {% endif %}
+
+{% endblock %}

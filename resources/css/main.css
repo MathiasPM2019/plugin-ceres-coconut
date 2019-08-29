@@ -398,17 +398,6 @@ ul.no-style-type li {
     padding: 0.8rem;
       }
 
-.widget-image-box {
-          padding-bottom: 0 !important;
-          min-height: 14rem;
-      }
-}
-
-.widget-image-box {
-    padding-bottom: 0 !important;
-    min-height: 16rem;
-}
-
 .widget-primary .bg-appearance {
     background-color: #fff;
     color: #c00418;
