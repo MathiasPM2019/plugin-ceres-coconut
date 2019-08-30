@@ -770,6 +770,16 @@ ul.image-list img {
   width:70%;
   }
 }
+
+.list-controls .selected-filters .selected-filter.reset-all {
+    background-color: #fff;
+    color: #c00418;
+}
+
+.list-controls .selected-filters .selected-filter.reset-all:hover {
+    background-color: #fff;
+    color: #c00418;
+}
 /*seitliche Navigation*/
 
 .sidebar-categories {
@@ -1192,7 +1202,6 @@ transform: translate(-50%) rotate(170deg);
 
 .owl-item+.active {
   padding: 0px 5px;
-  border: 1px solid red;
 }
 
 .owl-item+.active .thumb-content {
