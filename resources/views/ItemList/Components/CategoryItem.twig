@@ -70,10 +70,10 @@
                           <ul class="px-0 justify-content-end text-right">
                               <li v-if="item.prices.rrp && item.prices.rrp.price.value > 0 && item.prices.rrp.price.value > item.prices.default.unitPrice.value" class="justify-content-end text-right price-view-port">
                                   <del class="crossprice" v-if="item.prices.specialOffer">
-                                      ${ item.prices.default.unitPrice | itemCrossPrice(true) }
+                                      ${ item.prices.default.unitPrice.formatted | itemCrossPrice(true) }
                                   </del>
                                   <del class="crossprice" v-else>
-                                      ${ item.prices.rrp.unitPrice | itemCrossPrice }
+                                      ${ item.prices.rrp.unitPrice.formatted | itemCrossPrice }
                                   </del>
                               </li>
 
