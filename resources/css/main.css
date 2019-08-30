@@ -1182,3 +1182,15 @@ transform: translate(-50%) rotate(170deg);
   font-weight: 600;
   color: #666;
 }
+
+
+/* Artikel-Slider */
+
+.owl-item+.active {
+  padding: 0px 5px;
+  border: 1px solid red;
+}
+
+.owl-item+.active .thumb-content {
+  padding: 10px 5px;
+}
