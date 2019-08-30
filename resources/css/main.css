@@ -577,11 +577,11 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
 
    .li-bannerwerbung-oben {
     width: 330px;
-    overflow: hidden;
+    /*overflow: hidden;*/
     }
    .li-bannerwerbung-unten {
      width: 330px;
-     overflow: hidden;
+    /* overflow: hidden;*/
     }
    .bild-wrapper-oben {
      height: 200px;
