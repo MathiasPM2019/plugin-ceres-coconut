@@ -985,7 +985,10 @@ transform: translate(-50%) rotate(170deg);
 .list-controls .selected-filters .selected-filter {
     font-size: 0.9rem;
     padding: 5px 10px;
+    color: #c00418;
     background-color: #fff;
+    border: 2px solid #c00418;
+    margin-top: 10px;
 }
 
 /* ItemSingelView */
