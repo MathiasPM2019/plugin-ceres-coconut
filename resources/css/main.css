@@ -108,6 +108,10 @@ ul.no-style-type li {
   list-style-type: none;
 }
 
+.no-hover:hover {
+  cursor:default !important;
+}
+
 /* Dialog Overlay */
 
 .modal-content {
