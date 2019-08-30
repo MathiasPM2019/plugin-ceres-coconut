@@ -1194,3 +1194,10 @@ transform: translate(-50%) rotate(170deg);
 .owl-item+.active .thumb-content {
   padding: 10px 5px;
 }
+
+.owl-carousel .owl-single-item-control {
+   padding: 2px 10px;
+   color: #c00418;
+   text-shadow: 0px 0px 3px rgb(255,255,255);
+   font-size: 3rem;
+   }
