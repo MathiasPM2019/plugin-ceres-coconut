@@ -10,11 +10,16 @@
     {{ component( "Ceres::ItemList.Components.Filter.ItemFilterList") }}
     {{ component( "CeresCoconut::ItemList.Components.Filter.ItemFilterTagList") }}
 
-    <div class="categoriegrid page-content"> <!-- container-max entfernt -->
-      <!-- Breadcrumps neu positioniert -->
-      {% if not services.template.isHome() and not services.template.isMyAccount() and not services.template.isCheckout() %}
-          {% include "CeresCoconut::PageDesign.Partials.Header.Breadcrumb" %}
+    <div class="categoriegrid page-content"> <!-- Suchergebnisse -->
+      <div class="container-max">
+      {% if category is not defined and itemList is not empty %}
+          <div class="row mt-3">
+              <div class="col-12">
+                  <h1 class="h2 my-2" id="searchPageTitle">Dein Suche nach {{ searchString }} ergab folgende Ergebnisse:</h1>
+              </div>
+          </div>
       {% endif %}
+      </div>
 
           <div class="list-controls grey-mid mt-2 mb-3 pb-2 sticky-top">
             <div class="list-controls-inner">
