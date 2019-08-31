@@ -2,6 +2,100 @@
 
 <header id="page-header" class="top-bar"> <!--header-top-scroll -->
     <div>
+      <div class="container-max">
+<div class="row flex-row justify-content-end"><!--Top Bar -->
+           {{ LayoutContainer.show("Ceres::Header.LeftSide") }}
+             <div class="col-sm-12 col-lg-8 hidden-md-down">
+               <div  class="col-4 pull-left text-center padding-y-05">
+                 <i aria-hidden="true" class="fa fa-check"></i>
+                       schnelle Lieferung
+               </div>
+               <div  class="col-4 pull-left text-center padding-y-05">
+                 <i aria-hidden="true" class="fa fa-check"></i>
+                       tolle Auswahl
+               </div>
+               <div  class="col-4 pull-left text-center padding-y-05">
+                 <i aria-hidden="true" class="fa fa-check"></i>
+                       gratis Versand ab 25,- &euro;
+               </div>
+             </div>
+             <div class="col-sm-12 col-lg-4 no-padding-xs-up">
+               <ul id="controlsList" class="controls-list list-inline pull-right">
+                     <li class="list-inline-item control-user">
+                       <user-login-handler>
+                           <a data-toggle="modal">
+                               <i class="fa fa-user" aria-hidden="true"></i>
+                               <span class="hidden-lg-down">{{ trans("Ceres::Template.login") }}</span>
+                           </a>
+                           <span class="pipe"></span>
+                           <a data-toggle="modal">
+                               <i class="fa fa-user-plus" aria-hidden="true"></i>
+                               <span class="hidden-lg-down">{{ trans("Ceres::Template.loginRegister") }}</span>
+                           </a>
+                       </user-login-handler>
+                   </li>
+                   <li class="d-none list-inline-item dropdown control-languages">
+                       <a data-toggle="collapse" href="#countrySettings" aria-expanded="false"
+                          aria-controls="countrySettings"
+                          data-parent="#controlsList">
+                           <i class="flag-icon flag-icon-{{ lang }}"></i>
+                       </a>
+                   </li>
+
+                   {% if enableCurrencySelect == "true" %}
+                       <li class="d-none list-inline-item dropdown control-languages">
+                           <a class=""
+                              data-toggle="collapse"
+                              href="#currencySelect"
+                              aria-expanded="false"
+                              aria-controls="currencySelect"
+                              data-parent="#controlsList">
+                               <span>{{ services.checkout.getCurrencyData()[currencyFormat] }}</span>
+                           </a>
+                       </li>
+                   {% endif %}
+                   <li class="list-inline-item control-search d-lg-none">
+                     <!-- ausgeblendete Lupe toggle -->
+                       <a aria-label="toggle search"
+                          data-toggle="collapse"
+                          href="#searchBox"
+                          aria-expanded="false"
+                          aria-controls="searchBox"
+                          data-parent="#controlsList">
+                           <img src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/lupe.svg" alt="Lupe" style="max-height:20px;">
+                       </a>
+                   </li>
+                   {% if "wish-list" in enabledRoutes or "all" in enabledRoutes %}
+                       <li class="list-inline-item control-wish-list">
+                           <wish-list-count>
+                               <a>
+                                   <span class="badge-right">0</span>
+                                   <i class="fa fa-heart-o" aria-hidden="true"></i>
+                               </a>
+                           </wish-list-count>
+                       </li>
+                   {% endif %}
+                   <li class="list-inline-item control-basket">
+                       <a v-toggle-basket-preview href="#" class="toggle-basket-preview">
+                           {% if config("Ceres.header.basket_values") != "sum" %}
+                               <span class="badge-right" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span>
+                           {% endif %}
+
+                           <i v-waiting-animation="$store.state.basket.isBasketLoading" waiting-class="fa fa-refresh fa-spin" class="fa fa-shopping-cart" aria-hidden="true"></i>
+                           {% if config("Ceres.header.basket_values") != "quantity" %}
+                               <span class="badge" v-if="!$store.state.basket.showNetPrices" v-basket-item-sum="$store.state.basket.data.itemSum">0,00 {{ services.checkout.getCurrencyData()[currencyFormat] }}</span>
+                               <span class="badge" v-else v-cloak v-basket-item-sum="$store.state.basket.data.itemSumNet">0,00 {{ services.checkout.getCurrencyData()[currencyFormat] }}</span>
+                           {% endif %}
+                       </a>
+
+                       {% if config("Ceres.basket.preview_type") != "right" %}
+                           <basket-preview template="#vue-basket-preview-hover" :show-net-prices="{{ showNetPrices | json_encode }}"></basket-preview>
+                       {% endif %}
+                   </li>
+               </ul>
+             </div>
+           </div>
+</div>
         <div class="col-12 grey-mid">
           <div class="container-max">
           <div class="row flex-row">
