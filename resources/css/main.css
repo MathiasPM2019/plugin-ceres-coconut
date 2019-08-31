@@ -507,7 +507,7 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu {
 #mainNavbarCollapsable ul.mainmenu li.mainddown:hover {
    background-color: transparent;
   text-shadow: 0px 0px 5px rgba(255,255,255,0.7);
-  z-index: 1021;
+  z-index: 9999;
 }
 .no-touch nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li:hover{
   color: #fff !important;
@@ -584,7 +584,7 @@ nav.navbar.megamenu #mainNavbarCollapsable ul.mainmenu > li > ul.collapse {
     /* overflow: hidden;*/
     }
    .bild-wrapper-oben {
-     height: 200px;
+     height: 195px;
      overflow: hidden;
    }
    .li-bannerwerbung-oben img {
