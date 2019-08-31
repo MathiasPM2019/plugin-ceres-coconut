@@ -54,17 +54,7 @@
                             </a>
                         </li>
                     {% endif %}
-                    <li class="list-inline-item control-search d-lg-none">
-                      <!-- ausgeblendete Lupe toggle -->
-                        <a aria-label="toggle search"
-                           data-toggle="collapse"
-                           href="#searchBox"
-                           aria-expanded="false"
-                           aria-controls="searchBox"
-                           data-parent="#controlsList">
-                            <img src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/lupe.svg" style="max-height:20px;">
-                        </a>
-                    </li>
+                    
                     {% if "wish-list" in enabledRoutes or "all" in enabledRoutes %}
                         <li class="list-inline-item control-wish-list">
                             <wish-list-count>
