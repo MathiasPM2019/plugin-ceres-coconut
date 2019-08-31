@@ -17,7 +17,7 @@
 
 {% set headerContainer = LayoutContainer.show("CeresCoconut::Header") | trim %}
 {% if headerContainer is empty %}
-    {% include "CeresCoconut::PageDesign.Partials.Header.DefaultHeader" %}
+    {% include "Ceres::PageDesign.Partials.Header.DefaultHeader" %}
 {% else %}
 <header id="page-header">
     {{ headerContainer | raw }}
