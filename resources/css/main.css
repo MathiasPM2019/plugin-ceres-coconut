@@ -317,6 +317,10 @@ ul.no-style-type li {
       transition: all 400ms;
     }
 
+.img-kachel p {
+  max-width: 350px;
+}
+
 .mkt-homepage row {
   align-items: stretch;
 }
