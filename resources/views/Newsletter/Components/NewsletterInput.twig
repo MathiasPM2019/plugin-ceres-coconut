@@ -13,8 +13,8 @@
                         <input type="text" :id="'last-name-input_' + _uid" v-model="lastName">
                     </div>
                 </div>
-
-                <div class="col-xs-12">
+            </div>
+                <div class="w-100">
                     <div class="input-group">
                         <div class="input-unit" data-validate="mail">
                             <label :for="'email-input-id_' + _uid">{{ trans("Ceres::Template.newsletterEmail") }} *</label>
@@ -23,7 +23,7 @@
                     </div>
                 </div>
 
-                <div class="col-xs-12" v-if="showPrivacyPolicyCheckbox">
+                <div class="w-75" v-if="showPrivacyPolicyCheckbox">
                     <div class="form-check small" data-validate>
                         <input type="checkbox" class="form-check-input" :id="'privacy-policy-accept-id_' + _uid" name="privacy-policy-accept" v-model="privacyPolicyValue">
                         <label :for="'privacy-policy-accept-id_' + _uid" class="form-check-label">
@@ -39,8 +39,8 @@
                     </div>
                 </div>
 
-                <div class="col-xs-12">
-                        <div class="input-group-btn col-xs-12">
+                <div class="w-100 mt-3">
+                        <div class="input-group-btn">
                             <button type="button" class="btn btn-block btn-primary btn-appearance" @click="validateData" :disabled="isDisabled">
                                 <i v-waiting-animation="isDisabled" class="fa fa-paper-plane-o" aria-hidden="true"></i>
                                 {{ trans('Ceres::Template.newsletterSubscribeButtonLabel') }}
@@ -48,6 +48,6 @@
                         </div>
                 </div>
 
-            </div>
+
         </form>
 </script>
