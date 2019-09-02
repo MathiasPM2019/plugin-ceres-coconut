@@ -1,5 +1,5 @@
 {% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
-{% include "Ceres::Newsletter.Components.NewsletterInput" %}
+{% include "CeresCoconut::Newsletter.Components.NewsletterInput" %}
 
 {% set numberOfCols = config('Ceres.footer.number_of_cols') %}
 {% set colSize = (12 / (numberOfCols + 1)) %}
@@ -10,7 +10,7 @@
 {% if footerContainer is empty %}
 
 <!-- Info-Container -->
-<div class="grey-mid mt-4 no-print">
+<div class="grey-mid mt-4 pt-3 no-print">
 <div class="container-max">
   <div class="row">
     <div class="col-sm-12 col-md-4 px-3 px-lg-5 mb-4">
@@ -55,17 +55,18 @@
 
 <!-- Newsletter -->
 <div class="container-max no-print">
-  <div class="row my-4">
-    <div class="col-12 mb-5">
+  <div class="my-4">
+    <div class="w-100 mb-5">
       <h2 class="text-center">Exklusiv informiert - unser Newsletter</h2>
       <hr class="border-50">
       <h5 class="text-center">Immer zum richtigen Zeitpunkt: Lass dich &uuml;ber Preisnachlässe, Aktionen und Events auf dem Laufendem halten.</h5>
     </div>
+    <div class="row">
     <div class="col-xs-12 col-md-6 col-lg-6 mb-4">
       <div class="newsletter-bild">
       </div>
     </div>
-    <div class="col-xs-12 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-md-6 col-lg-4">
       <h4 class="font-weight-bold">Deine Vorteile auf einen Blick</h4>
       <ul class="newsletter-benefits m-0 p-0">
         <li><i class="text-color-red fa fa-heart-o"></i>&nbsp;&nbsp;Exklusive Angebote &amp; Preisvorteile</li>
@@ -84,6 +85,7 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 <div class="footer">
 
@@ -97,38 +99,9 @@
 
 
     <div class="col-12 grey-dark-mobile border-top-red mt-4">
-        <div class="row hidden">
-            <div class="col-12">
-                <div class="footer-services mt-4">
-                    {% set paymentMethodContent = LayoutContainer.show("Ceres::Homepage.PaymentMethods") %}
-                    {% if paymentMethodContent|trim is not empty %}
-                        <div class="services-payment mb-3">
-                            <strong class="services-title">{{ trans("Ceres::Template.footerPaymentMethods") }}</strong>
-                            {{ paymentMethodContent }}
-                        </div>
-                    {% endif %}
-                    {% set shippingContent = LayoutContainer.show("Ceres::Homepage.Shipping") %}
-                    {% if shippingContent|trim is not empty %}
-                        <div class="services-shipping mb-3">
-                            <strong class="services-title">{{ trans("Ceres::Template.footerOrderShippedBy") }}</strong>
-                            {{ shippingContent }}
-                        </div>
-                    {% endif %}
-                    {% set certifiedContent = LayoutContainer.show("Ceres::Homepage.Certified") %}
-                    {% if certifiedContent|trim is not empty %}
-                        <div class="services-certificate mb-3">
-                            <strong class="services-title">{{ trans("Ceres::Template.footerCertifiedBy") }}</strong>
-                            {{ certifiedContent }}
-                        </div>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-
-        <div>
           <div class="container-max">
             <div class="row flex-row pt-4">
-              <div class="col-lg-3 mb-4">
+              <div class="col-xs-12 col-sm-6 col-md-3 mb-4">
                 <h5 class="text-uppercase">&Uuml;ber uns</h5>
                 <hr>
                 <h5>Intersport Kl&ouml;pping</h5>
@@ -144,7 +117,7 @@
                 </ul>
 
               </div>
-              <div class="col-lg-3 mb-4">
+              <div class="col-xs-12 col-sm-6 col-md-3 mb-4">
                 <h5 class="text-uppercase">&Oumlffnungszeiten</h5>
                 <hr>
                 <table class="footerList">
@@ -152,7 +125,7 @@
                   <tr><td>Samstag</td><td align="right" width="100px">10.00 &ndash; 15.00 Uhr</td></tr>
                 </table>
               </div>
-              <div class="col-lg-3 mb-4">
+              <div class="col-xs-12 col-sm-6 col-md-3 mb-4">
                 <h5 class="text-uppercase">Einkaufen</h5>
                 <hr>
                 <ul class="footerList">
@@ -165,7 +138,7 @@
                   <li><a href="{{ urls.myAccount }}">Mein Konto</a></li>
                 </ul>
               </div>
-              <div class="col-lg-3 mb-4">
+              <div class="col-xs-12 col-sm-6 col-md-3 mb-4">
                 <h5 class="text-uppercase">Rechtliches</h5>
                 <hr>
                 <ul class="footerList">
@@ -181,16 +154,16 @@
             </div>
             <hr>
             <div class="row flex-row pt-4">
-              <div class="col-lg-3">
+              <div class="col-xs-12 col-sm-6 col-md-3">
                 <p class="footerList">Bei Fragen stehen wir dir gern telefonisch zur Verf&uuml;gung</p>
               </div>
-              <div class="col-lg-3">
+              <div class="col-xs-12 col-sm-6 col-md-3">
                 <p class="footerList">VERSAND: 0 34 91 / 45 90 121</p>
               </div>
-              <div class="col-lg-3">
+              <div class="col-xs-12 col-sm-6 col-md-3">
                 <p class="footerList">SPORT-SHOP: 0 34 91 / 45 90 110</p>
               </div>
-              <div class="col-lg-3">
+              <div class="col-xs-12 col-sm-6 col-md-3">
                 <p class="footerList">FAHRRAD-SHOP: 0 34 91 / 45 90 114</p>
               </div>
             </div>
@@ -205,72 +178,7 @@
                </div>
             </div>
           </div>
-        </div>
-        <div class="row hidden">
-            <hr class="my-4">
-            {% for i in 1..numberOfCols %}
-                <div class="col-6 col-sm-3 col-lg-2">
-                    <nav class="footer-column mb-4">
-                        <h2 class="h5">{{ trans('Ceres::Template.footerColumnTitle' ~ i) }}</h2>
-                        <ul class="list-unstyled">
 
-                            {% set footerCategories = config('Ceres.footer.col_' ~ i ~ '_categories') | find("[0-9]+") %}
-                            {% for catID in footerCategories %}
-
-                                {% set cat = services.category.get(catID, lang) %}
-
-                                {% if cat is not null %}
-                                    {% set displayedCategories = displayedCategories | merge([catID]) %}
-                                    <li>
-                                        <a href="{{ services.category.getURL( cat ) }}">
-                                            {{ cat.details.first.name }}</a>
-                                    </li>
-                                {% endif %}
-
-                            {% endfor %}
-
-                        </ul>
-                    </nav>
-                </div>
-            {% endfor %}
-            <hr class="d-sm-none my-4">
-            <div class="col-6 col-sm-3">
-                <div class="footer-column">
-                    {{ LayoutContainer.show("Ceres::Footer.RowOne") }}
-                </div>
-            </div>
-            <div class="col-12 col-sm-3">
-                <div class="footer-column row">
-                    {% set rowTwo = LayoutContainer.show("Ceres::Footer.RowTwo") %}
-
-                    {{ rowTwo }}
-
-                    <div class="col-12{% if rowTwo|trim is not empty %} col-sm-6 col-lg-12{% endif %}">
-                        {{ LayoutContainer.show("Ceres::Footer.RowThree") }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        {% set cat = services.category.get(config('Ceres.global.category.legal_disclosure')) %}
-        <div class="copyright text-center my-3">
-            <div class="static-link-list hidden">
-                {% autoescape false %}
-                    <a href="{{ urls.cancellationRights }}">{{ trans("Ceres::Template.footerCancellationRight", {"hyphen": "&shy;"}) }}</a>
-                    {% if config("Ceres.footer.cancellation_use_pdf") == "true" %}
-                        <a href="{{ config('Ceres.footer.cancellation_pdf_path') }}" target="_blank">{{ trans("Ceres::Template.footerCancellationForm", {"hyphen": "&shy;"}) }}</a>
-                    {% else %}
-                        <a href="{{ urls.cancellationForm }}">{{ trans("Ceres::Template.footerCancellationForm", {"hyphen": "&shy;"}) }}</a>
-                    {% endif %}
-                    <a href="{{ urls.legalDisclosure }}">{{ trans("Ceres::Template.footerLegalDisclosure") }}</a>
-                    <a href="{{ urls.privacyPolicy }}">{{ trans("Ceres::Template.footerPrivacyPolicy", {"hyphen": "&shy;"}) }}</a>
-                    <a href="{{ urls.gtc }}">{{ trans("Ceres::Template.footerGtc") }}</a>
-                    {% if config("Ceres.contact.shop_mail") | length > 0 and config("Ceres.contact.shop_mail") != "your@email.com" %}
-                        <a href="{{ urls.contact }}">{{ trans("Ceres::Template.footerContact") }}</a>
-                    {% endif %}
-                {% endautoescape %}
-            </div>
-        </div>
     </div>
 </div>
 {% else %}
