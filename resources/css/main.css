@@ -438,6 +438,27 @@ ul.no-style-type li {
     color: #444;
 }
 
+/* Cookie Hinweis (externe Herkunft */
+.cc_message {
+}
+
+.cc_container .cc_btn {
+background-color: #fff !important;
+color: #c00418 !important;
+  border-radius: 0px !important;
+  border: 2px solid #c00418 !important;
+}
+
+.cc_container {
+background: #333 !important;
+color: #efefef !important;
+}
+
+.cc_container a {
+color: #fff !important;
+  padding-left: 10px;
+}
+
 /* Bereich Header */
 .header-top-scroll {
   position: relative;
