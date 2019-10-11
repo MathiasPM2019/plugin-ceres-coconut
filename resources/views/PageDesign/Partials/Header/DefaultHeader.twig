@@ -75,7 +75,7 @@
                            </wish-list-count>
                        </li>
                    {% endif %}
-                   <li class="list-inline-item control-basket">
+                   <li class="list-inline-item control-basket mr-4">
                        <a v-toggle-basket-preview href="#" class="toggle-basket-preview">
                            {% if config("Ceres.header.basket_values") != "sum" %}
                                <span class="badge-right" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span>

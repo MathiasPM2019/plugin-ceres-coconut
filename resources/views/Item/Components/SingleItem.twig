@@ -7,7 +7,7 @@
 <script type="x/template" id="vue-single-item">
     <div>
       <slot name="default" :getDataField="getDataField" :getFilteredDataField="getFilteredDataField">
-        <div class="single container-max page-content">
+        <div id="item-body" class="single container-max page-content">
           <div class="small">{% include "CeresCoconut::PageDesign.Partials.Header.BreadcrumbItem" %}</div>
             <div class="row mt-2 position-relative">
                 <div class="col-12 col-md-7" id="item-container">
@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="col-12 col-md-5 single-rightside">
-                  <div v-stick-in-parent data-sticky-container="#item-container">
+                  <div v-stick-in-parent data-sticky-container="#item-body">
                     {% include "CeresCoconut::Item.Components.SingleItem.SingleItem_Details" %}
                   </div>
                 </div>
@@ -24,9 +24,12 @@
                     {% include "CeresCoconut::Item.Components.SingleItem.SingleItem_InformationTable" %}
                 </div>
             </div>
-            <slot name="item-list-container"></slot>
-            <slot name="feedback-container"></slot>
+
         </div>
+        <div class="single container-max page-content my-5">
+        <slot name="item-list-container"></slot>
+        <slot name="feedback-container"></slot>
+        <div>
       </slot>
     </div>
 

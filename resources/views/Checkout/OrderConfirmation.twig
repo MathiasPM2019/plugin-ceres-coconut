@@ -21,15 +21,7 @@
                 <div class="col-12">
                     <h1 class="h2">{{ trans("Ceres::Template.orderConfirmationThanks") }}</h1>
                     <p>{{ trans("Ceres::Template.orderConfirmationWillBeProcessed") }}</p>
-                    <p class="my-1"><span class="font-weight-bold">Wichtiger Hinweis: Aufgrund einer Umstellung in unseren Systemen werden bis zum 15.9. 2019 keine E-Mails versendet.</span> Dies betrifft:</p>
-                      <ul>
-                        <li>Bestellbestätigung</li>
-                        <li>Zahlungseingang (bei Zahlung durch Vorabüberweisung)</li>
-                        <li>Versandbestätigung (inkl. Paketverfolgung)</li>
-                      </ul>
-                      <p>
-                      Wir bitten hierfür um Verständnis. Wir empfehlen dir unter <a href="{{ urls.myAccount }}">"Mein Konto"</a> ein Kundenkonto anzulegen. Hier ist der Vortgang deiner Bestellung jederzeit ersichtlich.<br><br>
-                      Bei Rückfragen steht dir unser Versandteam unter Tel. 0 34 91 - 45 90 121 zur Verfügung.<br><br>
+                    <p>
                       <a href="#" onclick="window.print();">Bestellbestätigung drucken</a>
                     </p>
                     {{ LayoutContainer.show("Ceres::OrderConfirmation.AddContentAfterConfirmationThanks") }}
