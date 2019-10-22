@@ -12,7 +12,6 @@
     {{ component( "Ceres::Customer.Components.AddressSelect.AddressSelect" ) }}
     {{ component( "Ceres::Checkout.Components.AcceptGtcCheck" ) }}
     {{ component( "Ceres::Checkout.Components.PaymentProviderSelect" ) }}
-    {{ component( "Ceres::Checkout.Components.ShippingPrivacyHintCheck" ) }}
     {{ component( "Ceres::Checkout.Components.ShippingProfileSelect" ) }}
     {{ component( "Ceres::Checkout.Components.PlaceOrder" ) }}
     {{ component( "Ceres::Checkout.Components.ContactWishInput" ) }}
@@ -155,8 +154,6 @@
                                 </header>
 
                                 <contact-wish-input class="pb-3"></contact-wish-input>
-
-                                <shipping-privacy-hint-check></shipping-privacy-hint-check>
 
                                 <accept-gtc-check></accept-gtc-check>
                                 {{ LayoutContainer.show("Ceres::Checkout.OptIns") }}
