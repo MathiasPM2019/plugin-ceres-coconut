@@ -839,6 +839,11 @@ ul.image-list img {
     line-height: 16px;
 }
 
+.sidebar-categories ul li ul li ul li ul li ul li {
+    line-height: 10px;
+    margin-left: 15px;
+}
+
 .sidebar-categories ul li a {
     display: block;
     color: #4D4F4D;
