@@ -1050,7 +1050,7 @@ transform: translate(-50%) rotate(170deg);
 
 /* ItemSingelView */
 div.owl-stage>div {
-  padding: 20px;
+  padding: 5px;
 }
 
 .item-facts * {
