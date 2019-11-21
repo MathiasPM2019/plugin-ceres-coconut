@@ -1061,7 +1061,7 @@ div.owl-stage>div {
   line-height: 12px;
   padding: 0;
 }
-.item-facts ul.product-names img {
+.item-facts div.product-names img {
   max-height: 30px;
   max-width: 120px;
 }
