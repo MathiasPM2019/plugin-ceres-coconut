@@ -1,8 +1,8 @@
 
   <div class="item-facts">
     <div class="product-names">
-      <div class="mb-1"><img :src="currentVariation.item.manufacturer.logo" :alt="currentVariation.item.manufacturer.externalName"></div>
-      <h1 class="h1 title" :title="currentVariation.item.manufacturer.externalName + currentVariation.texts.name1">${ currentVariation | itemName }</h1>
+      <div class="mb-1"><img :src="currentVariation.item.manufacturer.logo" itemprop="logo" :alt="currentVariation.item.manufacturer.externalName"></div>
+      <h1 class="h1 title" itmprop="name" :title="currentVariation.item.manufacturer.externalName +  currentVariation.texts.name1">${ currentVariation | itemName }</h1>
       <div class="h5">${ currentVariation.texts.name3 }</div>
     </div>
     <hr>
@@ -12,7 +12,7 @@
     <div class="mb-5">
       <dl class="small">
         <dt class="font-weight-bold">{{ trans("Ceres::Template.singleItemNumber") }}</dt>
-          <dd>${ currentVariation.variation.number }</dd>
+          <dd itemprop="productID">${ currentVariation.variation.number }</dd>
         <dt class="font-weight-bold" v-if="currentVariation.unit">Inhalt / Menge:</dt>
           <dd v-if="currentVariation.unit">
             <dd v-if="currentVariation.ids.categories.all[1] == 429 || currentVariation.ids.categories.all[1] == 613">1x Fahrrad, 1x Starter-Kit Werkzeug</dd>
@@ -63,7 +63,7 @@
     {% endif %}
 
     <span style="clear:left;" class="price h1">
-                            <span ref="variationTotalPrice" :content="currentVariation.prices.default.price.value">
+                            <span itemprop="price" ref="variationTotalPrice" :content="currentVariation.prices.default.price.value">
                                 ${ variationTotalPrice | currency(currentVariation.prices.default.currency) }
                             </span>
                             <span :content="currentVariation.prices.default.currency"></span>
