@@ -119,6 +119,10 @@ ul.no-style-type li {
     border-radius: 0px;
     overflow: hidden;
   }
+/*Korrektur statt z-index1070 */
+  .modal-backdrop {
+    z-index: 1010;
+}
 
 /*ELEMENTE*/
 
