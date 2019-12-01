@@ -1,10 +1,10 @@
 <script type="x/template" id="vue-item-filter">
     <div v-if="facet.name" class="card">
-        <div data-toggle="collapse" href="${ facetName }" class="h3">${ facetName }</div>
+        <div data-toggle="collapse" :href="'#' + facetName" class="h3">${ facetName }</div>
         <div v-if="facet.type === 'price'">
             <item-filter-price></item-filter-price>
         </div>
-        <div id="${ facetName }" v-else>
+        <div :id="facetName" class="collapse" v-else>
             <div class="form-check" v-for="value in facets" :key="value.id">
                 <input :id="'option-' + value.id" class="form-check-input d-none" type="checkbox" :checked="isSelected(value.id)" @change="updateFacet(value)" :disabled="isLoading || value.count <= 0">
                 <label :for="'option-' + value.id" class="form-check-label">
