@@ -3,7 +3,7 @@
         <a data-toggle="collapse" :href="'#' + facetName" class="h3 filter-h3">
         <i aria-hidden="true" class="fa fa-angle-down default-float"></i>
         ${ facetName }</a>
-        <div v-if="facet.type === 'price'">
+        <div class="mt-2" v-if="facet.type === 'price'">
             <item-filter-price></item-filter-price>
         </div>
         <div :id="facetName" class="collapse" v-else>
