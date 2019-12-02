@@ -824,8 +824,8 @@ ul.image-list img {
 }
 
 .card .filter-h3[aria-expanded="true"] i {
-    -webkit-transform: rotate(-90deg);
-    transform: rotate(-90deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 
 .filter-wrapper .card:nth-last-child(1) i.fa-angle-down {
