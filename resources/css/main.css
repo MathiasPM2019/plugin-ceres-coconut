@@ -822,6 +822,16 @@ ul.image-list img {
     background-color: #fff;
     color: #c00418;
 }
+
+.card .filter-h3[aria-expanded="true"] i {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.filter-wrapper .card:nth-last-child(1) i.fa-angle-down {
+  display: none;
+}
+
 /*seitliche Navigation*/
 
 .sidebar-categories {
