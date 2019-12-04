@@ -14,7 +14,7 @@
     {{ component( "Ceres::Checkout.Components.PaymentProviderSelect" ) }}
     {{ component( "Ceres::Checkout.Components.ShippingProfileSelect" ) }}
     {{ component( "Ceres::Checkout.Components.PlaceOrder" ) }}
-    {{ component( "Ceres::Checkout.Components.ContactWishInput" ) }}
+    {{ component( "Ceres::Checkout.Components.ContactWishInputSocken" ) }}
     {{ component( "Ceres::Basket.Components.Coupon" ) }}
     {{ component( "Ceres::Basket.Components.BasketList" ) }}
     {{ component( "CeresCoconut::Basket.Components.BasketTotals" ) }}
@@ -149,11 +149,7 @@
                                 {% endif %}
                                 {{ LayoutContainer.show("Ceres::Checkout.AfterPaymentList") }}
 
-                                <header>
-                                    <h3>{{ trans("Ceres::Template.checkoutContactWish") }}</h3>
-                                </header>
 
-                                <contact-wish-input class="pb-3"></contact-wish-input>
 
                                {{ LayoutContainer.show("Ceres::Checkout.OptIns") }}
                             </div>
@@ -174,7 +170,14 @@
                                     </div>
                                     <hr>
                                     <coupon></coupon>
-                                    <hr class="mb-0">
+                                    <div>
+                                      <img style="width:100%" class="mb-0" src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Aktionen/Schenk_doch_Socken/socken_kachel_top.jpg">
+                                      <header>
+                                        <div class="h5 mt-0">Wir schenken dir zu jedem Einkauf ab 50 Euro ein 3er Set NIKE Socken!<br>
+                                        </div>
+                                      </header>
+                                      <contact-wish-input class="pb-3"></contact-wish-input>
+                                    </div>
                                 </div>
                             </aside>
                         </div>
