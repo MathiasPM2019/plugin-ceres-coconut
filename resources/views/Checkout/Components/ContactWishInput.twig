@@ -1,1 +1,8 @@
-<!-- Insert markup for checkout here -->
+<script type="x/template" id="vue-contact-wish-input">
+    <div class="input-unit textarea cmp-contact mb-0">
+        <textarea id="contact_wish" @change="updateContactWish($event)" class="no-resize" rows="5">
+        </textarea>
+        <label for="contact_wish" style="color:#c00418;text-transform:inherit;">Bitte gew&uuml;nschte Gr&ouml;&szlig;e (S, M, L, XL) und Farbe (wei&szlig; oder schwarz) angeben.</label>
+    </div>
+    <div class="small mt-0 text-muted">S = 34 - 38 | M = 38 - 42 | L = 42 - 46 | XL = 46 - 50</div>
+</script>
