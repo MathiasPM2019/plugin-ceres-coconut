@@ -223,29 +223,41 @@ ul.no-style-type li {
 .sockencontainer {
   width:100%;
   height: 100%;
-  background-image: url(https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Aktionen/Schenk_doch_Socken/socken_kachel.jpg);
+  background-image: url(https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Aktionen/Schenk_doch_Socken/kachel_top.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
   background-position-x: 50%;
 }
 
-@media (min-width:576px) {
-  .sockencontainer { background-size: 90%; }
+
+  .sockencontainer { background-size: 100%; }
 
  .sockentext {
   position:absolute;
-   bottom:5px;
+   bottom:25px;
    padding:5px;
-    font-size:12px;
-  }}
+    font-size:14px;
 
-@media (min-width:992px) {
-  .sockencontainer { background-size: cover; }
+  }
+
+@media (min-width:776px) {
+  .sockencontainer { background-size: 100%; }
  .sockentext {
    padding: 10px;
   position:absolute;
    bottom:20px;
     font-size:16px;
   }}
+
+@media (min-width:992px) {
+  .sockencontainer { background-size: 100%; }
+ .sockentext {
+   padding: 10px;
+  position:absolute;
+   bottom:20px;
+    font-size:16px;
+  }}
+
 /* ENDE Aktionen */
 
   /* Startpage */
