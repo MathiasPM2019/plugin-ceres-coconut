@@ -227,6 +227,7 @@ ul.no-style-type li {
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: 50%;
+  position: relative;
 }
 
 
