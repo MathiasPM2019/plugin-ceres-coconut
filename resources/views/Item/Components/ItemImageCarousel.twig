@@ -7,7 +7,7 @@
                 </a>
             </div>
         </div>
-        <div id="thumb-carousel" class="owl-thumbs owl-carousel owl-theme owl-single-item" ref="thumbs">
+        <div v-if="carouselImages > 1" id="thumb-carousel" class="owl-thumbs owl-carousel owl-theme owl-single-item" ref="thumbs">
             <img
                 @click="goTo(index)"
                 class="owl-thumb"
