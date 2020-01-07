@@ -124,14 +124,16 @@
             </div>
         {% endif %}
         <div class="container-max">
-        <div class="col-12">
-            {% if categoryDescriptionBottom == "description1" or categoryDescriptionBottom == "both" and category.details[0].description | trim is not empty %}
-                <div class="category-description pt-5 mt-5 border-top mb-3">{{ category.details[0].description | raw }}</div>
-            {% endif %}
-            {% if categoryDescriptionBottom == "description2" or categoryDescriptionBottom == "both" and category.details[0].description2 | trim is not empty %}
-                <div class="category-description pt-5 mt-5 border-top mb-3">{{ category.details[0].description2 | raw }}</div>
-            {% endif %}
-        </div>
+          {% if category is defined %}
+              <div class="col-12">
+                  {% if ceresConfig.item.showCategoryDescriptionBottom in ["description1", "both"] and category.details[0].description | trim is not empty %}
+                      <div class="category-description pt-5 mt-5 border-top mb-3">{{ category.details[0].description | raw }}</div>
+                  {% endif %}
+                  {% if ceresConfig.item.showCategoryDescriptionBottom in ["description2", "both"] and category.details[0].description2 | trim is not empty %}
+                      <div class="category-description pt-5 mt-5 border-top mb-3">{{ category.details[0].description2 | raw }}</div>
+                  {% endif %}
+              </div>
+          {% endif %}
       </div>
     </div>
 
