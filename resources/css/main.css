@@ -438,6 +438,22 @@ ul.no-style-type li {
      font-size: 18px;
   }
 
+  @media (max-width: 767px) {
+.widget-image-carousel .widget-inner .widget-caption {
+    position: absolute;
+    text-align: center;
+    bottom: 0px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 100%;
+ }
+  .widget-image-carousel .widget-inner .widget-caption h2 {
+    font-size: 20px;
+    display: block;
+  }
+}
+
   .widget-image-box.widget-image-box-block-caption > .widget-inner .widget-caption i {
     display: none;
   }
