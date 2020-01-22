@@ -482,15 +482,21 @@ ul.no-style-type li {
 .widget-image-box.widget-image-box-block-caption > .widget-inner {
     position: absolute;
     padding: 0.2rem;
-  }
+}
 
 .widget-image-box.widget-image-box-block-caption > .widget-inner .widget-caption {
-    padding: 0.8rem;
-      } }
+  position: absolute;
+  width: 100%;
+  padding: 2px 20px;
+      }
+.widget.widget-image-box.widget-image-box-block-caption > .widget-inner .widget-caption   h3 {
+  font-size: 18px;
+  }
+}
 
 .widget-primary .bg-appearance {
-    background-color: #fff;
-    color: #c00418;
+  background-color: #fff;
+  color: #c00418;
   font-weight: 400;
   font-size: 1.2em;
 }
