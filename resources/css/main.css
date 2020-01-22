@@ -484,7 +484,7 @@ ul.no-style-type li {
     padding: 0.2rem;
 }
 
-.widget-image-box.widget-image-box-block-caption > .widget-inner .widget-caption {
+.widget.widget-image-box.widget-image-box-block-caption > .widget-inner .widget-caption {
   position: absolute;
   width: 100%;
   padding: 2px 20px;
