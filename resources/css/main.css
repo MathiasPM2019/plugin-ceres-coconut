@@ -520,6 +520,15 @@ ul.no-style-type li {
     color: #444;
 }
 
+
+.content-button h3 :after {
+  font-family: FontAwesome;
+  content: "\f105";
+  font-size: 22px;
+  font-weight: bold;
+  float: right;
+}
+
 /* Cookie Hinweis (externe Herkunft */
 .cc_message {
 }
