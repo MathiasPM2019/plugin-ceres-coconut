@@ -87,32 +87,22 @@
             <slot name="BeforeAddToBasket"></slot>
         </div>
 
-    {% if basket.shippingProfileId == 10 %}
-        <div class="w-100" style="border: 1px solid blue">
-            {{ AddToBasket.printVueComponent(
-                "currentVariation",
-                false,
-                true,
-                {
-                    ":missing-order-properties":"variationMissingProperties",
-                    ":is-variation-selected": "isVariationSelected && currentVariation.filter.isSalable"
-                  }
-            ) }}
-        </div>
-    {% else %}
-        <div class="w-100" style="border: 1px solid gray">
-            {{ AddToBasket.printVueComponent(
-                "currentVariation",
-                false,
-                true,
-                {
-                    ":missing-order-properties":"variationMissingProperties",
-                    ":is-variation-selected": "isVariationSelected && currentVariation.filter.isSalable"
-                  }
-            ) }}
-        </div>
-    {% endif %}
 
+        <div class="w-100">
+            {{ AddToBasket.printVueComponent(
+                "currentVariation",
+                false,
+                true,
+                {
+                    ":missing-order-properties":"variationMissingProperties",
+                    ":is-variation-selected": "isVariationSelected && currentVariation.filter.isSalable"
+                  }
+            ) }}
+        </div>
+
+        <div v-if="store.state.basket.data.shippingProfileId == 10">Filialabholung</div>
+        <div v-else-if="store.state.basket.data.shippingProfileId == 2">keine Filialabholung</div>
+        <div v-else>normaler Versand</div>
 
 
         <div class="w-100">
