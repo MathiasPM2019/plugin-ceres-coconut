@@ -1,0 +1,6 @@
+$lang = 'de';
+
+/** @var ItemRepositoryContract $repository */
+$repository = pluginApp(ItemRepositoryContract::class);
+$item = $repository->show($itemId; ['*'], $lang; ['itemShippingProfiles']);
+$shippingProfiles = $item->itemShippingProfiles;
