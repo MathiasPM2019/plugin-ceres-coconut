@@ -100,10 +100,6 @@
             ) }}
         </div>
 
-        <div v-if="store.state.basket.data.shippingProfileId == 10">Filialabholung</div>
-        <div v-else-if="store.state.basket.data.shippingProfileId == 2">keine Filialabholung</div>
-        <div v-else>normaler Versand</div>
-
 
         <div class="w-100">
             <slot name="AfterAddToBasket"></slot>
