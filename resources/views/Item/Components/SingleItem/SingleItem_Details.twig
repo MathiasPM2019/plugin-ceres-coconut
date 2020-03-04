@@ -88,7 +88,7 @@
         </div>
 
 
-        <div class="w-100">
+        <div class="w-100" v-if="currentVariation.item.manufacturer.name != 'woom'">
             {{ AddToBasket.printVueComponent(
                 "currentVariation",
                 false,
@@ -99,6 +99,10 @@
                   }
             ) }}
         </div>
+
+        <div class="w100" v-else>
+          Die Produkte der Marke Woom sind ausschlie&szlig;lich unseren Landenlokalen erh&auml;ltlich.
+      </div>
 
 
 
