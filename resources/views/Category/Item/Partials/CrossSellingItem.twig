@@ -1,2 +1,105 @@
-<slot name="crossSellingItemsSimilar"></slot>
- <slot name="crossSellingItemsAccessory"></slot>
+<!--leer -->
+
+{{ component( "Ceres::Basket.Components.AddToBasket" ) }}
+{{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
+{{ component( "Ceres::ItemList.Components.ItemStoreSpecial" ) }}
+
+{% import "Ceres::Basket.Macros.AddToBasket" as AddToBasket %}
+
+{% if enableCarousel is not defined %}
+    {% if config("Ceres.item.enable_image_carousel") == "true" %}
+        {% set enableCarousel = "true" %}
+    {% else %}
+        {% set enableCarousel = "false" %}
+    {% endif %}
+{% endif %}
+
+<script type="x/template" id="vue-category-item">
+    <article class="cmp cmp-product-thumb cmp-product-thumb--grid">
+        <div class="thumb-inner" :class="paddingClasses" :style="paddingInlineStyles">
+          <!--
+            {{ AddToBasket.printVueComponent( "item", true, false, { ":has-price": "item | hasItemDefaultPrice" } ) }}
+            -->
+            <div class="thumb-background"></div>
+
+            <div class="thumb-image">
+                <div class="square-container">
+                    <div class="square-inner main-image">
+                        <slot name="item-image">
+                            <category-image-carousel template="#vue-category-image-carousel"
+                                                    :image-urls-data="item.images | itemImages(imageUrlAccessor)"
+                                                    :alt-text="item | itemName"
+                                                    :title-text="item | itemName"
+                                                    :item-url="item | itemURL"
+                                                    :enable-carousel="{{ enableCarousel }}"
+                                                    :disable-carousel-on-mobile="disableCarouselOnMobile"
+                                                    ref="categoryImageCarousel">
+                            </category-image-carousel>
+                        </slot>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STORE SPECIALS -->
+            <slot name="store-special">
+                <item-store-special v-if="storeSpecial"
+                                    :store-special="storeSpecial"
+                                    :recommended-retail-price="item.prices.rrp"
+                                    :variation-retail-price="item.prices.default"
+                                    :decimal-count="decimalCount">
+                </item-store-special>
+            </slot>
+            <!-- ./STORE SPECIALS -->
+
+            <!-- ITEM DETAILS -->
+            <slot name="item-details">
+                <div class="thumb-content">
+                <a  :href="item | itemURL">
+                  <div class="row m-0">
+                    <div class="col-12 col-sm-8 px-0">
+                        <div class="thumb-title small">
+                          <ul class="px-0">
+                          <li class="h4 price font-weight-bold">${ item.item.manufacturer.externalName }</li>
+                          <li class="h5">${ item.texts.name1 }</li>
+                          <li class="h5">${ item.texts.name3 }</li>
+                          </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4 px-0">
+                      <div class="thumb-meta mt-0">
+                          <slot name="BeforePrices"></slot>
+
+                          <ul class="px-0 justify-content-end text-right">
+                              <li v-if="item.prices.rrp && item.prices.rrp.price.value > 0 && item.prices.rrp.price.value > item.prices.default.unitPrice.value" class="justify-content-end text-right price-view-port">
+                                  <del class="crossprice" v-if="item.prices.specialOffer">
+                                      ${ item.prices.default.unitPrice.formatted | itemCrossPrice(true) }
+                                  </del>
+                                  <del class="crossprice" v-else>
+                                      ${ item.prices.rrp.unitPrice.formatted | itemCrossPrice }
+                                  </del>
+                              </li>
+
+                              <li class="price justify-content-end text-right">
+                                  ${ item.prices.default.unitPrice.formatted | specialOffer(item.prices, "unitPrice", "formatted") }
+                              </li>
+                          </ul>
+                      </div>
+
+                      <slot name="AfterPrices"></slot>
+
+                      <div class="category-unit-price d-none" v-if="!(item.unit.unitOfMeasurement === 'C62' && item.unit.content === 1)">
+                          <span>${ item.unit.content }</span>
+                          <span>&nbsp;${ item.unit.names.name }</span>
+                          <span v-if="item.variation.mayShowUnitPrice">&nbsp;| ${ item.prices.default.basePrice }</span>
+                      </div>
+
+
+                      </div>
+                  </div><!-- row Ende -->
+                </a>
+                </div>
+            </slot>
+            <!-- ./ITEM DETAILS  -->
+        </div>
+    </article>
+</script>

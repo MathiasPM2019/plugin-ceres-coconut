@@ -10,7 +10,7 @@
 {{ component( "CeresCoconut::Item.Components.VariationSelect" ) }}
 
 <!-- weitere Cross Selling Listen -->
-{% set lang         = services.sessionStorage.getLang() %}
+{% set lang = services.sessionStorage.getLang() %}
 {% set newId = services.category.get(247, lang) %}
 {% set saleId = services.category.get(248, lang) %}
 
