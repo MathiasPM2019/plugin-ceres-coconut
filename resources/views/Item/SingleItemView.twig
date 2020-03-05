@@ -55,7 +55,7 @@
             <ul class="product-list row grid crossselling-list crossselling-similar">
                 {% for item in crossSimilarItemDetails.documents %}
                     <li class="col-xs-6">
-                        {% include "DeinTheme::Category.Item.Partials.CrosssellingItem" with { 'item': item } %}
+                        {% include "CeresCoconut::Category.Item.Partials.CrosssellingItem" with { 'item': item } %}
                     </li>
                 {% endfor %}
             </ul>
@@ -81,7 +81,7 @@
                     <ul class="product-list row grid crossselling-list crossselling-accessory">
                         {% for item in crossAccessoryItemDetails.documents %}
                             <li class="col-xs-6 col-md-3">
-                                {% include "DeinTheme::Category.Item.Partials.CrosssellingItem" with { 'item': item } %}
+                                {% include "CeresCoconut::Category.Item.Partials.CrosssellingItem" with { 'item': item } %}
                             </li>
                         {% endfor %}
                     </ul>
