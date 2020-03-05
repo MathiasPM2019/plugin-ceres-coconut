@@ -27,12 +27,6 @@ class CeresCoconutServiceProvider extends ServiceProvider
     public function boot(Twig $twig, Dispatcher $dispatcher, ConfigRepository $config)
     {
         $enabledOverrides = explode(", ", $config->get("CeresCoconut.templates.override"));
-          // Cross Selling Listen
-          $dispatcher->listen('IO.ctx.item', function (TemplateContainer $templateContainer, $templateData = [])
-   {
-       $templateContainer->setContext( MyThemeContext::class);
-       return false;
-   }, 0);
 
           // Override partials
         $dispatcher->listen('IO.init.templates', function (Partial $partial) use ($enabledOverrides)
@@ -64,6 +58,14 @@ class CeresCoconutServiceProvider extends ServiceProvider
 
             return false;
         }, self::PRIORITY);
+
+        // Cross Selling Listen
+        $dispatcher->listen('IO.ctx.item', function (TemplateContainer $templateContainer, $templateData = [])
+          {
+            $templateContainer->setContext( MyThemeContext::class);
+            return false;
+          }, 0);
+
 
         // Override homepage
         if (in_array("homepage", $enabledOverrides) || in_array("all", $enabledOverrides))
