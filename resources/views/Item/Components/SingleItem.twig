@@ -3,7 +3,6 @@
 
 {% set itemData = config("Ceres.item.data") | split(', ') %}
 {% set enabledRoutes = config("IO.routing.enabled_routes") | split(', ') %}
-{% include "CeresCoconut::Category.Item.Partials.CrosssellingItem" with { 'item': item } %}
 
 <script type="x/template" id="vue-single-item">
     <div>
@@ -28,8 +27,6 @@
 
         </div>
         <div class="single container-max page-content my-5">
-        <slot name="crossSellingItemsSimilar"></slot>
-        <slot name="crossSellingItemsAccessory"></slot>
         <slot name="item-list-container"></slot>
         <slot name="feedback-container"></slot>
         <div>
