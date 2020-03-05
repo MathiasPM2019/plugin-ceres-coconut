@@ -3,7 +3,6 @@ namespace CeresCoconut\Contexts;
 
 use IO\Helper\ContextInterface;
 use Ceres\Contexts\SingleItemContext;
-
 use IO\Services\ItemSearch\Services\ItemSearchService;
 use IO\Services\ItemSearch\SearchPresets\CrossSellingItems;
 

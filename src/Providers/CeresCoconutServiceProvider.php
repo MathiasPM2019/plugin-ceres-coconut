@@ -9,7 +9,7 @@ use IO\Helper\TemplateContainer;
 use IO\Extensions\Functions\Partial;
 use IO\Services\ItemSearch\Helper\ResultFieldTemplate;
 use Plenty\Plugin\ConfigRepository;
-
+use Theme\Contexts\CeresCoconutContext;
 
 /**
  * Class CeresCoconutServiceProvider
@@ -30,10 +30,10 @@ class CeresCoconutServiceProvider extends ServiceProvider
 
         // CrossSelling Anpassung
         $eventDispatcher->listen('IO.ctx.item', function (TemplateContainer $templateContainer, $templateData = [])
-   {
+       {
        $templateContainer->setContext(CrossSellingContext::class);
        return false;
-   }, 0);
+        }, 0);
 
         // Override partials
         $dispatcher->listen('IO.init.templates', function (Partial $partial) use ($enabledOverrides)
