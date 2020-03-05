@@ -31,15 +31,35 @@
 
 
 
-    <div slot="CrossSellingAccessory">
+    <template #cross-selling-accessory>
+    {% if accessory|length > 0 %}
+          <div class="crossSelling">
+            <hr>
+            <div class="col-xs-12">
+            <p class="h3">Das passt jetzt dazu:</p>
+            {{ component( "CeresCoconut::ItemList.Components.CategoryItem" ) }}
+            {% set decimalCount = ceresConfig.item.storeSpecial %}
+              {% for item in accessory %}
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                  <category-item :item-data="{{ item.data | json_data }}"
+                  :decimal-count="{{ decimalCount }}"
+                  image-url-accessor="urlMiddle"
+                  template="#vue-category-item"
+                  >
+                  <template slot="BeforePrices">{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
+                  <template slot="AfterPrices">{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
+				    <a href="{{ item.data | itemURL }}" class="small">
+                        <i class="fa fa-image"></i>
+                        <span>{{ item.data | itemName }}</span>
+                    </a>
+                </category-item>
+              </div>
+              {% endfor %}
+          </div>
+        </div>
+    {% endif %}
+</template>
 
-    	{% if accessory|length > 0 %}
-            		<div class="crossSelling">
-            			<span class="h3">Das passt auch dazu:</span>
-            			<container-item-list :items="null"></container-item-list>
-          		</div>
-    	{% endif %}
-       </div>
 
 
 </single-item>
