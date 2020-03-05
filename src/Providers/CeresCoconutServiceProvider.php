@@ -31,7 +31,7 @@ class CeresCoconutServiceProvider extends ServiceProvider
         // CrossSelling Anpassung
         $eventDispatcher->listen('IO.ctx.item', function (TemplateContainer $templateContainer, $templateData = [])
    {
-       $templateContainer->setContext( CrossSellingContext::class);
+       $templateContainer->setContext(CrossSellingContext::class);
        return false;
    }, 0);
 
