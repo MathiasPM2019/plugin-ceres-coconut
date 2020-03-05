@@ -38,6 +38,58 @@
             {{ ImageCarouselOverride }}
         {% endif %}
     </template>
-  
+    <div slot="crossSellingItemsSimilar">
+          {% if crossSellingItemsSimilar | length > 0 %}
+
+              {% set crossSimilarItemIds = [] %}
+
+              {% for crossSimilarItem in crossSellingItemsSimilar %}
+                  {% if crossSimilarItemIds | length < 16 %}
+                      {% set crossSimilarItemIds = crossSimilarItemIds|merge([crossSimilarItem.crossItemId]) %}
+                  {% endif %}
+              {% endfor %}
+
+              {% set crossSimilarItemDetails = services.itemLoader.loadForTemplate('DeinTheme::ItemList.ItemListView', itemLoaderPresets.items, {'itemIds':crossSimilarItemIds}) %}
+
+              <h3>&Auml;hnliche Artikel</h3>
+              <ul class="product-list row grid crossselling-list crossselling-similar">
+                  {% for item in crossSimilarItemDetails.documents %}
+                      <li class="col-xs-6">
+                          {% include "CeresCoconut::Category.Item.Partials.CrosssellingItem" with { 'item': item } %}
+                      </li>
+                  {% endfor %}
+              </ul>
+          {% endif %}<!-- ./Ähnliche Artikel -->
+      </div>
+      <div slot="crossSellingItemsAccessory">
+          <div class="row">
+              <div class="col-xs-12">
+
+                  {% if crossSellingItemsAccessory | length > 0 %}
+
+                      {% set crossAccessoryItemIds = [] %}
+
+                      {% for crossAccessoryItem in crossSellingItemsAccessory %}
+                          {% if crossAccessoryItemIds | length < 16 %}
+                              {% set crossAccessoryItemIds = crossAccessoryItemIds|merge([crossAccessoryItem.crossItemId]) %}
+                          {% endif %}
+                      {% endfor %}
+
+                      {% set crossAccessoryItemDetails = services.itemLoader.loadForTemplate('DeinTheme::ItemList.ItemListView', itemLoaderPresets.items, {'itemIds':crossAccessoryItemIds}) %}
+
+                      <h3>passendes Zubeh&ouml;r</h3>
+                      <ul class="product-list row grid crossselling-list crossselling-accessory">
+                          {% for item in crossAccessoryItemDetails.documents %}
+                              <li class="col-xs-6 col-md-3">
+                                  {% include "CeresCoconut::Category.Item.Partials.CrosssellingItem" with { 'item': item } %}
+                              </li>
+                          {% endfor %}
+                      </ul>
+                  {% endif %}
+
+              </div>
+          </div><!-- ./Zubehör -->
+      </div>
+
 </single-item>
 <!-- -->
