@@ -9,16 +9,6 @@
 {{ component( "CeresCoconut::Item.Components.SingleItem" ) }}
 {{ component( "CeresCoconut::Item.Components.VariationSelect" ) }}
 
-<!-- weitere Cross Selling Listen -->
-{% set lang = services.sessionStorage.getLang() %}
-{% set newId = services.category.get(247, lang) %}
-{% set saleId = services.category.get(248, lang) %}
-
-{% set crossSellingItemsAccessory = services.item.getItemCrossSellingList(item.documents[0].data.item.id, "Accessory") %}
-{% set crossSellingItemsSimilar = services.item.getItemCrossSellingList(item.documents[0].data.item.id, "Similar") %}
-
-<!-- ENDE -->
-
 <single-item v-cloak item-data="{{ item | json_data }}" attributes-data="{{ attributes | json_data }}" variations="{{ variations | json_data }}">
     <template #before-price>{{ LayoutContainer.show("Ceres::SingleItem.BeforePrice", item.documents[0].data) }}</template>
     <template #after-price>{{ LayoutContainer.show("Ceres::SingleItem.AfterPrice", item.documents[0].data) }}</template>
@@ -38,58 +28,19 @@
             {{ ImageCarouselOverride }}
         {% endif %}
     </template>
-    <div slot="crossSellingItemsSimilar">
-          {% if crossSellingItemsSimilar | length > 0 %}
 
-              {% set crossSimilarItemIds = [] %}
 
-              {% for crossSimilarItem in crossSellingItemsSimilar %}
-                  {% if crossSimilarItemIds | length < 16 %}
-                      {% set crossSimilarItemIds = crossSimilarItemIds|merge([crossSimilarItem.crossItemId]) %}
-                  {% endif %}
-              {% endfor %}
 
-              {% set crossSimilarItemDetails = services.itemLoader.loadForTemplate('CeresCoconut::ItemList.ItemListView', itemLoaderPresets.items, {'itemIds':crossSimilarItemIds}) %}
+    <div slot="CrossSellingAccessory">
 
-              <h3>&Auml;hnliche Artikel</h3>
-              <ul class="product-list row grid crossselling-list crossselling-similar">
-                  {% for item in crossSimilarItemDetails.documents %}
-                      <li class="col-xs-6">
-                          {% include "CeresCoconut::Category.Item.Partials.CrossSellingItem" with { 'item': item } %}
-                      </li>
-                  {% endfor %}
-              </ul>
-          {% endif %}<!-- ./Ähnliche Artikel -->
-      </div>
-      <div slot="crossSellingItemsAccessory">
-          <div class="row">
-              <div class="col-xs-12">
+    	{% if accessory|length > 0 %}
+            		<div class="crossSelling">
+            			<span class="h3">Das passt auch dazu:</span>
+            			<container-item-list :items="null"></container-item-list>
+          		</div>
+    	{% endif %}
+       </div>
 
-                  {% if crossSellingItemsAccessory | length > 0 %}
-
-                      {% set crossAccessoryItemIds = [] %}
-
-                      {% for crossAccessoryItem in crossSellingItemsAccessory %}
-                          {% if crossAccessoryItemIds | length < 16 %}
-                              {% set crossAccessoryItemIds = crossAccessoryItemIds|merge([crossAccessoryItem.crossItemId]) %}
-                          {% endif %}
-                      {% endfor %}
-
-                      {% set crossAccessoryItemDetails = services.itemLoader.loadForTemplate('CeresCoconut::ItemList.ItemListView', itemLoaderPresets.items, {'itemIds':crossAccessoryItemIds}) %}
-
-                      <h3>passendes Zubeh&ouml;r</h3>
-                      <ul class="product-list row grid crossselling-list crossselling-accessory">
-                          {% for item in crossAccessoryItemDetails.documents %}
-                              <li class="col-xs-6 col-md-3">
-                                  {% include "CeresCoconut::Category.Item.Partials.CrossSellingItem" with { 'item': item } %}
-                              </li>
-                          {% endfor %}
-                      </ul>
-                  {% endif %}
-
-              </div>
-          </div><!-- ./Zubehör -->
-      </div>
 
 </single-item>
 <!-- -->
