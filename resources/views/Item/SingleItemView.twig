@@ -28,6 +28,23 @@
             {{ ImageCarouselOverride }}
         {% endif %}
     </template>
-    
+    <template #cross-selling-accessory>
+    {% if accessory|length > 0 %}
+          <div class="crossSelling">
+            <hr>
+            <div class="col-xs-12">
+            <p class="h3">Das passt dazu:</p>
+            {{ component( "Ceres::ItemList.Components.CategoryItem" ) }}
+            {% set decimalCount = ceresConfig.item.storeSpecial %}
+              {% for item in accessory %}
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                  
+              </div>
+              {% endfor %}
+          </div>
+        </div>
+    {% endif %}
+</template>
+
 </single-item>
 <!-- -->
