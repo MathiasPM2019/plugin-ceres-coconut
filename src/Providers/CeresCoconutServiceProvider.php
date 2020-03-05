@@ -28,6 +28,13 @@ class CeresCoconutServiceProvider extends ServiceProvider
     {
         $enabledOverrides = explode(", ", $config->get("CeresCoconut.templates.override"));
 
+        // CrossSelling Anpassung
+        $eventDispatcher->listen('IO.ctx.item', function (TemplateContainer $templateContainer, $templateData = [])
+   {
+       $templateContainer->setContext( CeresCoconutContext::class);
+       return false;
+   }, 0);
+
         // Override partials
         $dispatcher->listen('IO.init.templates', function (Partial $partial) use ($enabledOverrides)
         {
