@@ -9,6 +9,7 @@ use IO\Helper\TemplateContainer;
 use IO\Extensions\Functions\Partial;
 use IO\Services\ItemSearch\Helper\ResultFieldTemplate;
 use Plenty\Plugin\ConfigRepository;
+use CeresCoconut\Contexts\CrossSellingContext;
 
 /**
  * Class CeresCoconutServiceProvider
@@ -26,6 +27,12 @@ class CeresCoconutServiceProvider extends ServiceProvider
     public function boot(Twig $twig, Dispatcher $dispatcher, ConfigRepository $config)
     {
         $enabledOverrides = explode(", ", $config->get("CeresCoconut.templates.override"));
+          // Cross Selling Listen
+          $dispatcher->listen('IO.ctx.item', function (TemplateContainer $templateContainer, $templateData = [])
+   {
+       $templateContainer->setContext( MyThemeContext::class);
+       return false;
+   }, 0);
 
           // Override partials
         $dispatcher->listen('IO.init.templates', function (Partial $partial) use ($enabledOverrides)
