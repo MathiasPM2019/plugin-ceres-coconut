@@ -7,7 +7,7 @@ use Ceres\Contexts\SingleItemContext;
 use IO\Services\ItemSearch\Services\ItemSearchService;
 use IO\Services\ItemSearch\SearchPresets\CrossSellingItems;
 
-class CoconutContext extends SingleItemContext implements ContextInterface
+class CrossSellingContext extends SingleItemContext implements ContextInterface
 {
 	public $accessory;
 
