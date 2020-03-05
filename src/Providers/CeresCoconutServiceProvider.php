@@ -57,12 +57,12 @@ class CeresCoconutServiceProvider extends ServiceProvider
             }
 
             return false;
-        }, self::PRIORITY); 
+        }, self::PRIORITY);
 
         // Cross Selling Listen
         $dispatcher->listen('IO.ctx.item', function (TemplateContainer $templateContainer, $templateData = [])
           {
-            $templateContainer->setContext( MyThemeContext::class);
+            $templateContainer->setContext( CrossSellingContext::class);
             return false;
           }, 0);
 
