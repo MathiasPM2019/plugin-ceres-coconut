@@ -1,5 +1,5 @@
 <?php
-namespace ThemeName\Contexts;
+namespace CeresCoconut\Contexts;
 
 use IO\Helper\ContextInterface;
 use Ceres\Contexts\SingleItemContext;
@@ -7,7 +7,7 @@ use Ceres\Contexts\SingleItemContext;
 use IO\Services\ItemSearch\Services\ItemSearchService;
 use IO\Services\ItemSearch\SearchPresets\CrossSellingItems;
 
-class MyThemeContext extends SingleItemContext implements ContextInterface
+class CoconutContext extends SingleItemContext implements ContextInterface
 {
 	public $accessory;
 
