@@ -1,6 +1,5 @@
 {% import "Ceres::Basket.Macros.AddToBasket" as AddToBasket %}
 {% import "Ceres::Item.Macros.AgeRestriction" as AgeRestriction %}
-
 {% set itemData = config("Ceres.item.data") | split(', ') %}
 {% set enabledRoutes = config("IO.routing.enabled_routes") | split(', ') %}
 
