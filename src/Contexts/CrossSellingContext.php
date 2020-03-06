@@ -10,6 +10,7 @@ use IO\Services\ItemSearch\SearchPresets\CrossSellingItems;
 class CrossSellingContext extends SingleItemContext implements ContextInterface
 {
 	public $accessory;
+	public $similar;
 
 	public function init($params)
 	{
@@ -19,8 +20,16 @@ class CrossSellingContext extends SingleItemContext implements ContextInterface
         			"relation" => "Accessory"      // Nutze die Liste Zubehoer
        		);
      		$searchfactory = CrossSellingItems::getSearchFactory( $options );
-     		$searchfactory->setPage(1, 9); // Begrenze auf 6 Artikel
+     		$searchfactory->setPage(1, 9); // Begrenze auf x Artikel
       		$result = pluginApp(ItemSearchService::class)->getResult($searchfactory);
       		$this->accessory = $result['documents'];
+		$options = array(
+        			"itemId" => $this->item['documents'][0]['data']['item']['id'],
+        			"relation" => "Similar"      // Nutze die Liste Zubehoer
+       		);
+       	$searchfactory = CrossSellingItems::getSearchFactory( $options );
+       	$searchfactory->setPage(1, 9); // Begrenze auf x Artikel
+      		$result = pluginApp(ItemSearchService::class)->getResult($searchfactory);
+      		$this->similar= $result['documents'];
 	}
 }

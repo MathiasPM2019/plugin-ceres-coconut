@@ -53,5 +53,30 @@
         </div>
     {% endif %}
 </template>
+<template #cross-selling-similar>
+{% if similar|length > 0 %}
+      <div class="crossSelling">
+        <hr>
+        <div class="col-12">
+        <p class="h3">Das könnte dir auch gefallen:</p>
+        <div class="col-12">
+            <carousel>
+                {% for item in similar %}
+                    <template slot="items">
+                        <category-item
+                            :item-data="{{ item.data | json_encode }}"
+                            :decimal-count="{{ ceresConfig.item.storeSpecial }}"
+                            :disable-carousel-on-mobile="true">
+                            <template #before-prices>{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
+                            <template #after-prices>{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
+                        </category-item>
+                    </template>
+                {% endfor %}
+            </carousel>
+        </div>
+      </div>
+    </div>
+{% endif %}
+</template>
 </single-item>
 <!-- -->
