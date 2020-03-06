@@ -8,6 +8,8 @@
 {{ component( "Ceres::Item.Components.OrderPropertyList" ) }}
 {{ component( "CeresCoconut::Item.Components.SingleItem" ) }}
 {{ component( "CeresCoconut::Item.Components.VariationSelect" ) }}
+{{ component( "CeresCoconut::ItemList.Components.CategoryItem") }}
+{{ component( "Ceres::PageDesign.Components.Carousel" ) }}
 
 <single-item v-cloak item-data="{{ item | json_data }}" attributes-data="{{ attributes | json_data }}" variations="{{ variations | json_data }}">
     <template #before-price>{{ LayoutContainer.show("Ceres::SingleItem.BeforePrice", item.documents[0].data) }}</template>
@@ -34,12 +36,10 @@
               <hr>
               <div class="col-xs-12">
               <p class="h3">Das passt dazu:</p>
-              {{ component( "CeresCoconut::ItemList.Components.CategoryItem") }}
-              {{ component( "Ceres::PageDesign.Components.Carousel" ) }}
+
               <div class="col-12">
-                  <carousel>
                       {% for item in accesory %}
-                          <template slot="items">
+                      
                               <category-item
                                   :item-data="{{ item.data | json_encode }}"
                                   :decimal-count="{{ ceresConfig.item.storeSpecial }}"
@@ -47,9 +47,9 @@
                                   <template #before-prices>{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
                                   <template #after-prices>{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
                               </category-item>
-                          </template>
+
                       {% endfor %}
-                  </carousel>
+
               </div>
             </div>
           </div>
