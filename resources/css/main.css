@@ -791,6 +791,7 @@ ul.newsletter-benefits li {
 
 ul.image-list img {
     max-height: 20px;
+      max-width: 75px;
 }
 
 /* START Kategorie */
