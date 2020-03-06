@@ -38,17 +38,19 @@
               <p class="h3">Das passt dazu:</p>
 
               <div class="col-12">
-                      {% for item in accesory %}
-                      
-                              <category-item
-                                  :item-data="{{ item.data | json_encode }}"
-                                  :decimal-count="{{ ceresConfig.item.storeSpecial }}"
-                                  :disable-carousel-on-mobile="true">
-                                  <template #before-prices>{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
-                                  <template #after-prices>{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
-                              </category-item>
-
-                      {% endfor %}
+                <carousel>
+                    {% for item in accessory %}
+                        <template slot="items">
+                            <category-item
+                                :item-data="{{ item.data | json_encode }}"
+                                :decimal-count="{{ ceresConfig.item.storeSpecial }}"
+                                :disable-carousel-on-mobile="true">
+                                <template #before-prices>{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
+                                <template #after-prices>{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
+                            </category-item>
+                        </template>
+                    {% endfor %}
+                </carousel>
 
               </div>
             </div>
