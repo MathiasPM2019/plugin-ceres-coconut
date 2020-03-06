@@ -38,7 +38,7 @@
               {{ component( "Ceres::PageDesign.Components.Carousel" ) }}
               <div class="col-12">
                   <carousel>
-                      {% for item in itemList %}
+                      {% for item in accesory %}
                           <template slot="items">
                               <category-item
                                   :item-data="{{ item.data | json_encode }}"
