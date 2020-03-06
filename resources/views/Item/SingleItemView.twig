@@ -29,31 +29,33 @@
         {% endif %}
     </template>
     <template #cross-selling-accessory>
-    {% if accessory|length > 0 %}
-          <div class="crossSelling">
-            <hr>
-            <div class="col-12">
-            <p class="h3">Das passt dazu:</p>
-            {{ component( "Ceres::ItemList.Components.CategoryItem" ) }}
-
-            <carousel>
-            {% for item in accesory %}
-            <template slot="items">
-                <category-item
-                    :item-data="{{ item.data | json_encode }}"
-                    :decimal-count="{{ ceresConfig.item.storeSpecial }}"
-                    :disable-carousel-on-mobile="true">
-                    <template #before-prices>{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
-                    <template #after-prices>{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
-                </category-item>
-            </template>
-            {% endfor %}
-              </carousel>
-
+      {% if accessory|length > 0 %}
+            <div class="crossSelling">
+              <hr>
+              <div class="col-xs-12">
+              <p class="h3">Das passt dazu:</p>
+              {{ component( "Ceres::ItemList.Components.CategoryItem" ) }}
+              {% set decimalCount = ceresConfig.item.storeSpecial %}
+                {% for item in accessory %}
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <category-item :item-data="{{ item.data | json_data }}"
+                    :decimal-count="{{ decimalCount }}"
+                    image-url-accessor="urlMiddle"
+                    template="#vue-category-item"
+                    >
+                    <template slot="BeforePrices">{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
+                    <template slot="AfterPrices">{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
+  				    <a href="{{ item.data | itemURL }}" class="small">
+                          <i class="fa fa-image"></i>
+                          <span>{{ item.data | itemName }}</span>
+                      </a>
+                  </category-item>
+                </div>
+                {% endfor %}
+            </div>
           </div>
-        </div>
-    {% endif %}
-</template>
+      {% endif %}
+  </template>
 
 </single-item>
 <!-- -->
