@@ -19,7 +19,7 @@ class CrossSellingContext extends SingleItemContext implements ContextInterface
         			"relation" => "Accessory"      // Nutze die Liste Zubehoer
        		);
      		$searchfactory = CrossSellingItems::getSearchFactory( $options );
-     		$searchfactory->setPage(1, 4); // Begrenze auf 4 Artikel
+     		$searchfactory->setPage(1, 9); // Begrenze auf 6 Artikel
       		$result = pluginApp(ItemSearchService::class)->getResult($searchfactory);
       		$this->accessory = $result['documents'];
 	}
