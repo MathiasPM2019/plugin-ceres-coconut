@@ -1337,6 +1337,23 @@ transform: translate(-50%) rotate(170deg);
   color: #666;
 }
 
+/*Vergleichstabelle*/
+.tab-content table.vergleich {
+  font-size: 10px;
+  width: 90%;
+  padding: 4px;
+  font-weight: 400;
+  color: #666;
+}
+.tab-content table.vergleich td:nth-child(1) {
+  font-size: 12px;
+  width: 10%;
+  padding: 4px;
+  font-weight: 600;
+  color: #666;
+}
+/*ENDE*/
+
 
 /* Artikel-Slider */
 
