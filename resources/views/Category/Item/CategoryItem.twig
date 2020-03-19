@@ -91,8 +91,10 @@
               {% endif %}
               {% if itemList is not empty %}
 
-              <div class="widget widget-text widget-danger my-2 w-100"><div class="widget-inner bg-appearance pb-1"><h5 class="align-center"><a href="https://shop.intersport-kloepping.de/filialen/unternehmen/covid-19" class="color-info"><strong>+++ Aktuell gibt es keine Einschränkungen im Online-Versand.
-                Für weitere Informationen zu Verfügbarkeit und Auslieferung angesichts des Corona-Virus bitte hier klicken. +++</strong></a></h5></div></div>
+              <div class="mb-5">
+                <a href="/filialen/unternehmen/covid-19">
+                <img src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Aktionen/intersport-kloepping-online-shop-offen.jpg"></a>
+                </div>
                 <ul class="product-list row grid">
                     {% for item in itemList %}
                         <li class="col-6 col-sm-6 col-md-4 col-lg-{% if category is defined and ceresConfig.header.showNavBars in ["side", "both"] %}4{% else %}3{% endif %}">
