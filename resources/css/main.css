@@ -190,11 +190,6 @@ ul.no-style-type li {
     padding: 10px 5px 10px 5px;
   }
 
-.provider-select-label + .provider-select-label-height {
-  height:auto;
-}
-
-
   /* Checkout-Gutschein Button */
 .checkout-rightside .cmp .btn-primary {
       background-color: #fff;

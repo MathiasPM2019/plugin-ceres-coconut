@@ -11,18 +11,12 @@
                         :checked="shippingProfileId === shippingProfile.parcelServicePresetId"
                         :disabled="isBasketLoading || isCheckoutReadonly"
                 >
-                <label class="provider-select-label {% if shippingProfileId == 10 %} provider-select-label-height {% endif %}" :for="'ShippingProfileID' +  _uid + shippingProfile.parcelServicePresetId" :class="paddingClasses" :style="paddingInlineStyles">
+                <label class="provider-select-label" :for="'ShippingProfileID' +  _uid + shippingProfile.parcelServicePresetId" :class="paddingClasses" :style="paddingInlineStyles">
                     <div class="icon">
                         {#<img src="">#}
                     </div><!--
                     --><div class="content">
                         ${ shippingProfile.parcelServiceName } - ${ shippingProfile.parcelServicePresetName }
-                        <div v-if="shippingProfileId == 10">
-                          <h5 class="font-weight-bold">Wichtiger Hinweis:</h5>
-                          <p>Aufgrund der derzeitigen Situation bieten wir eine verbesserte Filialabholung an.
-                            Nachdem du den/die Artikel gekaufts hast, setzen wir uns mit dir in Verbindung.
-                             Wir vereinbaren mit dir einen für dich passenden Termin in Jessen oder Wittenberg</p>
-                        </div>
                         <div>
                             <small>
                                 ${ shippingProfile.shippingAmount | currency }

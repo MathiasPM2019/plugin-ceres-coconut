@@ -12,7 +12,7 @@
     {{ component( "Ceres::Customer.Components.AddressSelect.AddressSelect" ) }}
     {{ component( "Ceres::Checkout.Components.AcceptGtcCheck" ) }}
     {{ component( "Ceres::Checkout.Components.PaymentProviderSelect" ) }}
-    {{ component( "CeresCoconut::Checkout.Components.ShippingProfileSelect" ) }}
+    {{ component( "Ceres::Checkout.Components.ShippingProfileSelect" ) }}
     {{ component( "Ceres::Checkout.Components.PlaceOrder" ) }}
     {{ component( "Ceres::Checkout.Components.ContactWishInput" ) }}
     {{ component( "Ceres::Basket.Components.Coupon" ) }}
@@ -128,6 +128,12 @@
                                 {% if overrideShippingProfiles|trim is empty %}
                                     <div class="shipping-method-select">
                                         <shipping-profile-select></shipping-profile-select>
+                                    </div>
+                                    <div>
+                                      <h5 class="font-weight-bold">Wichtiger Hinweis zur Filialabholung:</h5>
+                                      <p>Aufgrund der derzeitigen Situation bieten wir eine verbesserte Filialabholung an.
+                                        Nachdem du den/die Artikel gekaufts hast, setzen wir uns mit dir in Verbindung.
+                                         Wir vereinbaren mit dir einen für dich passenden Termin zur Abholung in Wittenberg</p>
                                     </div>
                                 {% else %}
                                     {{ overrideShippingProfiles }}
