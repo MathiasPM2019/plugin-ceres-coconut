@@ -1,1 +1,44 @@
-<!-- Insert markup for shipping profile select box here -->
+<script type="x/template" id="vue-shipping-profile-select">
+    <div class="cmp cmp-method-list list mb-4" v-bind:class="{ 'error': showError }">
+        <ul class="method-list component-loading" :class="{ 'isLoading': isBasketLoading || isCheckoutReadonly }">
+            <li v-for="shippingProfile in shippingProfileList" class="method-list-item" :data-id="shippingProfile.parcelServicePresetId">
+                <input
+                        type="radio"
+                        :id="'ShippingProfileID' + _uid + shippingProfile.parcelServicePresetId"
+                        :name="'shippingProfileSelect' + _uid"
+                        :value="shippingProfile.parcelServicePresetId"
+                        @change="onShippingProfileChange(shippingProfile.parcelServicePresetId)"
+                        :checked="shippingProfileId === shippingProfile.parcelServicePresetId"
+                        :disabled="isBasketLoading || isCheckoutReadonly"
+                >
+                <label class="provider-select-label {% if shippingProfileId == 10 %} provider-select-label-height {% endif %}" :for="'ShippingProfileID' +  _uid + shippingProfile.parcelServicePresetId" :class="paddingClasses" :style="paddingInlineStyles">
+                    <div class="icon">
+                        {#<img src="">#}
+                    </div><!--
+                    --><div class="content">
+                        ${ shippingProfile.parcelServiceName } - ${ shippingProfile.parcelServicePresetName }
+                        <div v-if="shippingProfileId == 10">
+                          <h5 class="font-weight-bold">Wichtiger Hinweis:</h5>
+                          <p>Aufgrund der derzeitigen Situation bieten wir eine verbesserte Filialabholung an.
+                            Nachdem du den/die Artikel gekaufts hast, setzen wir uns mit dir in Verbindung.
+                             Wir vereinbaren mit dir einen für dich passenden Termin in Jessen oder Wittenberg</p>
+                        </div>
+                        <div>
+                            <small>
+                                ${ shippingProfile.shippingAmount | currency }
+                                <template v-if="maxDeliveryDays && maxDeliveryDays[shippingProfile.parcelServicePresetId]"> - {{ trans("Ceres::Template.checkoutShippingProfileMaxDeliveryDays", {"days": "${ maxDeliveryDays[shippingProfile.parcelServicePresetId] }"}) }}</template>
+                            </small>
+                        </div>
+                    </div>
+                </label>
+            </li><!-- -->
+            <li v-if="shippingProfileList.length <= 0" class="method-list-item has-error">
+                <div class="label">
+                    <div class="content">
+                        {{ trans("Ceres::Template.notificationsCalculateShippingFailed") }}
+                    </div>
+                </div>
+            </li><!-- -->
+        </ul>
+    </div>
+</script>
