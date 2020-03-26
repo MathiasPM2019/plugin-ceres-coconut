@@ -24,6 +24,11 @@ body > #vue-app, body > #vue-error {
 .grey-mid {
   background-color: #f0f0f0;
 }
+
+.green-white {
+  background-color: #19ad19;
+  color: #fff;
+}
 .grey-dark, .grey-dark-mobile {
   background-color: #54585B;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#61686c+0,47494b+100 */
