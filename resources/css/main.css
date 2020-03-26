@@ -195,6 +195,10 @@ ul.no-style-type li {
     padding: 10px 5px 10px 5px;
   }
 
+  label.fullheight {
+    height:auto;
+  }
+
   /* Checkout-Gutschein Button */
 .checkout-rightside .cmp .btn-primary {
       background-color: #fff;
