@@ -12,9 +12,13 @@
                         :disabled="isBasketLoading || isCheckoutReadonly"
                 >
                 <label class="provider-select-label" :for="'ShippingProfileID' +  _uid + shippingProfile.parcelServicePresetId" :class="paddingClasses" :style="paddingInlineStyles">
-                    <div class="icon">
-                        {#<img src="">#}
-                    </div><!--
+                <div class="icon">
+                    <div class="square-container" v-if="shippingProfile.icon">
+                        <div class="square-inner center-xy">
+                            <img :src="shippingProfile.icon" :alt="shippingProfile.parcelServiceName" :title="shippingProfile.parcelServiceName" >
+                        </div>
+                    </div>
+                </div><!--
                     --><div class="content">
                         ${ shippingProfile.parcelServiceName } - ${ shippingProfile.parcelServicePresetName }
                         <div>
@@ -24,6 +28,7 @@
                             </small>
                         </div>
                     </div>
+                    <div>T</div>
                 </label>
             </li><!-- -->
             <li v-if="shippingProfileList.length <= 0" class="method-list-item has-error">
