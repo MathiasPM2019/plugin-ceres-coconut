@@ -15,7 +15,7 @@
           <dd itemprop="productID">${ currentVariation.variation.number }</dd>
         <dt class="font-weight-bold" v-if="currentVariation.unit">Inhalt / Menge:</dt>
           <dd v-if="currentVariation.unit">
-            <dd v-if="currentVariation.ids.categories.all[1] == 429 || currentVariation.ids.categories.all[1] == 613">1x Fahrrad, 1x Starter-Kit Werkzeug</dd>
+            <dd v-if="currentVariation.ids.categories.all[1] == 429 || currentVariation.ids.categories.all[1] == 613">1x Fahrrad, 1x Betriebsanleitung</dd>
             <dd v-else>
               <span>${ currentVariation.unit.content | numberFormat }</span>
               <span>${ currentVariation.unit.names.name }</span>
