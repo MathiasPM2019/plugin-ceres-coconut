@@ -1393,6 +1393,10 @@ transform: translate(-50%) rotate(170deg);
     color: #c00418;
 }
 
+.owl-thumb+.border-appaerance {
+  margin-top: 1px;
+}
+
 /* Content Pages */
 
 .preislisten-ski  {
