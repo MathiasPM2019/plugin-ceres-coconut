@@ -1434,6 +1434,6 @@ transform: translate(-50%) rotate(170deg);
 }
 
 @media print {
-  .print-detail+.owl-single-item img { max-height: 100mm; }
-  }
+  .print-detail img { max-height: 80mm; }
+  #item-container.print-detail { max-height: 80mm; }
 }
