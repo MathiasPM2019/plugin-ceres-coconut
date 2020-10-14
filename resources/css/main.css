@@ -1432,3 +1432,8 @@ transform: translate(-50%) rotate(170deg);
     display: block;
   }
 }
+
+@media print {
+  .print-detail+.owl-single-item img { max-height: 100mm; }
+  }
+}
