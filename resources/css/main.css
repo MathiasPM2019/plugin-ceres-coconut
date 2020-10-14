@@ -1418,3 +1418,17 @@ transform: translate(-50%) rotate(170deg);
   font-size: 14px;
   font-weight: bold;
 }
+
+/* Print-Options */
+
+@media print {
+  .footer {
+    display: block;
+  }
+}
+
+@media print {
+  .top-bar {
+    display: block;
+  }
+}

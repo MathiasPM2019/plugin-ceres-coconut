@@ -25,7 +25,7 @@
             <div class="tab-pane active overflow-auto" :id="'details-' + currentVariation.variation.id" role="tabpanel" v-if="isDescriptionTabActive">
                 <div class="my-4" v-html="currentVariation.texts.description">
                 </div>
-                <div v-if="currentVariation.ids.categories.all[1] == 429 && currentVariation.item.manufacturer.name != 'woom'" class="row m-0 border-top p-0 pt-3">
+                <div v-if="currentVariation.ids.categories.all[1] == 429 && currentVariation.item.manufacturer.name != 'woom'" class="row m-0 border-top p-0 pt-3 no-print">
                   <div class="col-12 col-lg-6 p-0">
                     <div class="row m-0">
                       <div class="col-5 text-center"><img src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/fahrrad_testen.svg" class="m-2" style="height: 65px;"></div>

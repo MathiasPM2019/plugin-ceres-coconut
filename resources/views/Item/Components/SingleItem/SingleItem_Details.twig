@@ -36,7 +36,7 @@
 
       <div v-if="currentVariation.attributes.length && currentVariation.attributes[0].attribute.names.name == 'Rahmengröße'">
         <hr>
-        <div class="col-12 mb-3">
+        <div class="col-12 mb-3 no-print">
           <a data-toggle="modal" href="#Groessen-check" class="text-muted">
             <div class="row">
               <div class="col-1 p-0"><img class="mx-2" style="max-height:40px;" src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Webshop-Grafiken/groessencheck.svg"></div>
@@ -88,7 +88,7 @@
         </div>
 
 
-        <div class="w-100 px-3">
+        <div class="w-100 px-3 no-print">
             {{ AddToBasket.printVueComponent(
                 "currentVariation",
                 false,

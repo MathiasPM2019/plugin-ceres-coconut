@@ -3,7 +3,7 @@
 <header id="page-header" class="top-bar"> <!--header-top-scroll -->
     <div>
       <div class="container-max">
-<div class="row flex-row justify-content-end"><!--Top Bar -->
+<div class="row flex-row justify-content-end no-print"><!--Top Bar -->
            {{ LayoutContainer.show("Ceres::Header.LeftSide") }}
              <div class="col-sm-12 col-lg-8 hidden-md-down">
                <div  class="col-4 pull-left text-center padding-y-05">
@@ -104,7 +104,7 @@
                 <img alt="Intersport Klöpping Onlineshop" src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/intersport_kloepping_2018.png" class="img-fluid"/>
               </a>
             </div>
-            <div id="searchBox" class="col-lg-9 cmp cmp-search-box py-sm-2 collapse">
+            <div id="searchBox" class="col-lg-9 cmp cmp-search-box py-sm-2 collapse no-print">
                 {% set overrideSearchBar = LayoutContainer.show("Ceres::Search.SearchBar") %}
                 {% if overrideSearchBar | trim is empty %}
                     <item-search template="#vue-item-search"></item-search>
@@ -115,7 +115,7 @@
           </div>
         </div>
         </div>
-        <div class="col-12 grey-dark no-padding">
+        <div class="col-12 grey-dark no-padding no-print">
           {% include "CeresCoconut::PageDesign.Partials.Header.Navigation" %}
         </div>
     </div>
