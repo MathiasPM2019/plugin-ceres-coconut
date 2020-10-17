@@ -1436,4 +1436,6 @@ transform: translate(-50%) rotate(170deg);
 @media print {
   .print-detail img { max-height: 80mm; }
   #item-container.print-detail { max-height: 80mm; }
+  .print-detail>div { max-height: 100mm; }
+  #item-container+.print-detail { max-height: 100mm; }
 }

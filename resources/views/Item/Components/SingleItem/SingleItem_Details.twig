@@ -104,9 +104,9 @@
             <slot name="AfterAddToBasket"></slot>
         </div>
     </div>
-    <hr>
+    <hr class="no-print">
 
-        <div class="row">
+        <div class="row no-print">
           {% if "wish-list" in enabledRoutes or "all" in enabledRoutes %}
           <div class="col-xs-6 col-sm-4 col-lg-4">
             <add-to-wish-list :variation-id="currentVariation.variation.id"></add-to-wish-list>
@@ -116,7 +116,7 @@
           </div>
         </div>
 
-      <hr>
+      <hr class="no-print">
 
       <div v-if="currentVariation.ids.categories.all[1] == 429 || currentVariation.ids.categories.all[1] == 613"  class="row">
         <p class="col-12"> Dieses Fahrrad kannst du auch leasen. Bitte kontaktiere uns in diesem Fall &uuml;ber das <a href="{{ urls.contact }}"><span style="text-decoration:underline">Kontaktformular</span></a>. Wir k&uuml;mmern uns umgehend um deine Leasinganfrage.
