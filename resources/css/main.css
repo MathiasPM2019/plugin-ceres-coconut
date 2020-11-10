@@ -1219,6 +1219,16 @@ transform: translate(-50%) rotate(170deg);
   color: #fff;
 }
 
+/* toBasket Button verfügbarkeit */
+
+.item-facts .button-display-5 .btn-primary {
+  display:none !important;
+}
+
+.item-facts .button-display-1 .btn-primary {
+  display:block !important;
+}
+
 .item-facts .availability_1 * {
     background-color: #fff;
     color: #888;
@@ -1282,6 +1292,7 @@ transform: translate(-50%) rotate(170deg);
     padding: 0 10px 0 10px;
   }
 }
+
 
 /* technical Data */
 

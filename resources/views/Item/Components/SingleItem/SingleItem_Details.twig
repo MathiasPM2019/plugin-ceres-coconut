@@ -88,16 +88,17 @@
         </div>
 
 
-        <div class="w-100 px-3 no-print">
-            {{ AddToBasket.printVueComponent(
-                "currentVariation",
-                false,
-                true,
-                {
-                    ":missing-order-properties":"variationMissingProperties",
-                    ":is-variation-selected": "isVariationSelected && currentVariation.filter.isSalable"
-                }
-            ) }}
+        <div :class="'w-100 px-3 no-print button-display-' + currentVariation.variation.availability.id">
+          {{ AddToBasket.printVueComponent(
+              "currentVariation",
+              false,
+              true,
+              {
+                  ":missing-order-properties":"variationMissingProperties",
+                  ":is-variation-selected": "isVariationSelected && currentVariation.filter.isSalable",
+                  ":has-price": "currentVariation | hasItemDefaultPrice"
+              }
+          ) }}
         </div>
 
         <div class="w-100">
