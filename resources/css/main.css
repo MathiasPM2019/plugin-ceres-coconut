@@ -1225,10 +1225,6 @@ transform: translate(-50%) rotate(170deg);
   display:none !important;
 }
 
-.item-facts .button-display-1 {
-  display:block !important;
-}
-
 .item-facts .availability_1 * {
     background-color: #fff;
     color: #888;
