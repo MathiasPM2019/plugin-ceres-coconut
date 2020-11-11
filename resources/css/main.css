@@ -1221,11 +1221,11 @@ transform: translate(-50%) rotate(170deg);
 
 /* toBasket Button verfügbarkeit */
 
-.item-facts .button-display-5 .btn-primary {
+.item-facts .button-display-5 {
   display:none !important;
 }
 
-.item-facts .button-display-1 .btn-primary {
+.item-facts .button-display-1 {
   display:block !important;
 }
 
