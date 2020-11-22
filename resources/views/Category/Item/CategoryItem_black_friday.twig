@@ -83,19 +83,10 @@
             {% endif %}
 
             <div class="col-12 col-lg-{% if ceresConfig.header.showNavBars == "side" or ceresConfig.header.showNavBars == "both" %}9{% else %}12{% endif %}">
-              {% if categoryDescriptionTop == "description1" or categoryDescriptionTop == "both" and category.details[0].description | trim is not empty %}
-                  <div class="category-description mb-3">{{ category.details[0].description | raw }}</div>
-              {% endif %}
-              {% if categoryDescriptionTop == "description2" or categoryDescriptionTop == "both" and category.details[0].description2 | trim is not empty %}
-                  <div class="category-description mb-3">{{ category.details[0].description2 | raw }}</div>
-              {% endif %}
-              {% if itemList is not empty %}
+                {% if itemList is not empty %}
                 <ul class="product-list row grid">
                   <li class="col-6 col-sm-6 col-md-4 col-lg-{% if category is defined and ceresConfig.header.showNavBars in ["side", "both"] %}4{% else %}3{% endif %}">
-                    <div class="sockencontainer">
-  <p class="text-center text-color-red sockentext">Ab einem Einkauf von 50&nbsp;Euro schenken wir dir ein 3er-Set NIKE Sportsocken!<br>
-  <span class="small">Aktion gilt bis zum 21.12. 2019</span></p>
-</div>
+                    
                   </li>
                     {% for item in itemList %}
                         <li class="col-6 col-sm-6 col-md-4 col-lg-{% if category is defined and ceresConfig.header.showNavBars in ["side", "both"] %}4{% else %}3{% endif %}">
