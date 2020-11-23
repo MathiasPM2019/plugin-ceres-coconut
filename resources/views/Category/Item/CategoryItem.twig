@@ -83,13 +83,7 @@
             {% endif %}
 
             <div class="col-12 col-lg-{% if ceresConfig.header.showNavBars == "side" or ceresConfig.header.showNavBars == "both" %}9{% else %}12{% endif %}">
-              {% if ceresConfig.item.showCategoryDescriptionTop in ["description1", "both"] and category.details[0].description | trim is not empty %}
-                  <div class="category-description mb-3">{{ category.details[0].description | raw }}</div>
-              {% endif %}
-              {% if ceresConfig.item.showCategoryDescriptionTop in ["description2", "both"] and category.details[0].description2 | trim is not empty %}
-                  <div class="category-description mb-3">{{ category.details[0].description2 | raw }}</div>
-              {% endif %}
-              <!-- Aktionen Banner -->
+                <!-- Aktionen Banner -->
               <div class="widget widget-image-carousel widget-primary widget-proportional prop-xs-3-1 mt-5">
                 <div class="widget-inner carousel slide">
                   <div class="carousel-inner">
