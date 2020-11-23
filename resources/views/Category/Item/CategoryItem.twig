@@ -6,12 +6,12 @@
 
 {% block PageBody %}
 
-    {{ component( "Ceres::ItemList.Components.CategoryItem") }}
-    {{ component( "Ceres::ItemList.Components.Filter.ItemFilterList") }}
-    {{ component( "Ceres::ItemList.Components.Filter.ItemFilterTagList") }}
+    {{ component( "CeresCoconut::ItemList.Components.CategoryItem") }}
+    {{ component( "CeresCoconut::ItemList.Components.Filter.ItemFilterList") }}
+    {{ component( "CeresCoconut::ItemList.Components.Filter.ItemFilterTagList") }}
 
     {% if category is defined and ceresConfig.item.showCategoryImage %}
-        {% include "Ceres::Category.Item.Partials.CategoryParallaxImage" with { 'category': category } %}
+        {% include "CeresCoconut::Category.Item.Partials.CategoryParallaxImage" with { 'category': category } %}
     {% endif %}
 
     <div class="categoriegrid page-content"><!-- container-max entfernt -->
@@ -82,7 +82,6 @@
               {% if category is defined and not ceresConfig.item.showCategoryImage %}
                   <div class="row mt-3">
                       <div class="col-12">
-                          <h1 class="h2 category-title">{{ category.details[0].name }}</h1>
                           {% if ceresConfig.item.showCategoryDescriptionTop in ["description1", "both"] and category.details[0].description | trim is not empty %}
                               <div class="category-description mb-3">{{ category.details[0].description | raw }}</div>
                           {% endif %}
