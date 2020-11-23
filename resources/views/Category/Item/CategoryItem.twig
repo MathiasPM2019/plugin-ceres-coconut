@@ -16,13 +16,13 @@
 
     <div class="categoriegrid page-content"><!-- container-max entfernt -->
 
-        {% if category is not defined and itemList is not empty %}
-            <div class="row mt-3">
-                <div class="col-12">
-                    <h1 class="h2" id="searchPageTitle">{{ trans("Ceres::Template.itemSearchResults") }} {{ searchString }}</h1>
-                </div>
-            </div>
-        {% endif %}
+      {% if not ceresConfig.item.showCategoryImage %}
+          <div class="row mt-3">
+              <div class="col-12">
+                  <h1 class="h2 category-title">{{ category.details[0].name }}</h1>
+              </div>
+          </div>
+      {% endif %}
 
         <div class="list-controls grey-mid mt-2 mb-3 pb-2 sticky-top">
             <div class="list-controls-inner">
@@ -57,14 +57,15 @@
 
         {% if ceresConfig.pagination.position in ['top', 'top_bottom'] %}
             <div class="list-controls mb-5 row">
+              <div class="container-max">
                 <div class="col-12">
                     {% include "Ceres::Category.Item.Partials.Pagination" %}
                 </div>
+              </div>
             </div>
         {% endif %}
         <div class="container-max">
         <div class="row">
-
             {% if category is defined and ceresConfig.header.showNavBars in ["side", "both"] %}
                 <div class="col-3 hidden-md-down">
                     <div class="sidebar-categories">
