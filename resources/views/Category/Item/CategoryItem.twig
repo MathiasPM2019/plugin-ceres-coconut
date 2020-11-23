@@ -68,7 +68,7 @@
         <div class="row">
             {% if category is defined and ceresConfig.header.showNavBars in ["side", "both"] %}
                 <div class="col-3 hidden-md-down">
-                    <div class="sidebar-categories">
+                    <div class="mt-3 sidebar-categories">
                         <div class="category-title">{{ trans("Ceres::Template.itemCategories") }}</div>
                         {{ include('Ceres::PageDesign.Partials.Header.SideNavigation.twig') }}
                     </div>
@@ -78,10 +78,24 @@
 
             {% endif %}
 
-            <div class="col-12 col-lg-{% if category is defined and ceresConfig.header.showNavBars in ["side", "both"] %}9{% else %}12{% endif %}">                {% if itemList is not empty %}
+            <div class="col-12 col-lg-{% if category is defined and ceresConfig.header.showNavBars in ["side", "both"] %}9{% else %}12{% endif %}">
+              <!--Banner -->
+              <div class="widget widget-image-carousel widget-primary widget-proportional prop-xs-3-1 mt-5">
+                <div class="widget-inner carousel slide">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <a href="/black-friday-sale/">
+                        <img src="https://cdn02.plentymarkets.com/ddqwk5nv41fq/frontend/Content-Pages/Themenwelten/Black_Friday-Sale/black-friday-kategorie-banner_neu.jpg" alt="Black-Friday-Aktion Intersport Klöpping" title="Black Friday Akiton Intersport Klöpping" class="img-coverx">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--ENDE-->
+                {% if itemList is not empty %}
 	                <ul class="product-list row grid">
 	                    {% for item in itemList %}
-	                        <li class="col-12 col-sm-6 col-md-4 col-lg-{% if category is defined and ceresConfig.header.showNavBars in ["side", "both"] %}4{% else %}3{% endif %}">
+	                        <li class="col-6 col-sm-6 col-md-4 col-lg-{% if category is defined and ceresConfig.header.showNavBars in ["side", "both"] %}4{% else %}3{% endif %}">
 	                            <category-item
 	                                item-data-ref="{{ item.data | json_data }}"
 	                                :decimal-count="{{ ceresConfig.item.storeSpecial }}">
@@ -105,10 +119,12 @@
         </div>
       </div>
         {% if ceresConfig.pagination.position in ['bottom', 'top_bottom'] %}
-            <div class="list-controls mb-5 row">
+            <div class="list-controls mb-5 mt-5 row">
+              <div class="container-max">
                 <div class="col-12">
                     {% include "Ceres::Category.Item.Partials.Pagination" %}
                 </div>
+              </div>
             </div>
         {% endif %}
 
