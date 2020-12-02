@@ -914,7 +914,7 @@ ul.image-list img {
 }
 
 .filter-wrapper .card:nth-last-child(1) i.fa-angle-down {
-  display: none;
+
 }
 
 @media (min-width: 576px) {
