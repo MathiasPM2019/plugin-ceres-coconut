@@ -83,14 +83,15 @@
             {% endif %}
 
             <div class="col-12 col-lg-{% if ceresConfig.header.showNavBars == "side" or ceresConfig.header.showNavBars == "both" %}9{% else %}12{% endif %}">
-              {% if categoryDescriptionTop == "description1" or categoryDescriptionTop == "both" and category.details[0].description | trim is not empty %}
+              {% if ceresConfig.item.showCategoryDescriptionTop in ["description1", "both"] and category.details[0].description | trim is not empty %}
                   <div class="category-description mb-3">{{ category.details[0].description | raw }}</div>
               {% endif %}
-              {% if categoryDescriptionTop == "description2" or categoryDescriptionTop == "both" and category.details[0].description2 | trim is not empty %}
+              {% if ceresConfig.item.showCategoryDescriptionTop in ["description2", "both"] and category.details[0].description2 | trim is not empty %}
                   <div class="category-description mb-3">{{ category.details[0].description2 | raw }}</div>
               {% endif %}
+
               {% if itemList is not empty %}
-              <!-- ImageSlider oder ItemBanner für Aktionen --> 
+              <!-- ImageSlider oder ItemBanner für Aktionen -->
 
 
                 <ul class="product-list row grid">
