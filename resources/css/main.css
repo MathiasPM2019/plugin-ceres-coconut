@@ -1446,3 +1446,18 @@ transform: translate(-50%) rotate(170deg);
   .print-detail>div { max-height: 100mm; }
   #item-container+.print-detail { max-height: 100mm; }
 }
+
+.category-description .badge {
+  font-size: 16px;
+  color: #fff;
+   border: 0;
+   border-radius: 0;
+  background: #19ad19;
+  background: -moz-linear-gradient(45deg, #6dd102 0%, #19ad19 100%);
+  background: -webkit-linear-gradient(45deg,#6dd102 0%,#19ad19 100%);
+  background: linear-gradient(45deg, #6dd102 0%,#19ad19 100%);
+  display: inline-block;
+  padding: 10px 15px 10px 15px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
