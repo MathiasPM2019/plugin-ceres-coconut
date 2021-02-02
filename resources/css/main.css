@@ -1447,7 +1447,7 @@ transform: translate(-50%) rotate(170deg);
   #item-container+.print-detail { max-height: 100mm; }
 }
 
-.category-description .badge {
+.category-description a.badge {
   font-size: 16px;
   color: #fff;
    border: 0;
