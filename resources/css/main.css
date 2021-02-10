@@ -1213,11 +1213,24 @@ transform: translate(-50%) rotate(170deg);
     background-color: #19ad19;
     border-color: transparent;
     border-radius: 1px;
+    background: #19ad19;
+    background: -moz-linear-gradient(45deg, #6dd102 0%, #19ad19 100%);
+    background: -webkit-linear-gradient(45deg,#6dd102 0%,#19ad19 100%);
+    background: linear-gradient(45deg, #6dd102 0%,#19ad19 100%);
 }
 
 .item-facts .btn-primary i {
   color: #fff;
 }
+
+.item-facts .quantity-input-container {
+  line-height: 2.8;
+}
+
+.item-facts .qty-btn-container {
+  font-size: 0.7rem;
+}
+
 
 /* toBasket Button verfügbarkeit */
 
