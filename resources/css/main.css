@@ -1211,12 +1211,23 @@ transform: translate(-50%) rotate(170deg);
 .item-facts .btn-primary {
     color: #fff;
     background-color: #19ad19;
-    border-color: transparent;
+    border:none;
     border-radius: 1px;
     background: #19ad19;
     background: -moz-linear-gradient(45deg, #6dd102 0%, #19ad19 100%);
     background: -webkit-linear-gradient(45deg,#6dd102 0%,#19ad19 100%);
     background: linear-gradient(45deg, #6dd102 0%,#19ad19 100%);
+}
+
+.item-facts .btn-primary:focus {
+    box-shadow: none;
+}
+
+.item-facts .btn-primary:not(:disabled):not(.disabled):active {
+    box-shadow: none;
+    color: #fff;
+    background-color: #19ad19;
+    border: none;
 }
 
 .item-facts .btn-primary i {
