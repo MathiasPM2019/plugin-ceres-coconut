@@ -13,7 +13,7 @@
                 >
                 <label v-if="shippingProfile.parcelServiceName == 'Spedition'" class="provider-select-label" style="display:block;height:auto;" :for="'ShippingProfileID' +  _uid + shippingProfile.parcelServicePresetId" :class="paddingClasses" :style="paddingInlineStyles">
                     <div class="content">
-                        ${ shippingProfile.parcelServiceName } - ${ shippingProfile.parcelServicePresetName } (Fahrradversand, fahrbereit im Karton)
+                        ${ shippingProfile.parcelServiceName } - ${ shippingProfile.parcelServicePresetName } <span class="small">(Fahrradversand, fahrbereit im Karton)s</span>
                         <div>
                             <small>
                                 ${ shippingProfile.shippingAmount | currency }
@@ -24,7 +24,7 @@
                     <div class="my-3 pl-2">
                       <h5 class="font-weight-bold">Wichtiger Hinweis:</h5>
                        	<p>Für den Versand von Fahrrädern benötigt die Spedition Deine Telefonnummer, um einen Termin zur Anlieferung zu vereinbaren.<br><br>
-                        Falls Du Deine Telefonnummer noch nicht angeben hast, erhälst Du <span class="text-decoration-underline">automatisch eine E-Mail </span>so dass Du uns die Telefonnummer leicht zusenden kannst.
+                        Falls Du Deine Telefonnummer noch nicht angeben hast, erhälst Du <span style="text-decoration:underline;">automatisch eine E-Mail</span> so dass Du uns die Telefonnummer leicht zusenden kannst.
                         </p>
                     </div>
                 </label>
