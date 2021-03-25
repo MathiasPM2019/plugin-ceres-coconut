@@ -11,6 +11,23 @@
                         :checked="shippingProfileId === shippingProfile.parcelServicePresetId"
                         :disabled="isBasketLoading || isCheckoutReadonly"
                 >
+                <label v-if="shippingProfile.parcelServiceName == 'Spedition'" class="provider-select-label" style="display:block;height:auto;" :for="'ShippingProfileID' +  _uid + shippingProfile.parcelServicePresetId" :class="paddingClasses" :style="paddingInlineStyles">
+                    <div class="content">
+                        ${ shippingProfile.parcelServiceName } - ${ shippingProfile.parcelServicePresetName }
+                        <div>
+                            <small>
+                                ${ shippingProfile.shippingAmount | currency }
+                                <template v-if="maxDeliveryDays && maxDeliveryDays[shippingProfile.parcelServicePresetId]"> - {{ trans("Ceres::Template.checkoutShippingProfileMaxDeliveryDays", {"days": "${ maxDeliveryDays[shippingProfile.parcelServicePresetId] }"}) }}</template>
+                            </small>
+                        </div>
+                    </div>
+                    <div class="my-3 pl-2">
+                      <h5>Wichtiger Hinweis:</h5>
+                       	<p>Für den Versand von Fahrrädern benötigt die Spedition Deine Telefonnummer, um einen Termin zur Anlieferung zu vereinbaren.
+                        Falls Du Deine Telefonnummer noch nicht angeben hast, erhälst Du automatisch eine E-Mail so dass Du uns die Telefonnummer leicht zusenden kannst.
+                        </p>
+                    </div>
+                </label>
                 <label v-if="shippingProfile.parcelServiceName == 'Selbstabholung'" class="provider-select-label" style="display:block;height:auto;" :for="'ShippingProfileID' +  _uid + shippingProfile.parcelServicePresetId" :class="paddingClasses" :style="paddingInlineStyles">
                     <div class="content">
                         ${ shippingProfile.parcelServiceName } - ${ shippingProfile.parcelServicePresetName }
@@ -21,12 +38,12 @@
                             </small>
                         </div>
                     </div>
-                    <div class="my-3 pl-2" style="color:#19ad19">
-                      <h5 class="font-weight-bold">Wichtiger Hinweis:</h5>
+                    <div class="my-3 pl-2">
+                      <h5>Wichtiger Hinweis:</h5>
                        	<p>Aufgrund der derzeitigen Situation bieten wir eine verbesserte Filialabholung an.
                         Nachdem du den/die Artikel gekauft hast, setzen wir uns mit dir in Verbindung.
                         Wir vereinbaren mit dir einen f&uuml;r dich passenden Termin zur Abholung in Wittenberg.<br><br>
-                        Abholungen sind in der Zeit von 9.30 bis 18.30 Uhr m&ouml;glich<br><br>
+                        Abholungen sind in der Zeit von 9.30 bis 18.00 Uhr m&ouml;glich<br><br>
                         Hotline: 0 34 91 - 45 90 121
                         </p>
                     </div>
