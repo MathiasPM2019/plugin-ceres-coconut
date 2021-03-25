@@ -40,38 +40,6 @@
                     </div>
 
                 </label>
-                <label v-if="shippingProfile.parcelServiceName == 'Selbstabholung'" class="provider-select-label" style="display:block;height:auto;" :for="'ShippingProfileID' +  _uid + shippingProfile.parcelServicePresetId" :class="paddingClasses" :style="paddingInlineStyles">
-                    <div class="content">
-                        ${ shippingProfile.parcelServiceName } - ${ shippingProfile.parcelServicePresetName }
-                        <div>
-                            <small>
-                                ${ shippingProfile.shippingAmount | currency }
-                                <template v-if="maxDeliveryDays && maxDeliveryDays[shippingProfile.parcelServicePresetId]"> - {{ trans("Ceres::Template.checkoutShippingProfileMaxDeliveryDays", {"days": "${ maxDeliveryDays[shippingProfile.parcelServicePresetId] }"}) }}</template>
-                            </small>
-                        </div>
-                    </div>
-                    <div class="my-3 pl-2">
-                      <h5>Wichtiger Hinweis:</h5>
-                       	<p>Aufgrund der derzeitigen Situation bieten wir eine verbesserte Filialabholung an.
-                        Nachdem du den/die Artikel gekauft hast, setzen wir uns mit dir in Verbindung.
-                        Wir vereinbaren mit dir einen f&uuml;r dich passenden Termin zur Abholung in Wittenberg.<br><br>
-                        Abholungen sind in der Zeit von 9.30 bis 18.00 Uhr m&ouml;glich<br><br>
-                        Hotline: 0 34 91 - 45 90 121
-                        </p>
-                    </div>
-                </label>
-                <label v-else class="provider-select-label" :for="'ShippingProfileID' +  _uid + shippingProfile.parcelServicePresetId" :class="paddingClasses" :style="paddingInlineStyles">
-                    <div class="content">
-                        ${ shippingProfile.parcelServiceName } - ${ shippingProfile.parcelServicePresetName }
-                        <div>
-                            <small>
-                                ${ shippingProfile.shippingAmount | currency }
-                                <template v-if="maxDeliveryDays && maxDeliveryDays[shippingProfile.parcelServicePresetId]"> - {{ trans("Ceres::Template.checkoutShippingProfileMaxDeliveryDays", {"days": "${ maxDeliveryDays[shippingProfile.parcelServicePresetId] }"}) }}</template>
-                            </small>
-                        </div>
-                    </div>
-
-                </label>
             </li><!-- -->
             <li v-if="shippingProfileList.length <= 0" class="method-list-item has-error">
                 <div class="label">
