@@ -28,6 +28,18 @@
                         </p>
                     </div>
                 </label>
+                <label v-else class="provider-select-label" :for="'ShippingProfileID' +  _uid + shippingProfile.parcelServicePresetId" :class="paddingClasses" :style="paddingInlineStyles">
+                    <div class="content">
+                        ${ shippingProfile.parcelServiceName } - ${ shippingProfile.parcelServicePresetName }
+                        <div>
+                            <small>
+                                ${ shippingProfile.shippingAmount | currency }
+                                <template v-if="maxDeliveryDays && maxDeliveryDays[shippingProfile.parcelServicePresetId]"> - {{ trans("Ceres::Template.checkoutShippingProfileMaxDeliveryDays", {"days": "${ maxDeliveryDays[shippingProfile.parcelServicePresetId] }"}) }}</template>
+                            </small>
+                        </div>
+                    </div>
+
+                </label>
                 <label v-if="shippingProfile.parcelServiceName == 'Selbstabholung'" class="provider-select-label" style="display:block;height:auto;" :for="'ShippingProfileID' +  _uid + shippingProfile.parcelServicePresetId" :class="paddingClasses" :style="paddingInlineStyles">
                     <div class="content">
                         ${ shippingProfile.parcelServiceName } - ${ shippingProfile.parcelServicePresetName }
