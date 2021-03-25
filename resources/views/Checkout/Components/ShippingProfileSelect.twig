@@ -13,7 +13,7 @@
                 >
                 <label v-if="shippingProfile.parcelServiceName == 'Spedition'" class="provider-select-label" style="display:block;height:auto;" :for="'ShippingProfileID' +  _uid + shippingProfile.parcelServicePresetId" :class="paddingClasses" :style="paddingInlineStyles">
                     <div class="content">
-                        ${ shippingProfile.parcelServiceName } - ${ shippingProfile.parcelServicePresetName } <span class="small">(Fahrradversand, fahrbereit im Karton)s</span>
+                        ${ shippingProfile.parcelServiceName } - ${ shippingProfile.parcelServicePresetName } <span class="small">(Fahrradversand, fahrbereit im Karton)</span>
                         <div>
                             <small>
                                 ${ shippingProfile.shippingAmount | currency }
